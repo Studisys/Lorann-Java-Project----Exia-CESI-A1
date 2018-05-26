@@ -1,0 +1,525 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+ <title>DCMOTO - Notice</title>
+ <style type="text/css">
+  body {font-family: sans-serif; font-size: 80%; color: #000; background-color: #fff;}
+  h1,h2,h3 {font-family: sans-serif; color: #000; margin-top: 1em; margin-bottom: 0.5em;}
+  h1 {font-size: 180%; background-color: #4cf; padding-left: 0.2em;}
+  h2 {font-size: 140%; background-color: #cff; padding-left: 0.2em;}
+  h3 {font-size: 100%; border-style: none; border-bottom: solid 1px #ccc; margin-left: 0.8em;}
+  p  {margin-left: 1em; margin-top: 0em;}
+  ul {margin-left: 2em; margin-top: 0em;}
+ </style>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta name="description" content="DCMOTO - Notice">
+ <meta name="author" content="Daniel Coulom">
+ <meta name="keywords" content="dcmoto, emulateur, thomson">
+</head>
+
+<body>
+<h1>DCMOTO - Notice</h1>
+<p>
+DCMOTO est un &eacute;mulateur pour Windows de tous les ordinateurs 8 bits Thomson.<br>
+Les utilisateurs de Linux, Mac-OS et autres syst&egrave;mes d'exploitation sont invit&eacute;s &agrave;<br>
+utiliser dcmo5, dcto8d ou dcto9p. Les liens sont &agrave; la page d'accueil du site officiel.<br>
+<br>
+Version : <b>2018.03.17</b><br>
+Auteur : Daniel Coulom<br>
+Site web : <a href="http://dcmoto.free.fr">dcmoto.free.fr</a>
+</p>
+
+<h3>Ordinateurs &eacute;mul&eacute;s</h3>  
+<ul>
+<li>MO5 azerty (3 versions), MO5 qwerty, MO5E, MO5E allemand, MO5 OS9</li>
+<li>MO5N, MO5NR, MO6 (3 versions), Olivetti Prodest PC128</li>
+<li>T9000, TO7 AZERTY fran&ccedil;ais, TO7 QWERTY fran&ccedil;ais, TO7 QWERTY allemand</li>
+<li>TO7/70, TO7/70 qwerty allemand et arabe</li>
+<li>TO9, TO9 allemand</li>
+<li>TO8, TO8 prototype, TO8D, TO9+, TO9+ OS9</li>
+</ul>
+
+<h3>Avertissement</h3>  
+<p>
+Chaque nouvelle version apporte th&eacute;oriquement des améliorations et des corrections d'erreurs.<br>
+Elle peut aussi provoquer de nouvelles anomalies.<br>
+Le signalement de tout comportement anormal est important pour permettre les corrections.<br>
+En cas de probl&egrave;me majeur, vous pouvez toujours utiliser les versions pr&eacute;c&eacute;dentes de l'&eacute;mulateur.<br>
+</p>
+
+<h3>Anti-virus</h3>  
+<p>
+Certains anti-virus voient parfois des menaces dans des programmes parfaitement inoffensifs, en<br>
+particulier lorsque les ex&eacute;cutables sont compact&eacute;s avec UPX. Dans le cas de dcmoto il n'y a strictement<br>
+rien &agrave; craindre : ni virus, ni cheval de Troie, ni logiciel espion, ni publicit&eacute;, ni appel de site internet.<br>
+Si votre anti-virus trouve le programme suspect, c'est un "faux positif". Dans ce cas, vous devez signaler<br>
+l'anomalie à votre fournisseur, pour qu'il puisse corriger ses r&egrave;gles de d&eacute;tection.
+</p>
+
+<h2>Installation</h2>
+
+<h3>Configuration requise</h3>
+<p>
+Processeur Pentium ou plus r&eacute;cent, fr&eacute;quence 300 MHz ou plus.<br>
+Windows 98/ME ou Windows 2000/XP/Vista/7/8/10 et suivants, 32 bits ou 64 bits.<br>
+Carte graphique avec r&eacute;solution minimum 640x480, 65536 couleurs ou plus.<br>
+Carte son obligatoire.
+</p>
+
+<h3>Proc&eacute;dure</h3>
+<p>
+D&eacute;compressez le fichier .zip dans un r&eacute;pertoire et cr&eacute;ez un raccourci vers dcmoto.exe (facultatif).<br>
+DCMOTO ne copie aucun fichier en dehors de son r&eacute;pertoire. Il ne modifie pas la base de registre, ni aucun<br>
+fichier de votre ordinateur. C'est un programme portable, pouvant &ecirc;tre install&eacute; sur un support amovible, tel<br>
+un disque externe ou une cl&eacute; USB, et d&eacute;plac&eacute; d'un ordinateur &agrave; un autre sans aucune difficulté.
+</p>
+
+<h3>Utilisation</h3>
+<p>
+Lancez le programme dcmoto.exe par un double-clic ou utilisez le raccourci.<br>
+Choisissez votre langue (Options/Paramètres...).<br>
+Consultez l'aide en ligne du programme et la documentation du site dcmoto.<br>
+La configuration du clavier peut &ecirc;tre affich&eacute;e et modifi&eacute;e (Outils/Clavier...).
+</p>
+
+ 
+<h2>Historique</h2>
+
+<h3>Version 2018.03.17</h3>
+<ul>
+<li>Correction de l'erreur de l'instruction NEG : avec la valeur $80 le bit carry du code condition doit être positionné à 1.</li>
+<li>Correction de l'erreur de chargement d'un fichier texte pour la simulation du clavier.</li>
+<li>Correction d'une anomalie de la commande CMD52 avec le contrôleur CS91-280 et l'interface SDMOTO.</li>
+<li>Emulation du contrôleur LEGO DACTA.</li>
+<li>Ajout automatique dans la carte SD du programme SDMOTO.SEL lors du chargement d'un fichier .sd avec le contrôleur CS91-280.</li>
+<li>Correction d'une anomalie dans l'émulation de l'instruction SYNC du 6809 et du 6309.</li>
+<li>Ajout automatique dans la carte SD du programme SDDRIVE.SEL lors du chargement d'un fichier .sd avec le contrôleur SDDRIVE.</li>
+<li>Ajout des paramètres pour l'émulation de l'interface SDDRIVE dans les fichiers .mrx.</li>
+<li>Ajout de l'émulation du contrôleur SDDRIVE pour la simulation de disquettes sur carte SD.</li>
+<li>Ajout d'une option pour choisir la fréquence d'échantillonnage du son en sortie de l'émulateur.</li>
+<li>Mise à jour de l'aide en italien (traduction de Giuseppe Papa).</li>
+</ul>
+
+<h3>Version 2017.09.03</h3>
+<ul>
+<li>Contr&ocirc;le de la version du fichier .mrx charg&eacute;.</li>
+<li>Prise en compte des fichiers .key de red&eacute;finition des touches (.key) dans les exécutables Windows (.exe).</li>
+<li>Correction d'une erreur dans l'instruction DAA du processeur 6809 (erreur apparue dans la version 2017.07.14).</li>
+<li>Correction d'une erreur dans l'&eacute;mulation des cartouches (erreur apparue dans la version 2017.07.14).</li>
+<li>R&eacute;tablissement de l'&eacute;tat de l'indicateur de pause &agrave; la fermeture de l'outil de mise au point (erreur apparue dans la version 2017.07.14).</li>
+</ul>
+
+<h3>Version 2017.07.14</h3>
+<ul>
+<li>Correction d'une erreur de lecture cassette avec les TO9, TO8, TO8D et TO9+.</li>
+<li>Dans l'outil de mise au point, affichage de la trace des 2000 valeurs pr&eacute;c&eacute;dentes des registres 6809 et 6309.</li>
+<li>Dans l'outil de mise au point, d&eacute;sassemblage et affichage des trois instructions avant l'instruction en cours.</li>
+<li>Dans l'outil de mise au point, correction d'un mauvais fonctionnement des points d'arrêt en lecture et en ecriture.</li>
+<li>Dans l'outil de mise au point, possibilit&eacute; de d&eacute;finir trois adresses de points d'arr&ecirc;t.</li>
+<li>Dans l'outil de mise au point, affichage du d&eacute;tail des bits du registre CC (condition register).</li>
+<li>L'outil de mise au point est d&eacute;compos&eacute; en deux bo&icirc;tes de dialogue distinctes, pour &eacute;viter de d&eacute;passer la taille de l'&eacute;cran.</li>
+<li>Simulation et désassembleur exp&eacute;rimentaux pour le processeur Hitachi HD63C09.</li>
+<li>La sauvegarde de l'&eacute;tat actuel du MO5 et du TO7/70 g&eacute;n&egrave;re des fichiers .sd permettant de restaurer l'&eacute;tat sur la machine r&eacute;elle.</li>
+<li>Retour de $CC en cas de lecture du registre 'SYSTEME 2' ($A7DD/$E7DD) des ordinateurs de derni&egrave;re g&eacute;n&eacute;ration.</li>
+<li>Correction d'une erreur de contr&ocirc;le de la luminosit&eacute;. L'&eacute;cran de r&eacute;glage du crayon optique TO7 et TO7/70 fonctionne.</li>
+<li>Ajout de l'&eacute;mulation du MO5 N (pr&eacute;d&eacute;cesseur du MO6 d&eacute;couvert en 2017).</li>
+<li>Correction d'une anomalie d'&eacute;mulation du clic de souris pour les MO5NR, MO6 et PC128.</li>
+<li>Ajout d'une option pour simuler un moniteur monochrome blanc, vert ou ambre.</li>
+<li>Correction d'une erreur de s&eacute;lection de la banque m&eacute;moire par le PIA syst&egrave;me des TO. Le Pascal UCSD fonctionne.</li>
+<li>Ajout d'une option pour imposer les proportions 4/3 à l'&eacute;cran affich&eacute;.</li>
+<li>Ajout d'une option pour simuler l'effet de balayage des &eacute;crans &agrave; tube cathodique.</li>
+<li>Suppression de la remise &agrave; z&eacute;ro du num&eacute;ro de banque de la cartouche en cas d'initialisation programme.</li>
+<li>Correction d'une anomalie dans le traitement des touches majuscule et Basic des claviers graphiques MO.</li>
+<li>Ajout de l'ordinateur TO9+ avec la ROM OS-9.</li>
+<li>Programmation de l'instruction CWAI dans l'&eacute;mulateur 6809 et le d&eacute;sassembleur.</li>
+<li>Ajout de la simulation d'acc&egrave;s aux cassettes et aux disquettes &agrave; la vitesse r&eacute;elle.</li>
+<li>Correction d'une anomalie emp&ecirc;chant de d&eacute;charger un support amovible dont le fichier image est vide.</li>
+<li>Le nom du fichier .sd charg&eacute; remplace le libell&eacute; fixe "boot.sd" dans le r&eacute;pertoire de la carte SD simul&eacute;e.</li>
+<li>Correction d'une anomalie (introduite en version 2015.05) lors de l'appui simultan&eacute; sur les touches SHIFT et BASIC.</li>
+<li>Emulation du contr&ocirc;leur de carte SD CS91-282 interne au MO5.</li>
+<li>Correction d'une anomalie d'affichage de la LED Shift-Lock du MO6 et du PC128 dans l'outil Clavier.</li>
+<li>Avec l'option Arduino, pour les fichiers d'extension .wav, chaque octet est converti en &eacute;chantillon sur 6 bits.</li>
+<li>Ajout de l'option Arduino dans le fichier .mrx pour permettre les d&eacute;monstrations de streaming.</li>
+<li>R&eacute;tablissement d'un curseur en forme de fl&egrave;che pour redimensionner la fen&ecirc;tre de l'&eacute;mulateur.</li>
+<li>Le clavier du PC n'&eacute;mule plus les manettes si la case correspondante n'est pas coch&eacute;e dans les options.</li>
+<li>Les instructions non-document&eacute;es $41 et $42 ne sont plus utilis&eacute;es pour la d&eacute;protection des cassettes MO5/MO6.</li>
+<li>Correction d'un conflit entre l'&eacute;mulation de l'interface Arduino et l'&eacute;mulation des manettes.</li>
+</ul>
+
+<h3>Version 2016.04</h3>
+<ul>
+<li>Emulation du contr&ocirc;leur nanor&eacute;seau pour communiquer avec dcnanoserveur.</li>
+<li>Emulation d'instructions non document&eacute;es du processeur 6809.</li>
+<li>Correction d'une anomalie dans la mise &agrave; jour de la palette des machines de derni&egrave;re g&eacute;n&eacute;ration.</li>
+<li>Programmation d'une subtilit&eacute; du processeur 6809 : CLR lit la m&eacute;moire avant de la remettre &agrave; z&eacute;ro.</li>
+<li>Correction d'anomalies dans le chargement et l'enregistrement de fichiers images (disquette, cassette et carte memoire).</li>
+<li>Ajout de l'&eacute;mulation de l'interface Arduino par les deux ports manettes pour lire une carte SD.</li>
+<li>Correction d'une anomalie d'affichage de la diode Minuscule des TO7 et TO7/70, provoquant une erreur dans Crystann.</li>
+<li>L'absence de disquette dans le lecteur &agrave; l'initialisation du contr&ocirc;leur TO8/TO8D/TO9+ ne positionne pas carry.</li>
+</ul>
+
+<h3>Version 2015.05</h3>
+<ul>
+<li>Nouvelle bo&icirc;te de dialogue pour configurer les touches d'&eacute;mulation des manettes.</li>
+<li>Ajout de l'&eacute;mulation du MO5 allemand, du MO5 OS9, des MO5 v1.0 et v1.1, des MO6 s&eacute;rie U et V.</li>
+<li>Remplacement des scancodes par les codes "Virtual Key" pour l'acquisition des touches du clavier PC.</li>
+<li>Correction d'une anomalie dans le calcul de la valeur du port A du PIA 6821 musique et jeux.</li> 
+<li>Correction d'une anomalie de s&eacute;lection de la banque vid&eacute;o en mode MO6.</li> 
+<li>Nouvelle fonction de sauvegarde d'un fichier binaire dans l'outil de mise au point.</li> 
+<li>Mise à jour du code du contrôleur CS91-280 version 2014.12.28 (correction d'une anomalie avec le MO6).</li> 
+<li>Mise à jour du code du contrôleur CS91-280 version 2014.12.11 (lecture du répertoire de la carte SD).</li> 
+<li>Emulation des modes vid&eacute;o page1 et page2 des ordinateurs de derni&egrave;re g&eacute;n&eacute;ration.</li> 
+<li>Emulation des modes surimpression et triple surimpression des ordinateurs de derni&egrave;re g&eacute;n&eacute;ration.</li> 
+<li>Correction d'une anomalie de s&eacute;lection de banque RAM en mode TO7/70 (s&eacute;lection par DDRB).</li>
+<li>Correction des valeurs retourn&eacute;es par INMOUSE quand la souris n'est pas connect&eacute;e (X = 0 et Y = 0).</li>
+<li>Correction d'une anomalie de l'interruption timer (raz du bit CSR0 selon la datasheet du 6846).</li>
+<li>La lecture du port B du PIA syst&egrave;me des ordinateurs MO d&eacute;sactive le signal IRQ.</li>
+<li>G&eacute;n&eacute;ration des signaux SPI pour les cartes SD sur le front descendant de l'horloge.</li>
+<li>Ajout de l'&eacute;mulation de la commande CMD12 des cartes SD, pour les interfaces SDMO et SDMOTO.</li>
+<li>Ajout de l'EPROM de 4Ko en $B000, pr&eacute;vue sur la carte m&egrave;re du MO5.</li>
+<li>Ajout de l'&eacute;mulation du prototype TO8 num&eacute;ro 14.</li>
+<li>Ajout de l'&eacute;mulation du contr&ograve;leur CS91-280/281 pour les interface SDMOTO et SDMO.</li>
+<li>Correction d'une erreur pouvant faire planter l'&eacute;mulateur pendant le formatage d'une disquette.</li>
+<li>Correction d'une erreur de sauvegarde de la palette dans les fichiers .mrx</li>
+<li>Ajout d'outils graphiques pour simuler les claviers Thomson et configurer le clavier PC.</li>
+<li>Adresse de chargement d'un fichier binaire diff&eacute;rente de l'adresse du dump m&eacute;moire.</li>
+<li>Option pour l'&eacute;mulation de l'interface SDMO avec les ordinateurs MO.</li>
+<li>Emulation de l'interface CFMO : interface d'un carte CompactFlash avec le port d'extension des ordinateurs MO.</li>
+<li>Correction d'une erreur d'&eacute;mulation du contr&ocirc;leur de disquette CD90-640 (écriture octet $A7D8/$E7D8).</li>
+<li>Correction d'une erreur d'&eacute;mulation du contr&ocirc;leur de disquette TO9 (écriture octet $E7D8).</li>
+<li>Correction d'une erreur de sauvegarde de l'option contr&ocirc;leur CD90-351 pour une partie des ordinateurs émulés.</li>
+<li>Correction d'une erreur d'&eacute;mulation des instructions LEAX et LEAY : le bit N ne doit pas &ecirc;tre modifi&eacute;.</li>
+</ul>
+
+<h3>Version 2013.03</h3>
+<ul>
+<li>Am&eacute;lioration de l'&eacute;mulation de l'interface SDMOTO : ajout de l'&eacute;criture sur la carte SD.</li>
+</ul>
+
+<h3>Version 2013.02</h3>
+<ul>
+<li>Remplacement de la rom MO5 v1.1 par la v2.1 (derni&egrave;re version du MO5 &agrave; clavier m&eacute;canique).</li>
+<li>Ajout d'un cycle &agrave; la p&eacute;riode du timer 6846 pour identit&eacute; avec la p&eacute;riode r&eacute;elle.</li> 
+<li>Correction d'une erreur dans l'&eacute;mulation du test des touches du clavier TO7.</li>
+<li>Correction de l'&eacute;mulation du PIA syst&egrave;me des TO7 et TO7/70.</li>
+<li>Ajout de l'émulation du timer du MC6846 pour les TO7 et TO7/70.</li>
+<li>Correction d'un blocage du lancement du Basic 1.0 du TO9 en l'absence de disquette.</li>
+<li>Emulation exp&eacute;rimentale de l'interface SDMOTO sur le connecteur de la deuxi&egrave;me manette.</li> 
+<li>Correction du bit Z du code condition retourn&eacute; par KTEST pour les claviers TO8 et TO8D.</li> 
+</ul>
+
+<h3>Version 2013.01</h3>
+<ul>
+<li>Ajout de l'&eacute;mulation du bouton droit de la souris pour toutes les machines.</li> 
+<li>Ajout de l'&eacute;mulation de la souris en mode TO9 et TO9 allemand.</li> 
+<li>Conversion automatique d'un fichier .txt en fichier .k7 lors du chargement d'une cassette.</li> 
+</ul>
+
+<h3>Version 2012.12</h3>
+<ul>
+<li>Suppression de sons parasites en mode TO9, TO8, TO8D et TO9+.</li> 
+<li>Correction d'anomalies dans les interruptions souris et crayon optique du TO9.</li>
+<li>Am&eacute;lioration de l'&eacute;mulation du clavier TO9 et TO9+.</li> 
+<li>Am&eacute;lioration de l'&eacute;mulation du PIA syst&egrave;me du TO9.</li> 
+<li>En cas d'annulation du chargement d'une cassette, la cassette pr&eacute;c&eacute;dente reste charg&eacute;e.</li>
+<li>En cas d'annulation du chargement d'une disquette, la disquette pr&eacute;c&eacute;dente reste charg&eacute;e.</li>
+</ul>
+
+<h3>Version 2012.11</h3>
+<ul>
+<li>Emulation exp&eacute;rimentale des interfaces MO5SD (port cassette) et MO6SD/TO8SD (port joystick).</li> 
+<li>Prise en compte des caract&egrave;res accentu&eacute;s lors de la simulation du clavier.</li> 
+<li>Correction de l'&eacute;mulation du clic gauche de la souris pour tous les ordinateurs.</li> 
+<li>Correction de l'&eacute;mulation de la souris pour les ordinateurs MO5NR, MO6 et PC128.</li> 
+<li>Correction d'anomalies mineures.</li> 
+</ul>
+
+<h3>Version 2012.03</h3>
+<ul>
+<li>Nouvel ordinateur &eacute;mul&eacute; : TO7 QWERTY allemand.</li>
+<li>Nouvel ordinateur &eacute;mul&eacute; : TO7 QWERTY français.</li>
+<li>Am&eacute;lioration de l'&eacute;mulation du contr&ocirc;leur de disquette pour permettre le boot sur l'unit&eacute; 1.</li>
+<li>Ajout de la sauvegarde de l'&eacute;tat du timer 6846 dans le fichier .mrx.</li> 
+<li>Correction d'anomalies mineures.</li> 
+</ul>
+
+<h3>Version 2012.01</h3>
+<ul>
+<li>Choix par défaut de la vitesse rapide de simulation du clavier (affichage après chaque ligne).</li>
+<li>D&eacute;sassemblage de l'instruction SWI adapt&eacute; au type d'ordinateur (MO ou TO).</li>
+<li>Correction d'une anomalie de gestion des banques m&eacute;moire en mode MO5NR, MO6 et PC128.</li>
+<li>Correction d'une anomalie d'initialisation de la page vid&eacute;o &agrave; la restauration des fichiers .mrx.</li>
+<li>Correction d'une erreur de simulation du clavier en mode TO8 et TO8D.</li>
+<li>Ajout d'une nouvelle fonction de mise au point : chargement d'un fichier binaire en m&eacute;moire.</li>
+<li>Correction du num&eacute;ro et du cycle de la ligne vid&eacute;o en mode mise au point.</li> 
+<li>Optimisation des fonctions d'affichage de l'écran par une meilleure programmation.</li> 
+</ul>
+
+<h3>Version 2011.10</h3>
+<ul>
+<li>Ajout du choix de l'italien dans les options de langue.</li> 
+<li>Ajout de l'&eacute;mulation du deuxi&egrave;me bouton des manettes.</li> 
+<li>Correction de l'anomalie du BEEP dans les modes TO8, TO8D et TO9+.</li> 
+</ul>
+
+<h3>Version 2011.09</h3>
+<ul>
+<li>Correction d'une erreur d'&eacute;mulation des instructions PSHU et PSHS quand U ou S deviennent n&eacute;gatifs.</li> 
+<li>Correction d'un test erron&eacute; emp&ecirc;chant le formatage de l'unit&eacute; de disquette num&eacute;ro 3.</li> 
+<li>Correction d'une anomalie d'&eacute;mulation du PIA musique et jeux en cas de non sélection des manettes.</li>
+<li>Correction d'une erreur dans la d&eacute;tection de l'appui sur le bouton Action des manettes.</li>
+<li>Correction de la fonction de formatage d'une disquette en Basic DOS et avec la cartouche Assembleur.</li>
+<li>Ajustement de la fr&eacute;quence de r&eacute;p&eacute;tition du clavier pour les TO8, TO9 et TO9+.</li>
+<li>Correction de la variation de vitesse de la musique en cas d'appui sur une touche avec le TO8 et le TO8D.</li> 
+</ul>
+
+<h3>Version 2011.07</h3>
+<ul>
+<li>Emulation des formes non document&eacute;es des instructions EXG et TFR du microprocesseur 6809.</li>
+<li>Ajout d'un bouton d'acc&egrave;s au site dcmoto dans la bo&icirc;te de dialogue "A propos de dcmoto".</li>
+<li>Correction d'une erreur d'&eacute;mulation du PIA 6821 musique et jeux (lecture du port B).</li>
+<li>Correction d'une erreur de commutation des banques RAM du TO8 et du TO9+ en mode compatibilit&eacute; TO7/70.</li>
+<li>Correction d'une erreur d'&eacute;mulation du processeur. L'&eacute;cran LOGO (version MEMO5) s'affiche correctement.</li>
+<li>Fermeture automatique du fichier dcmoto-printer.txt pour permettre sa consultation sans quitter l'&eacute;mulateur.</li>
+<li>Simulation des frappes au clavier avec le contenu du presse-papier ou d'un fichier texte.</li>
+<li>Pas d'avertissement pour les instructions $41 et $42 si la case "Arr&ecirc;t sur instruction invalide" n'est pas coch&eacute;e.</li>
+<li>Modification de l'initialisation des joysticks. Les p&eacute;riph&eacute;riques HID sur port USB fonctionnent.</li>
+<li>Correction d'une anomalie de traitement des interruptions dans La Mal&eacute;diction de Thaar version TO8.</li>
+<li>Correction d'une anomalie d'&eacute;mulation du clavier TO8 dans Micro-Scrabble et Las Vegas.</li>
+<li>Correction de deux inversions de libell&eacute;s anglais et fran&ccedil;ais dans le menu principal.</li>
+<li>Correction de la commutation de pages m&eacute;moire TO8 en mode compatibilit&eacute; TO7/70. Le jeu X-RAY fonctionne.</li>
+</ul>
+
+<h3>Version 2011.04</h3>
+<ul>
+<li>Nouvelle option de correction de gamma pour l'affichage, ajout&eacute;e dans le menu Options/Param&egrave;tres.</li>
+<li>Suppression de l'avertissement pour les instructions $41 et $42 en l'absence de cassette MO5 ou MO6.</li>
+<li>Correction d'une erreur de la version 2011.01 dans le recouvrement de la ROM par la RAM en mode TO8 et TO9+.</li>
+<li>Correction d'une erreur dans l'&eacute;mulation de l'interface clavier du TO8.</li>
+</ul>
+
+<h3>Version 2011.01</h3>
+<ul>
+<li>Am&eacute;lioration de l'&eacute;mulation des claviers du TO8 et du TO8D</li>
+<li>Correction d'une erreur de d&eacute;tection des touches pour les claviers de la famille MO</li>
+<li>Correction d'une erreur d'&eacute;mulation de l'instruction DAA. La version cassette TO8 de MGT fonctionne &agrave; nouveau</li> 
+<li>Correction d'une anomalie de d&eacute;tection de la position du crayon optique (erreur de calcul de la luminosit&eacute;)</li> 
+<li>Emulation du QD90-280 connect&eacute; au TO8, TO8D et TO9+ (reproduction du comportement anormal du TO9+)</li> 
+<li>Correction de l'erreur de lecture et d'&eacute;criture d'un secteur avec le contr&ocirc;leur CQ90-028</li> 
+<li>Nombreuses am&eacute;liorations techniques non visibles &agrave; l'utilisation</li>
+</ul>
+
+<h3>Version 2010.10 & 2010.10.22</h3>
+<ul>
+<li>Correction d'une anomalie de gestion du signal IRQ des TO8 et TO9 et diffusion de la sous-version 2010.10.22</li> 
+<li>Ajout du texte de la licence de dcmoto dans la bo&icirc;te de dialogue "A propos de dcmoto"</li> 
+<li>Affichage de la bo&icirc;te de dialogue "A propos de dcmoto" si dcmoto.ini est absent ou p&eacute;rim&eacute;</li> 
+<li>Dans le module de mise au point, incr&eacute;mentation automatique de l'adresse apr&egrave;s modification d'un octet</li> 
+<li>Simulation de l'interrupteur d'alimentation de l'ordinateur par la touche "Arr&ecirc;t D&eacute;filement"</li> 
+<li>Sortie du mode Pause par une touche quelconque, un clic de souris ou une touche action d'un joystick</li> 
+<li>Correction de plusieurs erreurs dans les fonctions de sauvegarde et de restauration de l'&eacute;tat de la machine</li> 
+<li>Correction d'une erreur de commutation de banques m&eacute;moire en mode TO8</li>   
+<li>Regroupement des r&eacute;glages et des options dans une seule bo&icirc;te de dialogue</li>   
+<li>Suppression des r&eacute;glages de la fr&eacute;quence d'affichage et du nombre de buffers sons</li>  
+<li>Suppression des r&eacute;glages de contraste et de luminosit&eacute;</li>  
+<li>Ajustement de la courbe de gamma pour un meilleur rendu des palettes 8, 16 et 4096 couleurs</li>
+<li>Ajout de l'indicateur CAPSLOCK dans la ligne de statut, &agrave; droite du nom de l'ordinateur &eacute;mul&eacute;</li>  
+<li>Emulation du mode 525 lignes. La routine Overscan de la megad&eacute;mo HCL fonctionne</li>  
+<li>Augmentation de la dur&eacute;e du signal IRQ pour obtenir un son correct dans La Mal&eacute;diction de Thaar</li>  
+<li>Correction d'une anomalie de lecture du clavier en mode TO8 et TO8D</li>  
+<li>Ajustement de l'action du signal Mute des TO8 et TO8D en fonction des valeurs mesur&eacute;es sur le mat&eacute;riel</li>  
+<li>S&eacute;lection possible d'une banque m&eacute;moire quelconque pour le d&eacute;sassemblage et le dump m&eacute;moire</li>
+<li>M&eacute;morisation des adresses du point d'arr&ecirc;t, du d&eacute;sassemblage et du dump m&eacute;moire</li> 
+<li>Ajout cartouche, disquette et cassette dans la sauvegarde et la restauration de l'&eacute;tat de la machine</li>  
+<li>Correction d'une erreur dans la lecture du secteur de boot en mode TO9</li>  
+<li>Refonte compl&egrave;te de l'&eacute;mulateur 6809 pour le rendre facilement portable</li>  
+<li>Rafra&icirc;chissement de l'&eacute;cran apr&egrave;s chaque instruction en mode mise au point pas &agrave; pas</li>
+<li>Rembobinage automatique de la cassette lors d'un d&eacute;marrage &agrave; froid</li>
+<li>Suppression du rembobinage automatique en fin de bande, uniquement un message d'avertissement</li> 
+<li>Stockage des images de disquettes et des images de cassettes en m&eacute;moire</li>
+</ul>
+
+<h3>Version 2010.04</h3>
+<ul>
+<li>Ajustement de la luminosit&eacute; et du contraste des palettes 16 couleurs</li>
+<li>R&eacute;tablissement de l'&eacute;mulation par d&eacute;faut de la touche ACC par Ctrl-droit pour toutes les machines</li>
+<li>Am&eacute;lioration du mode "plein &eacute;cran" et changement de mode par PageUp et PageDown</li>  
+<li>Simplification de l'&eacute;mulation du son (suppression de DirectSound)</li>
+</ul>
+
+<h3>Version 2009.05</h3>
+<ul>
+<li>Correction d'une anomalie d'&eacute;mulation du clavier TO8, TO8D et TO9. Le 5&egrave;me Axe fonctionne bien</li>
+<li>Am&eacute;lioration du traitement des interruptions dans l'&eacute;mulateur 6809</li>
+<li>Correction d'une anomalie d'&eacute;criture sur cassette du TO7</li> 
+<li>Sur TO8 et TO9, l'&eacute;criture &agrave; une adresse > &amp;H1FFF ne provoque plus la commutation de banque</li>
+<li>Correction de l'erreur de restauration du param&egrave;tre 'Arr&ecirc;t sur ex&eacute;cution d'une instruction invalide'</li>
+</ul>
+
+<h3>Version 2009.02</h3>
+<ul>
+<li>Correction d'une erreur dans le d&eacute;codage des touches du TO9+</li>
+<li>Nouveaux r&eacute;glages du contraste et de la luminosit&eacute; de l'&eacute;cran</li> 
+<li>Nouvelle bo&icirc;te de dialogue pour les r&eacute;glages de la vitesse, du son et de l'image</li> 
+<li>Utilisation de la courbe de gamma de l'EF9349 pour toutes les palettes &agrave; 4096 couleurs</li>
+<li>Utilisation d'un codage &agrave; quatre niveaux pour les palettes 8 et 16 couleurs</li>
+</ul>
+
+
+<h3>Version 2009.01</h3>
+<ul>
+<li>Emulation du MO5E francais clavier AZERTY</li>
+<li>Emulation du TO7/70 arabe clavier QWERTY</li>
+<li>Emulation du TO9 allemand clavier QWERTY</li>
+<li>Options pour connecter ou d&eacute;connecter les extensions m&eacute;moire</li>
+<li>Correction d'un bug de l'&eacute;mulation du signal Mute sur TO8 et TO9</li>
+<li>Correction d'un bug de l'outil Magn&eacute;tophone</li>
+<li>Ajout du r&eacute;glage du volume du son dans les options</li>
+<li>Emulation arret&eacute;e pendant le formatage d'une disquette</li>
+<li>Fonction de copie d'&eacute;cran dans le menu Fichier</li>
+<li>Fonctions de sauvegarde et restauration d'&eacute;tat dans le menu Fichier</li>
+<li>Correction de l'instruction SYNC du 6809. Plus de clignotement du 5&egrave;me Axe MO5</li>
+</ul>
+
+<h3>Version 2008.01 (v10.1)</h3>
+<ul>
+<li>R&eacute;glage fin de la fr&eacute;quence du processeur (pas de 1 kHz)</li>
+<li>Meilleure pr&eacute;cision de la fr&eacute;quence d'&eacute;chantillonnage du son</li>
+<li>Bouton "Appliquer" dans la bo&icirc;te de dialogue des options</li>
+<li>Options 2-4-6-8-10 pour le nombre de buffers son</li>
+<li>Correction du bug de formatage du ramdisk</li>
+<li>Correction de la fonction de restauration d'un "snapshot"</li>
+<li>Suppression du son parasite dans le r&eacute;glage palette TO8, TO8D et TO9+</li>
+</ul>
+
+<h3>Version 2007.10 (v10.0)</h3>
+<ul>
+<li>Initialisation automatique de la date syst&egrave; (TO8, TO8D et TO9+)</li>
+<li>Nouvelles routines d'affichage pour une meilleure fid&eacute;lite (voir demo HCL)</li>
+<li>Option pour activer/d&eacute;sactiver l'&eacute;mulation du pav&eacute; num&eacute;rique Thomson</li>
+<li>Option pour activer/d&eacute;sactiver l'&eacute;mulation des manettes par le pav&eacute; num&eacute;rique PC</li>
+<li>Correction d'une anomalie d'&eacute;mulation de l'interface musique et jeu</li>
+<li>Correction du redimensionnement de la bo&icirc;te de dialogue de l'aide</li>
+</ul>
+
+<h3>Version 2007.08 (v9.6)</h3>
+<ul>
+<li>R&eacute;paration d'une erreur de la version 9.5 dans l'&eacute;mulation QDD en mode MO5</li>
+<li>En mode mise au point, choix du type de point d'arr&ecirc;t (ex&eacute;cution, lecture, &eacute;criture)</li>
+<li>Correction coordonn&eacute;es crayon et souris dans les marges gauche et droite</li>
+<li>Message d'avertissement avant formatage d'une disquette</li>
+<li>Rembobinage automatique en fin de cassette</li>
+<li>En cas d'erreur d'acc&egrave;s disquette, retour du bon code d'erreur</li> 
+<li>Correction d'un bug du d&eacute;sassembleur affectant LDY, CMPX et CMPY (mode imm&eacute;diat)</li>
+<li>Correction d'un bug du d&eacute;sassembleur (adressage relatif par rapport &agrave; PC)</li>
+<li>Emulation du contr&ocirc;leur CD 90-015</li>
+<li>Emulation des disquettes simple face simple densit&eacute;</li>
+<li>Correction d'une anomalie de l'&eacute;mulation du 6846 (registre CRC)</li>
+<li>Ajout d'une option pour s&eacute;lectionner le nombre de buffers son (2, 4 ou 8)</li>
+</ul>
+
+<h3>Version 2006.12 (v9.5)</h3>
+<ul>
+<li>Simplification du syst&egrave;me d'affichage de message en fonction de la langue</li>
+<li>Meilleure &eacute;mulation du timer du contr&ocirc;leur MC6846</li>
+<li>Correction de l'&eacute;mulation du signal Mute (bug son r&eacute;solu dans Bob Winner)</li>
+<li>Plus de blocage en cas de lecture d'un fichier .k7 non ouvert</li>
+<li>Ajout d'une nouvelle taille de copie d'&eacute;cran 600x400</li>
+<li>Option pour ne pas arr&ecirc;ter le 6809 en cas d'instruction invalide</li>
+<li>Nouveau point d'arr&ecirc;t possible sur lecture ou &eacute;criture m&eacute;moire</li>
+<li>D&eacute;tection du crayon optique impossible dans une zone noire</li>
+<li>Correction de l'anomalie du clignotement curseur du TO9</li>
+<li>R&eacute;solution du probl&egrave;me de son dans GP500 et Bactron pour TO8</li>
+<li>Emulation clavier du joystick ind&eacute;pendante de la machine &eacute;mul&eacute;e</li>
+<li>Emulation du pav&eacute; num&eacute;rique des TO8, TO8D, TO9, TO9+</li>
+<li>Meilleure compression du fichier ex&eacute;cutable gr&acirc;ce &agrave; l'algorithme LZMA</li>
+</ul>
+
+<h3>Version 2006.10 (v9.4)</h3>
+<ul>
+<li>Initialisation de l'&eacute;tat de la cartouche lors du d&eacute;marrage &agrave; froid</li> 
+<li>Raccourcis clavier pour la sauvegarde de l'&eacute;tat machine et la copie d'&eacute;cran</li>
+<li>Correction &eacute;mulation CD90-351 (commutation des 4 banques rom par $a7d8)</li>
+<li>Modification format fichier .mrx (sauvegarde du type de contr&ocirc;leur)</li>
+<li>Refonte du d&eacute;sassembleur 6809 pour afficher le nombre de cycles</li>
+<li>Option de copie d'&eacute;cran 320x200 (sans la bordure)</li>
+<li>Correction des erreurs de couleurs de l'&eacute;mulation TO9</li>
+<li>Nouvelles vitesses d'&eacute;mulation : 800% et Max</li>
+<li>Ajout du mode &eacute;cran "bitmap4HCL" pour affichage correct de la d&eacute;mo HCL</li> 
+<li>Nouvelle pr&eacute;sentation de la bo&icirc;te de dialogue "Mise au point"</li>
+<li>Correction de bugs dans le d&eacute;sassembleur 6809</li>
+<li>Affichage des num&eacute;ros des banques m&eacute;moire s&eacute;lectionn&eacute;es</li>
+<li>S&eacute;lection des colonnes de "listbox" &agrave; copier dans le presse-papier</li>
+<li>La sortie imprimante fonctionne maintenant pour toutes les machines</li>
+<li>Les contr&ocirc;leurs externes fonctionnent maintenant pour toutes les machines</li>
+<li>R&eacute;solution du bug de d&eacute;tection des manettes dans Yeti</li>
+<li>Correction d'une anomalie dans la d&eacute;tection de la cartouche LOGO-TO7</li>
+<li>Nombreuses am&eacute;liorations de d&eacute;tails</li>
+<li>Correction de la conversion des fichiers .sap</li>
+</ul>
+
+<h3>Version 2006.04 (v9.3)</h3>
+<ul>
+<li>Barre de t&acirc;che et menus d&eacute;sactiv&eacute;s en mode plein &eacute;cran</li> 
+<li>Am&eacute;lioration de la bo&icirc;te de dialogue de personnalisation du clavier</li>
+<li>Correction du plantage al&eacute;atoire lors de la red&eacute;finition des touches</li>
+<li>Am&eacute;lioration du format .mrx pour sauvegarder le contenu des cartouches</li>
+<li>Raccourcis clavier : Pause, Screenshot, Snapshot, Mise au point</li>
+<li>Ajout de la taille du screenshot dans les param&egrave;tres</li>
+<li>Touche de raccourci F8 pour le chargement rapide d'un fichier .mrx</li>
+<li>Refonte complete du syst&egrave;me des messages d'erreur et d'avertissement</li>
+<li>Correction d'une inversion dans la s&eacute;lection des p&eacute;riph&eacute;riques</li>
+<li>Protection &eacute;criture modifiable dans Outils / Magnetophone...</li>
+<li>Mise &agrave; jour de la barre d'&eacute;tat apr&egrave;s modification des options</li>
+<li>Mise &agrave; jour de la barre d'&eacute;tat apr&egrave;s utilisation de l'outil magn&eacute;tophone</li>
+<li>Correction taille case &agrave; cocher 'protection cassette' dans les options</li>
+</ul>
+
+<h3>Version 2005.09 (v9.2)</h3>
+<ul>
+<li>Ajout du mode plein &eacute;cran accessible par ALT-ENTREE</li>
+<li>Optimisation du temps CPU d'affichage de l'&eacute;cran (utilisation de pointeurs de fonctions)</li>
+<li>Affichage de la ligne 12 microsecondes plus t&ocirc;t (pour les d&eacute;mos du groupe Puls)</li>
+<li>Correction d'un bug du contr&ocirc;leur int&eacute;gr&eacute; TO8-TO8D-TO9+ (introduit en version 9.1 et bloquant des jeux Infogrames)</li>
+<li>Optimisation de l'&eacute;mulateur 6809</li>
+</ul>
+
+<h3>Version 2005.06 (v9.1)</h3>
+<ul>
+<li>L'utilisateur peut modifier la disposition du clavier</li>
+<li>Sauvegarde et chargement palette corrects pour les TO8 et T09</li> 
+<li>Correction d'un bug dans la couleur de bordure TO7/70</li>
+<li>Am&eacute;lioration de la correction de gamma pour toutes les machines</li>
+<li>Nombreuses am&eacute;liorations de d&eacute;tails</li>
+<li>Optimisation du temps CPU par une meilleure programmation (utilisation de pointeurs de fonctions)</li>
+</ul>
+
+<h3>Version 2005.01 (v9.0 beta 3)</h3>
+<ul>
+<li>Refonte totale de l'affichage avec DirectDraw</li>
+<li>Refonte totale de la sortie son avec DirectSound</li>
+<li>La fen&ecirc;tre peut &ecirc;tre redimensionn&eacute;e et maximis&eacute;e</li>
+<li>Options nouvelles pour le zoom et la protection &eacute;criture</li>
+<li>Nouvelles zones dans l'&eacute;cran de mise au point</li>
+<li>Nom du fichier .mrx modifiable</li>
+<li>Fonctions de copie d'&eacute;cran dans des fichiers .bmp</li>
+<li>Emulation du TO7 version 2</li>
+<li>Lecture et conversion automatique des fichiers .sap</li>
+<li>Correction d'un bug de formatage des unit&eacute;s > 0</li>
+<li>Messages d'erreur d&eacute;taill&eacute;s pour DirectX</li>
+<li>Le .bmp des screenshots est compatible avec les logiciels non microsoft</li>
+<li>Suppression de la fonction GetWindowInfo pour compatibilit&eacute; Windows 95</li>
+</ul>
+
+<h3>Version 2004.08 (v8.4 preview)</h3>
+<ul>
+<li>Correction bug de lecture du clavier TO9</li>
+<li>A propos de DCMOTO passe du menu fichier au menu aide</li>
+<li>Red&eacute;finition des touches pour une meilleure coh&eacute;rence entre les diff&eacute;rentes machines &eacute;mul&eacute;es</li>
+<li>Am&eacute;lioration des acc&egrave;s m&eacute;moire pour plus de rapidit&eacute;</li>
+</ul>
+
+<hr><center>&copy; 2018 - Daniel Coulom</center>
+
+</body>
+</html>

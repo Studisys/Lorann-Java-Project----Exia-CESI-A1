@@ -1,0 +1,521 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+ <title>DCMOTO - Release notes</title>
+ <style type="text/css">
+  body {font-family: sans-serif; font-size: 80%; color: #000; background-color: #fff;}
+  h1,h2,h3 {font-family: sans-serif; color: #000; margin-top: 1em; margin-bottom: 0.5em;}
+  h1 {font-size: 180%; background-color: #4cf; padding-left: 0.2em;}
+  h2 {font-size: 140%; background-color: #cff; padding-left: 0.2em;}
+  h3 {font-size: 100%; border-style: none; border-bottom: solid 1px #ccc; margin-left: 0.8em;}
+  p  {margin-left: 1em; margin-top: 0em;}
+  ul {margin-left: 2em; margin-top: 0em;}
+ </style>
+ <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <meta name="description" content="DCMOTO - Release notes">
+ <meta name="author" content="Daniel Coulom">
+ <meta name="keywords" content="dcmoto, emulator, thomson">
+</head>
+
+<body>
+<h1>DCMOTO - Release notes</h1>
+<p>
+DCMOTO is an emulator for Windows of all Thomson 8 bits computers<br>
+Linux, Mac-OS and other operating system users may wish to use<br>
+dcmo5, dcto8d or dcto9p. Links are on the home page of the official web site.<br>
+<br>
+Version : <b>2018.03.17</b><br>
+Author : Daniel Coulom<br>
+Web page : <a href="http://dcmoto.free.fr">dcmoto.free.fr</a>
+</p>
+
+<h3>Emulated computers</h3>  
+<ul>
+<li>MO5 azerty (3 versions), MO5 qwerty, MO5E, german MO5E, MO5 OS9</li>
+<li>MO5N, MO5NR, MO6 (3 versions), Olivetti Prodest PC128</li>
+<li>T9000, French QWERTY TO7, French QWERTY TO7, German QWERTY TO7</li>
+<li>TO7/70, arab TO7/70</li>
+<li>TO9, german TO9</li>
+<li>TO8, TO8 prototype, TO8D, TO9+, TO9+ OS9</li>
+</ul>
+
+<h3>Warning</h3>  
+<p>
+Every new version is supposed to come with improvements and bug fixes. It can also bring new troubles.<br>
+Reporting abnormal behaviour is very important, in order to fix program errors.<br>
+In case of major issue, you can still use previous versions.<br>
+</p>
+
+<h3>Anti-virus</h3>  
+<p>
+Some anti-virus find threats in harmless programs, especially when the executable program is compressed with UPX.<br>
+With DCMOTO there is absolutely no virus, trojan horse, spyware, nor advertising nor call to any website.<br>
+If your anti-virus program finds a threat, it is a "false positive". In this case, you must report the error to your<br>
+provider, so it can correct the detection rules.
+</p>
+
+<h2>Installation</h2>
+
+<h3>Required hardware configuration</h3>
+<p>
+Pentium or newer processor, frequency 300 MHz or better.<br>
+Windows 98/ME or Windows 2000/XP/Vista/Seven/8/10 or newer, 32 bits or 64 bits.<br>
+640x480 or better display, 65536 or more colors. Audio processor needed.<br>
+</p>
+
+<h3>Install dcmoto</h3>
+<p>
+Unzip downloaded file to any folder and (optional) make a shortcut to dcmoto.exe program.<br>
+DCMOTO doesn't copy any file to other folders. It doesn't modify registry, nor any file in your computer.<br>
+It is a portable program : it can be copied to a removable device, i.e. an external hard drive or an usb key,<br>
+and moved to another computer with no difficulty.
+</p>
+
+<h3>Using dcmoto</h3>
+<p>
+Execute dcmoto.exe by double-clicking the filename or using the shortcut.<br>
+Select the language (Options/Settings...).<br>
+Read online Help and dcmoto web site documentation.<br>
+Keyboard layout can be displayed and modified by user (Tools/Keyboard...).
+</p>
+
+ 
+<h2>History</h2>
+
+<h3>Version 2018.03.17</h3>
+<ul>
+<li>Fixed NEG operation error : when resulting value is $80 condition code carry bit must be set.</li>
+<li>Fixed keyboard simulation with text file (file selection not working).</li>
+<li>Fixed SD card CMD52 emulation error with CS91-280 controller and SDMOTO device.</li>
+<li>Added LEGO DACTA controller emulation.</li>
+<li>With CS91-280 controller emulation the selection programme SDMOTO.SEL is automatically added to the selected SD card.</li>
+<li>Fixed SYNC operation emulation for both 6809 and 6309 processors.</li>
+<li>With SDDRIVE controller emulation the selection programme SDDRIVE.SEL is automatically added to the selected SD card.</li>
+<li>Added SDDRIVE emulation parameters to .mrx files.</li>
+<li>Added SDDRIVE controller emulation for simulating floppy disks on SD card.</li>
+<li>Added new option to select emulator sound output sampling rate.</li>
+<li>Italian help updated (translation by Giuseppe Papa).</li>
+</ul>
+
+<h3>Version 2017.09.03</h3>
+<ul>
+<li>Check .mrx file version before loading.</li>
+<li>Use keyboard customisation files (.key) with Windows executable files (.exe).</li>
+<li>Fixed 6809 DAA operation code emulation error (this error occured in 2017.07.04 version).</li>
+<li>Fixed cartridge emulation error (this error occured in 2017.07.04 version).</li>
+<li>Restore 'Pause' status after closing debugger tool (this error occured in 2017.07.04 version).</li>
+</ul>
+
+<h3>Version 2017.07.14</h3>
+<ul>
+<li>Fixed tape read error with TO9, TO8, TO8D and TO9+.</li>
+<li>In the debugging tool, the 2000 previous values of the processor registers are displayed.</li>
+<li>In the debugging tool, the three previous instructions before current instruction are disassembled and displayed.</li>
+<li>In the debugging tool, READ and WRITE breakpoints incorrect operation fixed .</li>
+<li>In the debugging tool, three breakpoints are available.</li>
+<li>In the debugging tool, the CC (condition register) bits are displayed separately.</li>
+<li>The debugging tool is spread accross two windows in order to fit a low resolution PC screen.</li>
+<li>Experimental simulation and disassembly of Hitachi HD63C09 processor instructions and registers.</li>
+<li>Saving the current state in MO5 or TO7/70 mode create a .sd file, allowing restoring the emulator state on the actual hardware.</li>
+<li>Return $CC when reading 'SYSTEME 2' register ($A7DD/$E7DD) with last generation computers.</li>
+<li>Fixed brightness control with lightpen. Lightpen adjustment function now works fine with TO7 and TO7/70.</li>
+<li>Added MO5 N emulation. The MO5 N is a MO6 prototype discovered in 2017.</li>
+<li>Fixed mouse left button operation with MO5NR, MO6 and PC128.</li>
+<li>New option to simulate a monochrome screen, white or green or amber.</li>
+<li>Fixed memory bank selection error with the system PIA of the TO computers. UCSD Pascal is now working.</li>
+<li>New option to force 4/3 aspect ratio of the emulated computer screen.</li>
+<li>New option to simulates cathode ray tube scanlines.</li>
+<li>The cartridge bank number is no more reset after program initialization.</li>
+<li>Fixed a processing error with MO graphical keyboard Uppercase and Basic keys.</li>
+<li>Added TO9+ computer with OS-9 ROM.</li>
+<li>Fixed emulation and disassembly of CWAI microprocessor instruction.</li>
+<li>Added 'actual speed' checkboxes for tape and floppy disks.</li>
+<li>Allow to load a removable media with an empty image file.</li>
+<li>Loading a SD card image file shows the actual filename instead of 'boot.sd'.</li>
+<li>Fixed an error (introduced in 2015.05 version) with simutaneous SHIFT and BASIC keystrokes.</li>
+<li>Added CS91-282 SD card controller emulation for the MO5.</li>
+<li>Fixed Shift-Lock LED display error with MO6 and PC128 graphical keyboards.</li>
+<li>With Arduino option, each byte in files with .wav extension .wav is converted to 6 bits.</li>
+<li>Added Arduino option in .mrx file to allow playing audio streaming demos with dcmoto.</li>
+<li>Fixed mouse pointer shape error when resizing emulator window.</li>
+<li>PC keyboard does not emulate joysticks when option is not checked in sttings dialog box..</li>
+<li>Not-documented instructions $41 et $42 are no more used for MO5 and MO6 copy-protected tapes.</li>
+<li>Fixed Arduino interface and joystick emulation conflict.</li>
+</ul>
+
+<h3>Version 2016.04</h3>
+<ul>
+<li>Emulate nanoreseau controller to enable communication with dcnanosereur.</li> 
+<li>Emulate non-documented 6809 microprocessor operation codes.</li>
+<li>Fixed an error in last generation computer palette update.</li>
+<li>Added memory read at the beginning of the CLR 6809 microprocessor operation.</li>
+<li>Fixed several errors when loading and unloading image files (disk, tape and memory card).</li>
+<li>Added Arduino interface emulation to read an SD card and send bytes to the joystick ports.</li>
+<li>Fixed lowercase LED display in TO7 and TO7/70 keyboard, to avoid blinking screen with Crystann.</li>
+<li>Carry bit in the CC register is no longer set when the TO8/TO8D/TO9+ disk drive is empty.</li>
+</ul>
+
+<h3>Version 2015.05</h3>
+<ul>
+<li>New dialog box to customize joystick emulation key mapping.</li>
+<li>Added new computer emulation : german MO5, OS9 MO5, v1.0 and v1.1 MO5, serial U and V MO6.</li>
+<li>Replace scancodes by virtual key codes to map PC keyboard keys.</li>
+<li>Error fixed in computation of music and game 6821 PIA port A.</li> 
+<li>Error fixed in MO6 video bank selection.</li> 
+<li>New function in debugging tool, to save a binary file from emulated computer memory.</li> 
+<li>Updated CS91-280 controller code to version 2014.12.28 (to fix a bug with the MO6).</li> 
+<li>Updated CS91-280 controller code to version 2014.12.11 (to read SD card directory).</li> 
+<li>Added video page1 and page2 mode emulation for last generation computers.</li> 
+<li>Added superimposition and triple superimposition modes for last generation computers.</li> 
+<li>Error fixed in TO7/70 ram bank selection (DDRB selection).</li>
+<li>Fixed INMOUSE return values when the mouse is not plugged (X = 0 and Y = 0).</li>
+<li>Error fixed in time interruption (clear CSR0 bit as explained in 6846 datasheet).</li>
+<li>Reading MO computer system PIA port B clears IRQ signal.</li>
+<li>SD card SPI signal is now generated on clock falling edge.</li>
+<li>Added SD card CMD12 emulation for SDMO and SDMOTO interfaces.</li>
+<li>Added MO5 optional 4K EPROM at $B000.</li>
+<li>Added TO8 #14 prototype emulation.</li>
+<li>Added CS91-280 controller emulation for SDMOTO and SDMO interfaces.</li>
+<li>Fixed error to avoid emulator crash during disk formating.</li>
+<li>Fixed error in .mrx file color palette saving.</li>
+<li>Added graphical keyborads to simulate Thomson keyboard and customize PC keyboard mapping.</li>
+<li>Added binary file address different from dump address in debugging tool.</li>
+<li>Added SDMO interface emulation for MO computers.</li>
+<li>Added CFMO interface emulation for MO computers.</li>
+<li>Error fixed in CD90-640 floppy disk controller emulation ($A7D8/$E7D8 byte writing).</li>
+<li>Error fixed in TO9 floppy disk controller emulation ($E7D8 byte writing).</li>
+<li>Error fixed in dcmoto.ini for CD90-351 controller option.</li>
+<li>Error fixed in LEAX and LEAY 6809 instruction emulation : N bit in CC register must not be changed.</li>
+</ul>
+
+<h3>Version 2013.03</h3>
+<ul>
+<li>SDMOTO emulation improvement : functions added to write to the SD card.</li>
+</ul>
+
+<h3>Version 2013.02</h3>
+<ul>
+<li>MO5 rom v1.1 replaced by v2.1 (last mechanical keyboard MO5 version).</li>
+<li>Added one cycle to 6846 timer period to comply with real hardware.</li> 
+<li>Fixed key test error with T9000, TO7 and TO7/70 keyboards.</li>
+<li>Fixed system PIA emulation with T9000, TO7 and TO7/70.</li>
+<li>Added MC6846 timer emulation for the T9000, TO7 and TO7/70.</li>
+<li>Fixed TO9 emulation freeze when launching Basic 1.0 with no disk loaded.</li>
+<li>SDMOTO interface emulation with second joystick port (test in progress...).</li> 
+<li>Fixed condition code Z bit setting after KTEST with TO8 and TO8D keyboards.</li> 
+</ul>
+
+<h3>Version 2013.01</h3>
+<ul>
+<li>Added right mouse button emulation for all computers.</li> 
+<li>Added mouse emulation for TO9 and german TO9 computers.</li> 
+<li>With Tape/load command, an ASCII .txt file is automatically converted to .k7 file.</li> 
+</ul>
+
+<h3>Version 2012.12</h3>
+<ul>
+<li>Fixed unexpected sound cracks with TO9, TO8, TO8D and TO9+.</li>
+<li>Fixed TO9 mouse and ligthpen interrupt errors.</li>
+<li>Improved emulation of the TO9 and TO9+ keyboard.</li>
+<li>Improved emulation of the TO9 system PIA.</li>
+<li>After canceling 'Tape load', the previous tape is not unloaded.</li>
+<li>After canceling 'Disk load', the previous disk is not unloaded.</li>
+</ul>
+
+<h3>Version 2012.11</h3>
+<ul>
+<li>Emulation test for SD card devices : MO5SD (on the tape port) and MO6SD/TO8SD (on the joystick port).</li> 
+<li>Accented characters are now valid with keyboard simulation.</li> 
+<li>Mouse click bug fixed for all computers.</li> 
+<li>Mouse emulation bug fixed for MO5NR, MO6 and PC128 computers.</li> 
+<li>Minor bug fixes.</li> 
+</ul>
+
+<h3>Version 2012.03</h3>
+<ul>
+<li>New emulated computer : German QWERTY TO7.</li>
+<li>New emulated computer : French QWERTY TO7.</li>
+<li>Improved floppy disk controller emulation, allowing to boot from disk unit #1.</li>
+<li>6846 timer status is now saved to .mrx file.</li> 
+<li>Minor improvements and bug fixes.</li> 
+</ul>
+
+<h3>Version 2012.01</h3>
+<ul>
+<li>Keyboard simulation defaults to fast speed (screen displayed after each line).</li>
+<li>SWI instruction disassembled differently depending on the computer type (MO or TO).</li>
+<li>Floppy controller initialization does not reset the selected default device.</li>
+<li>Fixed MO5NR, MO6 and PC128 memory bank management.</li>
+<li>Fixed keyboard simulation error with the TO8 and the TO8D.</li>
+<li>New feature to load a binary file into memory.</li>
+<li>Fixed cycle number and video line number in the debugger dialog box.</li>
+<li>Minor improvements in video display functions.</li>
+</ul>
+
+<h3>Version 2011.10</h3>
+<ul>
+<li>Added Italian language option.</li>
+<li>Added emulation of joystick second button.</li>
+<li>Fixed BEEP malfunction with TO8, TO8D and TO9+ modes.</li>
+</ul>
+
+<h3>Version 2011.09</h3>
+<ul>
+<li>Fixed an error in PSHU and PSHS instructions when U or S register becomes less than zero.</li>
+<li>Fixed wrong test making disk unit 3 impossible to format with DSKINI function.</li>
+<li>Fixed error in PIA emulation when joysticks are not selected in the option dialog box.</li>
+<li>Fixed problem with the joystick fire button detection in some uncommon cases.</li> 
+<li>Fixed disk format function. It was wrong with DOS Basic and Assembler cartridge.</li> 
+<li>Keyboard repeat delay adjusted for TO8, TO8D, TO9 and TO9+.</li>
+<li>Fixed music speed change after pressing a key with the TO8 and the TO8D.</li>
+</ul>
+
+<h3>Version 2011.07</h3>
+<ul>
+<li>Emulation of undocumented forms of EXG and TFR 6809 microprocessor operations.</li>
+<li>Added new button to link to dcmoto website in 'About' dialogbox.</li>
+<li>Fixed 'Music & game' 6821 PIA emulation error (read port B).</li> 
+<li>Fixed TO8 and TO9+ RAM switching error in TO7/70 compatibility mode.</li>
+<li>Fixed processor emulation error. Correct screen is now displayed with MEMO5 version of LOGO.</li>
+<li>File dcmoto-printer.txt is automatically closed to allow opening without closing the emulator.</li>
+<li>Simulation of keystrokes with clipboard or text file.</li>
+<li>No warning for $41 and $42 opcode when "Stop on invalid operation code" option is unchecked.</li>
+<li>Joystick initialization improved. HID devices on USB port are now working.</li>
+<li>Fixed interrupt processing error with "La Malediction de Thaar" TO8 version.</li>
+<li>Fixed TO8 keyboard emulation error with "Micro-Scrabble" and "Las Vegas".</li>
+<li>Fixed inverted french and english messages in main menu.</li>
+<li>Fixed memory page switching error with TO8 in TO7/70 compatibility mode. Game X-RAY is now working.</li>
+</ul>
+
+<h3>Version 2011.04</h3>
+<ul>
+<li>New gamma adjustment function available in Options/Settings menu</li>
+<li>$41 and $42 invalid instruction warning disabled when no MO5 nor MO6 cassette are loaded</li>
+<li>Error in 2011.01 version fixed : erroneous RAM adress in the 'RAM supersedes the ROM' process</li>
+<li>TO8 keyboard interface emulation error fixed (Sapiens, Le 5e Axe, ...)</li> 
+</ul>
+
+<h3>Version 2011.01</h3>
+<ul>
+<li>TO8 and TO8D keyboard emulation routine significantly improved</li>
+<li>Keyboard scan error with MO computer family fixed</li> 
+<li>DAA (6809 operation) emulation fixed. MGT tape for TO8 works fine</li>
+<li>Lightpen detection problem fixed (brightness computation was erroneous)</li>
+<li>Implementation of QD90-280 emulation with the TO8, TO8D and TO9+ (showing the TO9+ bug)</li>
+<li>QDD sector read/write error with CQ90-028 controller fixed</li> 
+<li>Many technical improvements with no impact on the user interface</li>
+</ul>
+
+<h3>Versions 2010.10 and 2010.10.22</h3>
+<ul>
+<li>IRQ signal management error fixed with the new subversion 2010.10.22</li> 
+<li>Dcmoto license text has been added to "About dcmoto" dialogbox</li> 
+<li>"About dcmoto" dialogbox is automatically displayed when dcmoto.ini is missing or obsolete</li> 
+<li>In debugger module, automatic incrementation of the address after a memory byte modification</li> 
+<li>Computer power switch is emulated with PC Scroll-Lock key</li> 
+<li>Pause state is ended with any key stroke, mouse click or joystick fire button</li> 
+<li>Errors fixed and improvements made in Save snapshot and Restore snapshot functions</li> 
+<li>Bank memory switching error fixed in TO8 mode</li>   
+<li>Options and Tuning are now parts of the same dialog box</li>   
+<li>Frame rate and sound buffer number options are no longer available. Best values are used</li>  
+<li>Contrast and brightness tuning is no longer available</li>  
+<li>Gamma curve modified to render better 8, 16 and 4096 color palettes</li>
+<li>CAPSLOCK flag added to the status line, near the computer name</li>  
+<li>Video mode with 525 lines is emulated. Overscan routine works in the HCL Megademo</li>  
+<li>IRQ signal duration has been increased to fix a sound problem in La Malediction de Thaar</li>  
+<li>TO8 ans TO8D keyboard reading bug fixed</li>  
+<li>TO8 and TO8D mute signal is accurately emulated after measurements on the real computer</li>  
+<li>Memory bank number can be select for desassembly and memory dump</li>
+<li>Debug mode break point address and memory dump address are saved and restored like other dcmoto options</li> 
+<li>Cartridge, disk and tape are saved in .mrx file and restored as well</li>  
+<li>Error fixed in TO9 boot sector reading</li>  
+<li>The 6809 emulator has been deeply modified, to make it easy to port to other systems</li>  
+<li>In step by step debug mode, the screen is refresh after each instruction execution</li>
+<li>The tape is automatically rewind when a hardreset occurs</li>
+<li>The tape is no longer automatically rewinded at the end, there is just a warning message</li> 
+<li>Disk and tape images are loaded into PC memory</li>
+</ul>
+
+<h3>Version 2010.04</h3>
+<ul>
+<li>Brightness and contrast slightly modified for 16 color palette</li>
+<li>Right-Ctrl is used as the default key for ACC emulation, for all computers</li>
+<li>Better full-screen mode. Shortcuts are PAGE-UP for full-screen and PAGE-DOWN for windowed mode</li>
+<li>DirectSound is no longer used, to make sound emulation simple and light</li>
+</ul>
+
+<h3>Version 2009.05</h3>
+<ul>
+<li>TO8, TO8D and TO9 keyboard emulation fixed. This solve the keyboard problem with Le 5&egrave;me Axe</li>
+<li>Better interrupt management in 6809 emulator</li>
+<li>Tape writing with TO7 : error fixed</li> 
+<li>No more bank switching with TO8 and TO9 when writing to an address > &amp;H1FFF</li>
+<li>Saving and restoring of 'Stop on invalid 6809 operation code' setting fixed</li>
+</ul>
+
+<h3>Version 2009.02</h3>
+<ul>
+<li>Error fixed in TO9+ key decoding function</li>  
+<li>New tuning : display contrast and brightness</li>
+<li>New dialog box for speed tuning, sound tuning and display tuning</li>
+<li>4096 color palette computed with EF9349 gamma coefficients</li>
+<li>8 and 16 color palette computed with genuine four level color coding</li>
+</ul>
+
+<h3>Version 2009.01</h3>
+<ul>
+<li>French MO5E emulation (AZERTY keyboard)</li>
+<li>Arab TO7/70 emulation (QWERTY keyboard)</li>
+<li>German TO9 emulation (QWERTY keyboard)</li>
+<li>Memory expansion enabled/disabled option</li>
+<li>TO8 and TO9 Mute signal bug fixed</li>
+<li>Tape unit tool bug fixed</li>
+<li>Sound volume control added</li>
+<li>Emulation stopped during disk formating</li>
+<li>Screenshot function added to File menu</li>
+<li>Snapshot save and restore functions added to File menu</li>
+<li>Fixed 6809 SYNC instruction. Now 5&egrave;me Axe character doesn't blink anymore</li>
+</ul>
+
+<h3>Version 2008.01 (v10.1)</h3>
+<ul>
+<li>Sharp tuning of microprocessor frequency (step = 1 kHz)</li>
+<li>Improved accuracy of sound sampling frequency</li>
+<li>New 'Apply' button in Settings dialog box</li>
+<li>New values for sound buffer number : 2-4-6-8-10</li>
+<li>Ramdisk formating fixed</li>
+<li>Load snapshot function fixed</li>
+<li>No more sound interferences during setting of T08-TO8D-TO9+ color palette</li>
+</ul>
+
+<h3>Version 2007.10 (v10.0)</h3>
+<ul>
+<li>Automatic initialisation of the system date (TO8, TO8D, TO9+)</li> 
+<li>New display routines for more acurate rendering (have a look at HCL demo)</li>
+<li>Enable/disable option for numpad emulation</li>
+<li>Enable/disable option for joystick emulation with PC numpad</li>
+<li>Fixed bug in music and game MC6821 emulation</li>
+<li>Fixed help dialogbox resize</li>
+</ul>
+
+<h3>Version 2007.08 (v9.6)</h3>
+<ul>
+<li>Fixed v9.5 bug in QDD emulation for MO5 and MO5E</li>
+<li>Break point type can be selected (exec, read, write)</li>
+<li>Fixed lightpen and mouse coordinates in left or right margin</li>
+<li>Added warning message before floppy disk formating</li>
+<li>Auto-rewind after reaching the end of a tape image (.k7 file)</li>
+<li>After a floppy disk access error, right error code is returned</li>
+<li>Fixed disassembler bug for LDY, CMPX et CMPY (immediat mode)</li>
+<li>Fixed disassembler bug (PC relative address)</li>
+<li>Added CD 90-015 floppy controller emulation</li>
+<li>Added single side low density floppy disk emulation</li>
+<li>Fixed 6846 emulation error (CRC register)</li>
+<li>Added new option : number of sound buffers (2, 4 or 8)</li>
+</ul>
+
+<h3>Version 2006.12 (v9.5)</h3>
+<ul>
+<li>Simplification of language dependent message management</li>
+<li>MC6846 controller timer emulation improved</li>
+<li>Mute signal emulation fixed (sound bug in Bob Winner is fixed)</li>
+<li>Fixed program crash when reading not opened .k7 file</li>
+<li>Added new screenshot size : 600x400</li>
+<li>New option to do not stop 6809 on invalid operation code</li>
+<li>New optional break point on memory read or write</li>
+<li>Lightpen position on a black area is no longer detected</li>
+<li>Fixed TO9 cursor blinking malfunction</li>
+<li>Fixed GP500 and Bactron sound problem on TO8</li>
+<li>Joystick emulation no more linked to emulated computer</li>
+<li>Added emulation of the TO8, TO8D, TO9, TO9+ numeric keypad</li>
+<li>Better executable compression using LZMA algorithm</li>
+</ul>
+
+<h3>Version 2006.10 (v9.4)</h3>
+<ul>
+<li>Cartridge initialisation fixed in hardreset function</li>
+<li>Keyboard shortcuts for snapshot and screenshot</li>
+<li>CD90-351 emulation fixed (4 rom banks switched with &amp;a7d8)</li>
+<li>MRX file format modified (controller type added)</li>
+<li>6809 disassembly shows microprocessor cycle number</li>
+<li>New option for 320x200 screenshot (without border)</li>
+<li>TO9 colour errors fixed</li>
+<li>New emulation speed options : 800% and max</li>
+<li>Added new screen mode 'bitmap4HCL' for HCL mega demo</li>
+<li>New layout for 'debug' dialog box</li>
+<li>Bugs fixed in 6809 disassembler</li>
+<li>Selected bank number displayed in 'debug' dialog box</li> 
+<li>Improved 'Copy to clipboard' function in 'debug' dialog box</li>
+<li>Printer emulation now works for every emulated computer</li>
+<li>External controllers now work for every emulated computer</li>
+<li>Fixed joystick detection bug (ie in Yeti)</li>
+<li>Fixed LOGO-TO7 cartridge control (a new logo-to7 is available)</li>
+<li>Many detail improvements</li>
+<li>.sap file conversion fixed</li>
+</ul>
+
+<h3>Version 2006.04 (v9.3)</h3>
+<ul>
+<li>Task bar and menus are disabled in full-screen mode</li>
+<li>Keyboard customization dialogbox improvements</li>
+<li>Possible crash fixed in keyboard remapping</li>
+<li>.mrx format improvement, to save cartridge contents</li>
+<li>Keyboard shortcuts : Pause, Screenshot, Snapshot, Debug</li>
+<li>Screenshot size can be selected in Options / Settings...</li>
+<li>New F8 shortcut key to restore a .mrx file</li>
+<li>Error and warning message management fully redesigned</li>
+<li>Device selection bug fixed in 'Settings' dialog box</li>
+<li>Write protection checkbox in 'Tape unit' dialog box</li>
+<li>Status bar updated after option setting</li>
+<li>Status bar updated after 'Tape' tool had been used</li>
+<li>'tape protection' checkbox size fixed in 'settings...' dialog box</li>
+</ul>
+
+<h3>Version 2005.09 (v9.2)</h3>
+<ul>
+<li>Fullscreen mode available with ALT-ENTER</li>
+<li>Improved screen display programming (using function pointers)</li>
+<li>Video line displayed 12 microseconds sooner (to fit Puls group demos)</li>
+<li>Bug fixed in built-in TO8-TO8D-TO9+ controller (jamming some Infogrames games since v9.1)</li>
+<li>Optimization of 6809 emulator</li>
+</ul>
+
+<h3>Version 2005.06 (v9.1)</h3>
+<ul>
+<li>User can change keyboard layout</li>
+<li>TO8 and TO9 Palette Load/Save functions corrected</li>
+<li>TO7/70 border color bug fixed</li>
+<li>Gamma correction improved for all emulated computers</li>
+<li>Many detail improvements</li>
+<li>CPU load reduced with more efficient programming (using pointers to functions)</li>
+</ul>
+
+<h3>Version 2005.01 (v9.0 beta 3)</h3>
+<ul>
+<li>New display interface using DirectDraw</li>
+<li>New audio output using DirectSound</li>
+<li>Window can be resized and maximized</li>
+<li>New options for zooming and write protection</li>
+<li>New fields in Debug window</li>
+<li>.mrx file name can be choosed</li>
+<li>Screenshots can be saved to .bmp files</li>
+<li>TO7 second version is now emulated</li>
+<li>.sap files are read and automatically converted</li>
+<li>Bug fixed : disk format for unit > 0</li>
+<li>DirectX detailed error messages</li>
+<li>Screenshot .bmp structure compatible with non-microsoft software</li>
+<li>GetWindowInfo function removed for Windows 95 compatibility</li>
+</ul>
+
+<h3>Version 2004.08 (v8.4 preview)</h3>
+<ul>
+<li>TO9 keyboard bug fixed</li>
+<li>About DCMOTO switched from file menu to help menu</li>
+<li>Minor changes in keyboard layout to improve consistency among emulated computers</li>
+<li>Memory access improved for a better performance</li>
+</ul>
+
+<hr><center>&copy; 2018 - Daniel Coulom</center>
+
+</body>
+</html>
