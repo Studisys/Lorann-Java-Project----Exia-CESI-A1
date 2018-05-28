@@ -18,13 +18,13 @@ final class LorannBDDConnector {
     private static LorannBDDConnector instance;
 
     /** The login. */
-    private static String                  user     = "root";
+    private static String                  user     = "studisys";
 
     /** The password. */
-    private static String                  password = "";
+    private static String                  password = "studisys";
 
     /** The url. */
-    private static String                  url      = "jdbc:mysql://localhost/lorann?useSSL=false&serverTimezone=UTC";
+    private static String                  url      = "jdbc:mysql://localhost/lorann?autoReconnect=true&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
     /** The connection. */
     private Connection                     connection;
