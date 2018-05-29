@@ -1,9 +1,6 @@
 package MonModele;
 
-public class Item {
+public abstract class Item {
 	
-	public Item()
-	{
-		
-	}
+	protected int x, y;
 }
