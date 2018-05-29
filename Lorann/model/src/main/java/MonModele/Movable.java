@@ -1,12 +1,16 @@
 package MonModele;
 
+import java.awt.Image;
 import java.awt.Point;
+
+import javax.swing.ImageIcon;
 
 public abstract class Movable implements iMobile {
 
 	
 	private int speed;
 	private Position position;
+	private ImageIcon img;
 	
 	public Movable()
 	{
@@ -14,14 +18,14 @@ public abstract class Movable implements iMobile {
 	}
 	
 	@Override
-	public String getImage() {
+	public ImageIcon getImage() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.img;
 	}
 	@Override
 	public void setImage(String image)
 	{
-		
+		this.img = new ImageIcon(getClass().getResource(image));
 	}
 	
 	@Override
@@ -38,11 +42,12 @@ public abstract class Movable implements iMobile {
 
 
 	@Override
-	public void move() {
+	public boolean move() {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 	
+
 	private void moveUp()
 	{
 		
@@ -63,6 +68,10 @@ public abstract class Movable implements iMobile {
 		
 	}
 	
+	public void dontMove()
+	{
+		
+	}
 	
 	public void placeInMap(Position position)
 	{
@@ -80,4 +89,6 @@ public abstract class Movable implements iMobile {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 }
