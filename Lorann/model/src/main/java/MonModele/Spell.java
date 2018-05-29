@@ -23,9 +23,9 @@ public class Spell extends Movable {
 		return 0;
 	}
 	
-	public void hit()
+	public void launch()
 	{
-		
+		this.image = SpellSprite.
 	}
 	
 }

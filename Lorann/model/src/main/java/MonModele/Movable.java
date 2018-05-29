@@ -70,7 +70,11 @@ public abstract class Movable implements iMobile {
 	
 	public void dontMove()
 	{
-		
+		for(int i = 0; i<8;i++)
+		{
+			this.chemin = "/images/" + MeSprite.values()[i].toString();
+			this.setImage(this.chemin);
+		}
 	}
 	
 	public void placeInMap(Position position)
