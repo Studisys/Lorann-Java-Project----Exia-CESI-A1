@@ -1,6 +1,5 @@
 package MonModele;
 
-import java.awt.Image;
 import java.awt.Point;
 
 import javax.swing.ImageIcon;
@@ -11,6 +10,7 @@ public abstract class Movable implements iMobile {
 	private int speed;
 	private Position position;
 	private ImageIcon img;
+	private String chemin;
 	
 	public Movable()
 	{
@@ -68,14 +68,7 @@ public abstract class Movable implements iMobile {
 		
 	}
 	
-	public void dontMove()
-	{
-		for(int i = 0; i<8;i++)
-		{
-			this.chemin = "/images/" + MeSprite.values()[i].toString();
-			this.setImage(this.chemin);
-		}
-	}
+
 	
 	public void placeInMap(Position position)
 	{

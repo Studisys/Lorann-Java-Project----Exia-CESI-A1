@@ -25,7 +25,11 @@ public class Spell extends Movable {
 	
 	public void launch()
 	{
-		this.image = SpellSprite.
+			for(int i = 0; i<8;i++)
+			{
+				this.image = "/images/" + SpellSprite.values()[i].toString();
+				this.setImage(this.image);
+			}
 	}
 	
 }
