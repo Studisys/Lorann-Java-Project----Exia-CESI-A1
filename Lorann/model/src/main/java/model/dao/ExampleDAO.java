@@ -17,7 +17,7 @@ import model.Example;
 public abstract class ExampleDAO extends AbstractDAO {
 
     /** The sql example by id. */
-    private static String sqlExampleById   = "{call get_map_data(?)}";
+    private static String sqlExampleById   = "{call findExampleById(?)}";
 
     /** The sql example by name. */
     private static String sqlExampleByName = "{call findExampleByName(?)}";
