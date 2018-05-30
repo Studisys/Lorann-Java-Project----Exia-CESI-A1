@@ -1,5 +1,14 @@
 package MonModele;
 
+/**********************************************************************************
+**																				 **
+**							  	   MONSTER 3								 	 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
 public class MONSTER_TotemMan extends MOVABLEITEM_Ennemy {
 
 	//IMAGE = "/images/monster_3";

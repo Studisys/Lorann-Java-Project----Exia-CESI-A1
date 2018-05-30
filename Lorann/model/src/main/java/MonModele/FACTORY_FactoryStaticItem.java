@@ -1,5 +1,15 @@
 package MonModele;
 
+/**********************************************************************************
+**																				 **
+**							  Factory StaticItem								 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
+
 public class FACTORY_FactoryStaticItem {
 	
 	private Item item;

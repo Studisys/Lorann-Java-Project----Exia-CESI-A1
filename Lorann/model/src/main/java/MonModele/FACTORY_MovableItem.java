@@ -1,5 +1,15 @@
 package MonModele;
 
+/**********************************************************************************
+**																				 **
+**							  Factory MovableItem								 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
+
 public class FACTORY_MovableItem {
 	
 	public FACTORY_MovableItem()

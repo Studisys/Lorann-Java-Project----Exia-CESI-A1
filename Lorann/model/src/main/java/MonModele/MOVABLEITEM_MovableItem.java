@@ -1,5 +1,13 @@
 package MonModele;
-
+/**********************************************************************************
+**																				 **
+**						   General Class MovableItem							 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
 import java.awt.Point;
 
 import javax.swing.ImageIcon;

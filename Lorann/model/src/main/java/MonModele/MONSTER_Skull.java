@@ -1,5 +1,13 @@
 package MonModele;
-
+/**********************************************************************************
+**																				 **
+**							  		MONSTER 2								 	 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
 public class MONSTER_Skull extends MOVABLEITEM_Ennemy {
 
 //	IMAGE = "/images/monster_2";

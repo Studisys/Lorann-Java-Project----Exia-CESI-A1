@@ -4,6 +4,16 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 
+/**********************************************************************************
+**																				 **
+**								Interface Mobile								 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
+
 public interface INTERFACE_Mobile {
 
 	

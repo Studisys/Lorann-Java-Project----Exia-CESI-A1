@@ -1,5 +1,15 @@
 package MonModele;
 
+/**********************************************************************************
+**																				 **
+**							  		Class Map								 	 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
+
 public class Map {
 
 	private int width = 20, height = 12;
@@ -19,7 +29,6 @@ public class Map {
 		this.itemArray = new Item[this.row * this.columm];
 		this.d2cast = new char[this.row][this.columm];
 	}
-	
 	
 	public int getWidth() {
 		return width;
@@ -41,16 +50,13 @@ public class Map {
 		return row;
 	}
 
-
 	public void setRow(int row) {
 		this.row = row;
 	}
 
-
 	public int getColumm() {
 		return columm;
 	}
-
 
 	public void setColumm(int columm) {
 		this.columm = columm;

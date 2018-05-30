@@ -1,5 +1,15 @@
 package MonModele;
 
+/**********************************************************************************
+**																				 **
+**							      Main model								 	 **
+**																				 **
+**							@author Nicolas Drapier								 **
+**																				 **
+**							       Copyright 									 **
+**																				 **
+**********************************************************************************/
+
 import java.util.ArrayList;
 
 public class LorannModel implements INTERFACE_Model {
