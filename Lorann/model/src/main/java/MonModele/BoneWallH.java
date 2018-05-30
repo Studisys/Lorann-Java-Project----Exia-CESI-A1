@@ -6,10 +6,8 @@ public class BoneWallH extends Wall {
 
 	//IMAGE horizontal_bone
 	private String image = "/images/horizontal_bone";
-	public BoneWallH(Position position)
+	public BoneWallH( )
 	{
-		this.x = position.getX();
-		this.y = position.getY();
 		
 		this.setImage(this.image);
 	}

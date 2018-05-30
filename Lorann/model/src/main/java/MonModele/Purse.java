@@ -2,10 +2,11 @@ package MonModele;
 
 public class Purse extends StackableItem {
 	
-	public Purse(Position position)
+	private String image = "/images/purse";
+	
+	public Purse( )
 	{
-		this.x = position.getX();
-		this.y = position.getY();
+		this.setImage(image);
 		
 	}
 

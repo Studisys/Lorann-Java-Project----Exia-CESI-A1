@@ -6,7 +6,7 @@ public class Map {
 	
 	private String level;
 	private char[] cast;
-	private char[][] map = null;
+	private Item[][] itemArray;
 	
 	private ItemFactory factory;
 	private Position position;
@@ -14,6 +14,7 @@ public class Map {
 	public Map()
 	{
 		this.factory = new ItemFactory();
+		this.itemArray = new Item[20][12];
 	}
 	
 	
@@ -31,28 +32,21 @@ public class Map {
 
 	public void setLevel(String level) {
 		this.level = level;
+		this.cast = level.toCharArray();
 	}
 
-	public int[][] buildMap()
+	public void buildMap(String level)
 	{
-		int z = 0;
-		this.cast = level.toCharArray();
+		this.setLevel(level);
 		
-			for(int i = 0; i<=this.getWidth()-1;i++)
+		for(int i =0; i<19;i++)
+		{
+			for (int j=0; j<=11;j++)
 			{
-				for(int j = 0; j<=this.getHeight()-1;j++)
-				{
-					this.position.setX(i);
-					this.position.setY(j);
-					
-					this.map[i][j] = this.cast[z];
-					this.factory.createItem(this.map[i][j], this.position);
-					z++;
-				}
+				this.itemArray[i][j] = this.factory.createItem(this.cast[i]);
 			}
-		
-		
-		return null;
+			
+		}
 		
 	}
 }

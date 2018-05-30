@@ -5,10 +5,9 @@ public class Pillar extends Wall {
 	//IMAGE bone
 	private String image = "/images/bone";
 	
-	public Pillar(Position position)
+	public Pillar( )
 	{
-		this.x = position.getX();
-		this.y = position.getY();
+
 		
 		this.setImage(image);
 	}

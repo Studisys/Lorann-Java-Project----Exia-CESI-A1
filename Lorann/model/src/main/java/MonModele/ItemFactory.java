@@ -2,39 +2,46 @@ package MonModele;
 
 public class ItemFactory {
 
-	private Item item;
+	//private Item item;
 	
 	public ItemFactory()
 	{
 		
 	}
 	
-	public Item createItem(char changer, Position position)
+	public Item createItem(char changer)
 	{		
 		switch (changer)
 		{
 		case 'W':
-			this.item = new Purse(position);
-			break;
-		case 'B':
-			this.item = new SuperBall(position);
-			break;
+			return new Purse();
+		
 			
+		case 'B':
+			return new SuperBall();
+			
+			
+		case 'J':
+			return new BoneWallH();
+			
+		
 		case 'X':
-			this.item = new BoneWallH(position);
-			break;
+			return new BoneWallY();
+			
 			
 		case 'A':
-			this.item = new Pillar(position);
-			break;
+			return new Pillar();
+			
+			
 		case 'H':
-			this.item = new Door(position);
+			return new Door();
+			
+		case 'Y':
+			return new Void();
 			
 		default:
 			return null;
 		}
-
-		return item;
 	}
 	
 	

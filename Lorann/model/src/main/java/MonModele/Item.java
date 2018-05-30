@@ -13,4 +13,10 @@ public abstract class Item {
 	{
 		this.image = new ImageIcon(getClass().getResource(image));
 	}
+	
+	
+	public ImageIcon getImage()
+	{
+		return this.image;
+	}
 }
