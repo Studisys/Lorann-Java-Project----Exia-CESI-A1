@@ -40,7 +40,7 @@ public class ItemFactory {
 			return new Void();
 			
 		default:
-			return null;
+			return new Void();
 		}
 	}
 	

@@ -6,15 +6,14 @@ public class Map {
 	
 	private String level;
 	private char[] cast;
-	private Item[][] itemArray;
+	protected Item[] itemArray;
 	
 	private ItemFactory factory;
-	private Position position;
 	
 	public Map()
 	{
 		this.factory = new ItemFactory();
-		this.itemArray = new Item[20][12];
+		this.itemArray = new Item[240];
 	}
 	
 	
@@ -39,12 +38,9 @@ public class Map {
 	{
 		this.setLevel(level);
 		
-		for(int i =0; i<19;i++)
+		for(int i =0; i<=this.itemArray.length - 1;i++)
 		{
-			for (int j=0; j<=11;j++)
-			{
-				this.itemArray[i][j] = this.factory.createItem(this.cast[i]);
-			}
+			this.itemArray[i] = this.factory.createItem(this.cast[i]);
 			
 		}
 		

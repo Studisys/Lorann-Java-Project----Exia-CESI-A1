@@ -1,22 +1,36 @@
 package MonModele;
 
-import java.awt.Image;
-
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public abstract class Item {
 	
 	protected int x, y;
-	protected ImageIcon image;
+	protected Icon image;
+	protected String name;
 	
 	public void setImage(String image)
 	{
-		this.image = new ImageIcon(getClass().getResource(image));
+		this.image = new ImageIcon(image);
 	}
 	
 	
-	public ImageIcon getImage()
+	public Icon getImage()
 	{
 		return this.image;
 	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	
+	
 }
