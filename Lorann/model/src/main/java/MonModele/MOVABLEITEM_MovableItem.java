@@ -4,7 +4,7 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 
-public abstract class MOVABLEITEM_MovableItem extends Item implements iMobile {
+public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
 
 	
 	private int speed;
@@ -37,24 +37,24 @@ public abstract class MOVABLEITEM_MovableItem extends Item implements iMobile {
 	}
 	
 
-	private void moveUp()
+	private void moveUp(String image)
 	{
-		
+		this.setImage(image);
 	}
 
-	private void moveDown()
+	private void moveDown(String image)
 	{
-		
+		this.setImage(image);
 	}
 	
-	private void moveLeft()
+	private void moveLeft(String image)
 	{
-		
+		this.setImage(image);
 	}
 	
-	private void moveRight()
+	private void moveRight(String image)
 	{
-		
+		this.setImage(image);
 	}
 	
 

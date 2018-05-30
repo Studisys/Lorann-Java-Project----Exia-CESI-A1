@@ -22,7 +22,8 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 	{
 		for(int i = 0; i<8;i++)
 		{
-			this.image = "/images/" + SPRITE_MeSprite.values()[i].toString();
+			this.image = "C:/Users/Nicolas Drapier/git/Lorann-Java-Project----"
+					+ "Exia-CESI-A1/Lorann/model/images/" + SPRITE_MeSprite.values()[i].toString() + ".png";
 			this.setImage(this.image);
 		}
 	}

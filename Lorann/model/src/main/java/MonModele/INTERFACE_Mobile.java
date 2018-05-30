@@ -4,7 +4,7 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 
-public interface iMobile {
+public interface INTERFACE_Mobile {
 
 	
 	public Direction getDirection();
