@@ -2,68 +2,45 @@ package maVue;
 
 import java.awt.event.KeyEvent;
 
-import monController.iEventPerformer;
-import monController.iUserOrder;
+import monController.iOrderPerformer;
+import monController.iKeyOrder;
 import monController.Order;
-import monController.UserOrder;
+import monController.KeyOrder;
 import maVue.iEventPerformer;
 
 public class Event implements iEventPerformer{
 	private final iOrderPerformer orderPerformer;
 
-	public Event(iOrderPerformer orderPerformer)
+	public Event(iOrderPerformer eventPerformer)
 	{
-		this.orderPerformer = orderPerformer;
+		this.orderPerformer = eventPerformer;
 	}
-	@Override
-	public void eventPerform(final KeyEvent keyCode) {
-		final IUserOrder userOrder = this.keyCodeToUserOrder(keyCode.getKeyCode());
-		if (userOrder != null) {
-			this.orderPerformer.orderPerform(userOrder);
+	
+	public void event(final KeyEvent keyCode) {
+		final iKeyOrder keyOrder = this.getKeyCode(keyCode.getKeyCode());
+		if (keyOrder != null) {
+			this.orderPerformer.orderPerform(keyOrder);
 		}
 	}
-	private iUserOrder getKeyCode(int keyCode)
-	IUserOrder userOrder;
+	private iKeyOrder getKeyCode(int keyCode) {
+	iKeyOrder userOrder;
 	switch (keyCode) {
-		case KeyEvent.VK_UP:
-			userOrder = new UserOrder(0, Order.UP);
-			break;
-		case KeyEvent.VK_RIGHT:
-			userOrder = new UserOrder(0, Order.RIGHT);
-			break;
-		case KeyEvent.VK_DOWN:
-			userOrder = new UserOrder(0, Order.DOWN);
-			break;
-		case KeyEvent.VK_LEFT:
-			userOrder = new UserOrder(0, Order.LEFT);
-			break;
-		case KeyEvent.VK_CONTROL:
-			userOrder = new UserOrder(0, Order.SHOOT);
-			break;
-
 		case KeyEvent.VK_Z:
-			userOrder = new UserOrder(1, Order.UP);
+			userOrder = new KeyOrder(Order.UP);
 			break;
 		case KeyEvent.VK_D:
-			userOrder = new UserOrder(1, Order.RIGHT);
+			userOrder = new KeyOrder(Order.RIGHT);
 			break;
 		case KeyEvent.VK_S:
-			userOrder = new UserOrder(1, Order.DOWN);
+			userOrder = new KeyOrder(Order.DOWN);
 			break;
 		case KeyEvent.VK_Q:
-			userOrder = new UserOrder(1, Order.LEFT);
-			break;
-		case KeyEvent.VK_SHIFT:
-			userOrder = new UserOrder(1, Order.SHOOT);
+			userOrder = new KeyOrder(Order.LEFT);
 			break;
 		default:
 			userOrder = null;
 	}
 	return userOrder;
 }
-	@Override
-	public void event(KeyEvent keyCode) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }
