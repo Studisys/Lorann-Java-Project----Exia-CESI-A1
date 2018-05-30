@@ -4,7 +4,7 @@ import java.awt.Point;
 
 import javax.swing.ImageIcon;
 
-public abstract class Movable implements iMobile {
+public abstract class MOVABLEITEM_MovableItem extends Item implements iMobile {
 
 	
 	private int speed;
@@ -12,20 +12,9 @@ public abstract class Movable implements iMobile {
 	private ImageIcon img;
 	private String chemin;
 	
-	public Movable()
+	public MOVABLEITEM_MovableItem()
 	{
 		
-	}
-	
-	@Override
-	public ImageIcon getImage() {
-		// TODO Auto-generated method stub
-		return this.img;
-	}
-	@Override
-	public void setImage(String image)
-	{
-		this.img = new ImageIcon(getClass().getResource(image));
 	}
 	
 	@Override

@@ -2,11 +2,11 @@ package MonModele;
 
 import java.awt.Image;
 
-public class BoneWallH extends Wall {
+public class WALL_BoneWallH extends WALL_Wall {
 
 	//IMAGE horizontal_bone
 	private String image = "C:/Users/Nicolas Drapier/git/Lorann-Java-Project----Exia-CESI-A1/Lorann/model/images/horizontal_bone.png";
-	public BoneWallH( )
+	public WALL_BoneWallH( )
 	{
 		this.setName("boneH");
 		this.setImage(this.image);

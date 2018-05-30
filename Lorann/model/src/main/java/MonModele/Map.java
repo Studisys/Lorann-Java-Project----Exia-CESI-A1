@@ -8,11 +8,11 @@ public class Map {
 	private char[] cast;
 	protected Item[] itemArray;
 	
-	private ItemFactory factory;
-	
+	private FACTORY_FactoryStaticItem factory;
+
 	public Map()
 	{
-		this.factory = new ItemFactory();
+		this.factory = new FACTORY_FactoryStaticItem();
 		this.itemArray = new Item[240];
 	}
 	
@@ -41,7 +41,6 @@ public class Map {
 		for(int i =0; i<=this.itemArray.length - 1;i++)
 		{
 			this.itemArray[i] = this.factory.createItem(this.cast[i]);
-			
 		}
 		
 	}

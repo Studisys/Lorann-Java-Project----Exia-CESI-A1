@@ -1,10 +1,10 @@
 package MonModele;
 
-public class Void extends Wall {
+public class WALL_Void extends WALL_Wall {
 
 	//IMAGE gate-closed
 	private String image = "C:/Users/Nicolas Drapier/git/Lorann-Java-Project----Exia-CESI-A1/Lorann/model/images/void.png";
-	public Void()
+	public WALL_Void()
 	{
 		this.setName("void");
 		this.setImage(image);

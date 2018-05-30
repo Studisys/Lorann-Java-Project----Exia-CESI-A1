@@ -1,6 +1,6 @@
 package MonModele;
 
-public class Spell extends Movable {
+public class MOVABLEITEM_Spell extends MOVABLEITEM_MovableItem {
 
 	
 	private int speed;
@@ -8,7 +8,7 @@ public class Spell extends Movable {
 	private int distanceTraveled;
 	private String image;
 	
-	public Spell(Direction direction)
+	public MOVABLEITEM_Spell(Direction direction)
 	{
 		
 	}
@@ -27,7 +27,7 @@ public class Spell extends Movable {
 	{
 			for(int i = 0; i<8;i++)
 			{
-				this.image = "/images/" + SpellSprite.values()[i].toString();
+				this.image = "/images/" + SPRITE_SpellSprite.values()[i].toString();
 				this.setImage(this.image);
 			}
 	}

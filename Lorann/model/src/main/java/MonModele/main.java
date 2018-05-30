@@ -19,7 +19,7 @@ public class main {
 		maMap.buildMap(level);
 		
 		JFrame window = new JFrame();
-	    window.setSize(640, 384);
+	    window.setSize(960, 576);
 	    window.setTitle("Lorann");
 	    window.setLocationRelativeTo(null);
 	    window.setResizable(false);
