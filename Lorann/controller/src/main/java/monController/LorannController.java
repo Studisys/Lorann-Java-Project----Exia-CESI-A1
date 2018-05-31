@@ -1,41 +1,53 @@
 package monController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.sun.javafx.scene.traversal.Direction;
+
+import MonModele.INTERFACE_Mobile;
+import MonModele.INTERFACE_Model;
+import MonModele.MOVABLEITEM_Me;
+import MonModele.MOVABLEITEM_Spell;
+import MonModele.Position;
+import maVue.iView;
 
 //A class called LorannController
 public class LorannController implements iOrderPerformer
 {
 	private int TIME_SLEEP = 30;
+	private final INTERFACE_Model LorannModel;
+	private boolean isGameOver = false;
+	private iView viewSystem;
 	
-	public LorannController(final iModel LorannModel) 
+	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
 	}
 	
-	public void orderPerform(KeyOrder keyOrder) 
+	@Override
+	public void orderPerform(iKeyOrder keyOrder) 
 	{
-		if (Me !=null)
+		if (MOVABLEITEM_Me !=null)
 		{
 			Direction direction;
 			switch (keyOrder.getOrder())
 			{
 			case UP:
-			direction = Direction.UP;
-			break;
+				direction = Direction.UP;
+				break;
 			
 			case DOWN:
-			direction = Direction.DOWN;
-			break;
+				direction = Direction.DOWN;
+				break;
 			
 			case RIGHT:
-			direction = Direction.RIGHT;
-			break;
+				direction = Direction.RIGHT;
+				break;
 			
 			case LEFT:
-			direction = Direction.LEFT;
-			break;
+				direction = Direction.LEFT;
+				break;
 			
 			case SHOOT:
 				try
@@ -49,15 +61,15 @@ public class LorannController implements iOrderPerformer
 				}
 			}
 			
-			Me.setDirection(direction);
+			MOVABLEITEM_Me.setDirection(direction);
 		}
 	}
 	
 	public void play()
 	{
 		this.gameLoop();
-		this.viewSystem.displayMessage("Game Over!");
-		this.viewSystem.closeAll();
+		iView.displayMessage("Game Over!");
+		iView.exit();
 	}
 	
 	public void setViewSystem(final iView viewSystem)
@@ -67,31 +79,32 @@ public class LorannController implements iOrderPerformer
 	
 	private void launchSpell() throws IOException
 	{
-		if (Me != null)
+		if (MOVABLEITEM_Me != null)
 		{
-			final Position position = new Position(Me.getPosition().getX() + ((Me.getWidth() - Spell.getWidthWithADirection(Me.getDirection())) / 2),
-					Me.getPosition().getY() + ((Me.getHeight() - Spell.getHeightWithADirection(Me.getDirection())) / 2));
-					this.LorannModel.addMobile(new Spell(Me.getDirection(), position));
-					switch (Me.getDirection()) 
+			final Position position = new Position(MOVABLEITEM_Me.getPosition().getX() + ((MOVABLEITEM_Me.getWidth() - MOVABLEITEM_Spell.getWidthWithADirection(MOVABLEITEM_Me.getDirection())) / 2),
+					MOVABLEITEM_Me.getPosition().getY() + ((MOVABLEITEM_Me.getHeight() - MOVABLEITEM_Spell.getHeightWithADirection(MOVABLEITEM_Me.getDirection())) / 2));
+					this.LorannModel.addMobile(new MOVABLEITEM_Spell(MOVABLEITEM_Me.getDirection(), position));
+					switch (MOVABLEITEM_Me.getDirection()) 
 					{
 						case UP:
-						position.setY(position.getY() - Me.getHeight() - Me.getSpeed());
-						break;
+							position.setY(position.getY() - MOVABLEITEM_Me.getHeight() - MOVABLEITEM_Me.getSpeed());
+							break;
 							
 						case RIGHT:
-						position.setX(position.getX() + Me.getWidth() + Me.getSpeed());
-						break;
+							position.setX(position.getX() + MOVABLEITEM_Me.getWidth() + MOVABLEITEM_Me.getSpeed());
+							break;
 							
 						case DOWN:
-						position.setY(position.getY() + Me.getHeight() + Me.getSpeed());
-						break;
+							position.setY(position.getY() + MOVABLEITEM_Me.getHeight() + MOVABLEITEM_Me.getSpeed());
+							break;
 							
 						case LEFT:
-						position.setX(position.getX() - Me.getWidth() - Me.getSpeed());
-						break;
+							position.setX(position.getX() - MOVABLEITEM_Me.getWidth() - MOVABLEITEM_Me.getSpeed());
+							break;
 							
 						default:
-						break;
+							break;
+
 					}
 		}
 	}
@@ -110,22 +123,22 @@ public class LorannController implements iOrderPerformer
 				Thread.currentThread().interrupt();
 			}
 			
-			final ArrayList<iMobile> initialMobiles = new ArrayList<iMobile>();
-			for (final iMobile mobile : this.LorannModel.getMobiles())
+			final ArrayList<INTERFACE_Mobile> initialMobiles = new ArrayList<INTERFACE_Mobile>();
+			for (final INTERFACE_Mobile mobile : this.LorannModel.getMobiles())
 			{
 				initialMobiles.add(mobile);
 			}
 			
-			for (final iMobile mobile : initialMobiles)
+			for (final INTERFACE_Mobile mobile : initialMobiles)
 			{
 				mobile.move();
-				if (mobile.isWeapon())
+				if (((MOVABLEITEM_Me) mobile).isWeapon())
 				{
 					this.manageCollision(mobile);
 				}
 			}
 			
-			this.LorannModel.setMobilesHavesMoved();
+			this.LorannModel.setMobilesHavedMove();
 		}
 	}
 }

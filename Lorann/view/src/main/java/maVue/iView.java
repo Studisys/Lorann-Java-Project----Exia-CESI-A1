@@ -1,6 +1,12 @@
 package maVue;
 
 public interface iView {
-	public void displayMessage(String message);
-	public void exit();
+	public static void displayMessage(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+	public static void exit() {
+		// TODO Auto-generated method stub
+		
+	}
 }	
