@@ -38,13 +38,13 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 	}
 	@Override
 	public int getGlobalWidth() {
-		return this.lorannModel.getArea().getWidth();
-
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	@Override
 	public int getGlobalHeight() {
-		return this.lorannModel.getArea().getHeight();
-
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
 
