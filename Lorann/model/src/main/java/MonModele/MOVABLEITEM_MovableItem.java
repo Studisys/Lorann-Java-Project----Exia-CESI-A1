@@ -25,18 +25,6 @@ public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_
 		
 	}
 	
-	@Override
-	public Point getPosition() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setPosition(Point position) {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 	@Override
 	public boolean move() {
