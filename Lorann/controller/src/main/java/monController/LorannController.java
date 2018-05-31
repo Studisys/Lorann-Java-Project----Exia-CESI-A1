@@ -19,6 +19,7 @@ public class LorannController implements iOrderPerformer
 	private final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
+	final INTERFACE_Mobile hero = this.LorannModel.getMobiles();
 	
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
@@ -28,7 +29,8 @@ public class LorannController implements iOrderPerformer
 	@Override
 	public void orderPerform(iKeyOrder keyOrder) 
 	{
-		if (MOVABLEITEM_Me !=null)
+		
+		if (hero !=null)
 		{
 			Direction direction;
 			switch (keyOrder.getOrder())
@@ -79,12 +81,12 @@ public class LorannController implements iOrderPerformer
 	
 	private void launchSpell() throws IOException
 	{
-		if (MOVABLEITEM_Me != null)
+		if (hero != null)
 		{
-			final Position position = new Position(MOVABLEITEM_Me.getPosition().getX() + ((MOVABLEITEM_Me.getWidth() - MOVABLEITEM_Spell.getWidthWithADirection(MOVABLEITEM_Me.getDirection())) / 2),
-					MOVABLEITEM_Me.getPosition().getY() + ((MOVABLEITEM_Me.getHeight() - MOVABLEITEM_Spell.getHeightWithADirection(MOVABLEITEM_Me.getDirection())) / 2));
+			final Position position = new Position(hero.getPosition().getX() + ((MOVABLEITEM_Me.getWidth() - MOVABLEITEM_Spell.getWidthWithADirection(MOVABLEITEM_Me.getDirection())) / 2),
+					hero.getPosition().getY() + ((MOVABLEITEM_Me.getHeight() - MOVABLEITEM_Spell.getHeightWithADirection(MOVABLEITEM_Me.getDirection())) / 2));
 					this.LorannModel.addMobile(new MOVABLEITEM_Spell(MOVABLEITEM_Me.getDirection(), position));
-					switch (MOVABLEITEM_Me.getDirection()) 
+					switch (hero.getDirection()) 
 					{
 						case UP:
 							position.setY(position.getY() - MOVABLEITEM_Me.getHeight() - MOVABLEITEM_Me.getSpeed());
