@@ -36,5 +36,14 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 		}
 	}
 	
+	public int getSpeed()
+	{
+		return this.speed;
+	}
+	public void setSpeed(int speed)
+	{
+		this.speed = speed;
+	}
+	
 	
 }

@@ -11,7 +11,7 @@ package MonModele;
 public class MOVABLEITEM_Spell extends MOVABLEITEM_MovableItem {
 
 	
-	private int speed;
+	private int speed = 20;
 	private int maxDistanceTraveled;
 	private int distanceTraveled;
 	private String image;
@@ -20,17 +20,43 @@ public class MOVABLEITEM_Spell extends MOVABLEITEM_MovableItem {
 	{
 		
 	}
-	
-	public int getWidthWithADirection()
+	public MOVABLEITEM_Spell(Direction direction, Position position)
 	{
-		return 0;
+		
+	}
+	public int getWidthWithADirection(Direction direction)
+	{
+		switch (direction) {
+		case UP:
+		case DOWN:
+			return 48;
+		case RIGHT:
+		case LEFT:
+		default:
+			return 48;
+	}
 	}
 	
-	public int getHeightWithADirection()
+	public int getHeightWithADirection(Direction direction)
 	{
-		return 0;
+		switch (direction) 
+		{
+		case UP:
+		case DOWN:
+			return 48;
+		case RIGHT:
+		case LEFT:
+		default:
+			return 48;
+		}
 	}
 	
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
 	public void launch()
 	{
 			for(int i = 0; i<8;i++)

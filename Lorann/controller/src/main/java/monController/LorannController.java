@@ -3,8 +3,6 @@ package monController;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import com.sun.javafx.scene.traversal.Direction;
-
 import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.MOVABLEITEM_Me;
@@ -19,11 +17,15 @@ public class LorannController implements iOrderPerformer
 	private final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
-	final INTERFACE_Mobile hero = this.LorannModel.getMobiles();
+	private MOVABLEITEM_Me hero;
+	private MOVABLEITEM_Spell spell;
+	//final INTERFACE_Mobile hero = this.LorannModel.getMobiles();
+	private int width =20, height = 12;
 	
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
+		this.hero = new MOVABLEITEM_Me();
 	}
 	
 	@Override
@@ -32,23 +34,23 @@ public class LorannController implements iOrderPerformer
 		
 		if (hero !=null)
 		{
-			Direction direction;
+			MonModele.Direction direction = null;
 			switch (keyOrder.getOrder())
 			{
 			case UP:
-				direction = Direction.UP;
+				direction = MonModele.Direction.UP;
 				break;
 			
 			case DOWN:
-				direction = Direction.DOWN;
+				direction = MonModele.Direction.DOWN;
 				break;
 			
 			case RIGHT:
-				direction = Direction.RIGHT;
+				direction = MonModele.Direction.RIGHT;
 				break;
 			
 			case LEFT:
-				direction = Direction.LEFT;
+				direction = MonModele.Direction.LEFT;
 				break;
 			
 			case SHOOT:
@@ -63,7 +65,7 @@ public class LorannController implements iOrderPerformer
 				}
 			}
 			
-			MOVABLEITEM_Me.setDirection(direction);
+			this.hero.setDirection(direction);
 		}
 	}
 	
@@ -79,29 +81,35 @@ public class LorannController implements iOrderPerformer
 		this.viewSystem = viewSystem;
 	}
 	
+	public iView getViewSystem()
+	{
+		return this.viewSystem;
+	}
+	
 	private void launchSpell() throws IOException
 	{
 		if (hero != null)
+			
 		{
-			final Position position = new Position(hero.getPosition().getX() + ((MOVABLEITEM_Me.getWidth() - MOVABLEITEM_Spell.getWidthWithADirection(MOVABLEITEM_Me.getDirection())) / 2),
-					hero.getPosition().getY() + ((MOVABLEITEM_Me.getHeight() - MOVABLEITEM_Spell.getHeightWithADirection(MOVABLEITEM_Me.getDirection())) / 2));
-					this.LorannModel.addMobile(new MOVABLEITEM_Spell(MOVABLEITEM_Me.getDirection(), position));
+			final Position position = new Position(this.hero.getPosition().getX() + ((this.width - this.spell.getWidthWithADirection(this.hero.getDirection())) / 2),
+					hero.getPosition().getY() + ((this.height - this.spell.getHeightWithADirection(this.hero.getDirection())) / 2));
+					this.LorannModel.addMobile(new MOVABLEITEM_Spell(this.hero.getDirection(), position));
 					switch (hero.getDirection()) 
 					{
 						case UP:
-							position.setY(position.getY() - MOVABLEITEM_Me.getHeight() - MOVABLEITEM_Me.getSpeed());
+							position.setY(position.getY() - 48 - this.hero.getSpeed());
 							break;
 							
 						case RIGHT:
-							position.setX(position.getX() + MOVABLEITEM_Me.getWidth() + MOVABLEITEM_Me.getSpeed());
+							position.setX(position.getX() + 48 + this.hero.getSpeed());
 							break;
 							
 						case DOWN:
-							position.setY(position.getY() + MOVABLEITEM_Me.getHeight() + MOVABLEITEM_Me.getSpeed());
+							position.setY(position.getY() + 48 + this.hero.getSpeed());
 							break;
 							
 						case LEFT:
-							position.setX(position.getX() - MOVABLEITEM_Me.getWidth() - MOVABLEITEM_Me.getSpeed());
+							position.setX(position.getX() - 48 - this.hero.getSpeed());
 							break;
 							
 						default:
