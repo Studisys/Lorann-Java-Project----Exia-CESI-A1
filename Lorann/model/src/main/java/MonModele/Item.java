@@ -22,7 +22,18 @@ public abstract class Item {
 	protected Icon image;
 	protected ImageIcon source;
 	protected String name;
+	protected Position position;
 	
+	public Position getPosition() {
+		return position;
+	}
+
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+
+
 	public void setImage(String image)
 	{
 		this.source = new ImageIcon(image);
@@ -44,8 +55,5 @@ public abstract class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
-	
-	
+
 }

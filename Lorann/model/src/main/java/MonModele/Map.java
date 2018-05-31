@@ -1,5 +1,7 @@
 package MonModele;
 
+import java.util.ArrayList;
+
 /**********************************************************************************
 **																				 **
 **							  		Class Map								 	 **
@@ -11,14 +13,11 @@ package MonModele;
 **********************************************************************************/
 
 public class Map {
-
-	private int width = 20, height = 12;
 	
 	private String level;
 	private char[] cast;
-	private char[][] d2cast;
-	protected Item[] itemArray;
-	
+	protected char[][] map2D;
+	protected ArrayList<Item> listItem;
 	private int row = 12, columm = 20;
 	
 	private FACTORY_FactoryStaticItem factory;
@@ -26,18 +25,10 @@ public class Map {
 	public Map()
 	{
 		this.factory = new FACTORY_FactoryStaticItem();
-		this.itemArray = new Item[this.row * this.columm];
-		this.d2cast = new char[this.row][this.columm];
+		this.map2D = new char[this.row][this.columm];
+		this.listItem = new ArrayList<Item>();
 	}
 	
-	public int getWidth() {
-		return width;
-	}
-
-	public int getHeight() {
-		return height;
-	}
-
 	public String getLevel() {
 		return level;
 	}
@@ -66,9 +57,9 @@ public class Map {
 	{
 		this.setLevel(level);
 		
-		for(int i =0; i<=this.itemArray.length - 1;i++)
+		for(int i =0; i<=this.level.length()-1;i++)
 		{
-			this.itemArray[i] = this.factory.createItem(this.cast[i]);
+			this.listItem.add(i, this.factory.createItem(this.cast[i]));
 		}
 		
 		int h = 0;
@@ -76,12 +67,18 @@ public class Map {
 		{
 			for (int j=0; j<=this.columm - 1; j++)
 			{
-				this.d2cast[i][j] = this.cast[h];
+				this.map2D[i][j] = this.cast[h];
 				h++;
-				System.out.print(this.d2cast[i][j] + "   ");	
+				System.out.print(this.map2D[i][j] + "   ");	
 			}
 			System.out.println("");
 		}
+		System.out.println("");
+		for (int i = 0; i<=this.listItem.size()-1;i++)
+		{
+			System.out.println(this.listItem.get(i).toString());
+		}
+
 		
 	}
 }
