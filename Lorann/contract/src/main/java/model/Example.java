@@ -62,6 +62,6 @@ public class Example {
      */
     @Override
     public String toString() {
-        return this.getName();
+        return this.getId() + " : " + this.getName();
     }
 }

@@ -22,6 +22,18 @@ public interface IModel {
      */
     Example getExampleById(int id) throws SQLException;
 
+	Example getExampleByName(String name) throws SQLException;
 
+	List<Example> getAllExamples() throws SQLException;
+
+    /**
+     * Gets the example by name.
+     *
+     * @param name
+     *            the name
+     * @return the example by name
+     * @throws SQLException
+     *             the SQL exception
+     */
   
 }
