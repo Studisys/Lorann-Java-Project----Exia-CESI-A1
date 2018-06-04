@@ -1,16 +1,20 @@
 package maVue;
 
+import javax.swing.JOptionPane;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class GraphicsBuilderTest {
 
+public class MainFrameTest 
+{
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 
 	{
+		
 	}
 
 	@AfterClass
@@ -32,24 +36,21 @@ public class GraphicsBuilderTest {
 	}
 
 	@Test
-	public void drawMobile() 
+	public void run() 
 	{
-		
+			
 	}
+	
 	@Test
-	public void applyModelToGraphic() 
+	public void displayMessage() 
 	{
-		
+		String message = "test";
+		JOptionPane.showMessageDialog(null, message);
 	}
+	
 	@Test
-	public void getGlobalWidth() 
+	public void exit() 
 	{
 		
 	}
-	@Test
-	public void getGlobalHeight() 
-	{
-		
-	}
-
 }

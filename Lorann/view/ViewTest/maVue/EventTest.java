@@ -17,27 +17,35 @@ import monController.iKeyOrder;
 
 public class EventTest {
 
-	 @BeforeClass
-	    public static void setUpBeforeClass() throws Exception {
+	 	@BeforeClass
+	    public static void setUpBeforeClass() throws Exception 
+	 	{
+		 
 	 	}
 	    
 
 	    @AfterClass
-	    public static void tearDownAfterClass() throws Exception {
+	    public static void tearDownAfterClass() throws Exception 
+	    {
+	    	
 	    }
 
 	    @Before
-	    public void setUp() throws Exception {
+	    public void setUp() throws Exception 
+	    {
+	    	
 	    }
 
 	    @After
-	    public void tearDown() throws Exception {
+	    public void tearDown() throws Exception 
+	    {
+	    	
 	    }
 
-	    
 	    @Test public void getKeyCodeUp()
 	    {
-	    	int keyCode = 90; //Z key
+	    	// Z key
+	    	int keyCode = 90;
 			iKeyOrder userOrder;
 			iKeyOrder testOrder = new KeyOrder(Order.UP);
 			switch(keyCode) 
@@ -47,7 +55,9 @@ public class EventTest {
 				assertEquals("The Key is functionnal", userOrder.getOrder(),testOrder.getOrder());
 				break;
 			}
-			keyCode = 38; // Up Arrow
+			
+			// Up Arrow
+			keyCode = 38; 
 			iKeyOrder testOrder2 = new KeyOrder(Order.UP);
 			switch(keyCode) 
 			{
@@ -57,9 +67,11 @@ public class EventTest {
 				break;
 			}
 	    }
+	    
 	    @Test public void getKeyCodeDown()
 	    {
-	    	int keyCode = 83; //S key
+	    	// S key
+	    	int keyCode = 83; 
 			iKeyOrder userOrder;
 			iKeyOrder testOrder = new KeyOrder(Order.DOWN);
 			switch(keyCode) 
@@ -69,7 +81,9 @@ public class EventTest {
 				assertEquals("The Key is functionnal", userOrder.getOrder(),testOrder.getOrder());
 				break;
 			}
-			keyCode = 40; // Down Arrow
+			
+			// Down Arrow
+			keyCode = 40; 
 			iKeyOrder testOrder2 = new KeyOrder(Order.DOWN);
 			switch(keyCode) 
 			{
@@ -79,9 +93,11 @@ public class EventTest {
 				break;
 			}
 	    }
+	    
 	    @Test public void getKeyCodeRight()
 	    {
-	    	int keyCode = 68; //D key
+	    	// D key
+	    	int keyCode = 68; 
 			iKeyOrder userOrder;
 			iKeyOrder testOrder = new KeyOrder(Order.RIGHT);
 			switch(keyCode) 
@@ -89,9 +105,11 @@ public class EventTest {
 			case KeyEvent.VK_D :
 				userOrder = new KeyOrder(Order.RIGHT);
 				assertEquals("The Key is functionnal", userOrder.getOrder(),testOrder.getOrder());
-				break;
+				break;	
 			}
-			keyCode = 39; // Right Arrow
+			
+			// Right Arrow
+			keyCode = 39; 
 			iKeyOrder testOrder2 = new KeyOrder(Order.RIGHT);
 			switch(keyCode) 
 			{
@@ -101,9 +119,11 @@ public class EventTest {
 				break;
 			}
 	    }
+	    
 	    @Test public void getKeyCodeLeft()
 	    {
-	    	int keyCode = 81; //Q key
+	    	// Q key
+	    	int keyCode = 81; 
 			iKeyOrder userOrder;
 			iKeyOrder testOrder = new KeyOrder(Order.LEFT);
 			switch(keyCode) 
@@ -113,7 +133,9 @@ public class EventTest {
 				assertEquals("The Key is functionnal", userOrder.getOrder(),testOrder.getOrder());
 				break;
 			}
-			keyCode = 37; // Left Arrow
+			
+			// Left Arrow
+			keyCode = 37; 
 			iKeyOrder testOrder2 = new KeyOrder(Order.LEFT);
 			switch(keyCode) 
 			{
@@ -123,9 +145,11 @@ public class EventTest {
 				break;
 			}
 	    }
+	    
 	    @Test public void getKeyCodeShoot()
 	    {
-	    	int keyCode = 32; //Space key
+	    	// Space key
+	    	int keyCode = 32; 
 			iKeyOrder userOrder;
 			iKeyOrder testOrder = new KeyOrder(Order.SHOOT);
 			switch(keyCode) 
