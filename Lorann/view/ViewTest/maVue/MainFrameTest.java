@@ -9,15 +9,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 
-public class MainFrameTest {
-
-
+public class MainFrameTest 
+{
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 
 	{
 		
 	}
-
 
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception 
@@ -31,7 +29,6 @@ public class MainFrameTest {
 		
 	}
 
-
 	@After
 	public void tearDown() throws Exception 
 	{
@@ -41,176 +38,19 @@ public class MainFrameTest {
 	@Test
 	public void run() 
 	{
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+			
 	}
+	
 	@Test
 	public void displayMessage() 
 	{
 		String message = "test";
 		JOptionPane.showMessageDialog(null, message);
 	}
+	
 	@Test
 	public void exit() 
 	{
 		
 	}
-
 }

@@ -6,11 +6,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class GraphicsBuilderTest {
-
+public class GraphicsBuilderTest 
+{
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception 
 	{
+		
 	}
 
 	@AfterClass
@@ -36,20 +37,22 @@ public class GraphicsBuilderTest {
 	{
 		
 	}
+	
 	@Test
 	public void applyModelToGraphic() 
 	{
 		
 	}
+	
 	@Test
 	public void getGlobalWidth() 
 	{
 		
 	}
+	
 	@Test
 	public void getGlobalHeight() 
 	{
 		
 	}
-
 }
