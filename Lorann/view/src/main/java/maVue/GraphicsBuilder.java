@@ -23,11 +23,11 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 		this.map = this.lorannModel.getItemList();
 		this.monsterList = this.lorannModel.getMonsterList();
 	}
-	private void drawMobile(Graphics g, ImageObserver observer)
+	/*private void drawMobile(Graphics g, ImageObserver observer)
 	{
 		
-	}
-
+	}*/
+	
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver observer) 
 	{
@@ -45,7 +45,7 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 		{
 			graphics.drawImage(items.getImage(), items.getPosition().getX()*48+50, items.getPosition().getY() *48+50, 48, 48, null);
 		}		
-		}
+		
 	}
 	@Override
 	public int getGlobalWidth() {
