@@ -3,6 +3,12 @@
 	<name>lorann</name>
 	<comment></comment>
 	<projects>
+		<project>contract</project>
+		<project>controller</project>
+		<project>main</project>
+		<project>model</project>
+		<project>showboard</project>
+		<project>view</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
