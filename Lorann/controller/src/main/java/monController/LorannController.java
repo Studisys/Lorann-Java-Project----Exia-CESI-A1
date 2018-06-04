@@ -151,4 +151,5 @@ public class LorannController implements iOrderPerformer
 			this.LorannModel.setMobilesHavedMove();
 		}
 	}
+
 }

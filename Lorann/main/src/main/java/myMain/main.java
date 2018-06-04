@@ -9,6 +9,7 @@ import MonModele.LorannModel;
 import maVue.*;
 import model.Example;
 import model.dao.LorannDAO;
+import monController.LorannController;
 
 public class main {
 
@@ -41,16 +42,20 @@ public class main {
 		System.out.println("Map String Answer from MySQL server : " + daoReturn);
 		
 		// Instantiate LorannModel
-				LorannModel lomo = new LorannModel();
+				LorannModel lorannmodel = new LorannModel();
 				
 		// Assign Answer from Server to level string
-		lomo.setLevel(String.valueOf(daoReturn));
+		lorannmodel.setLevel(String.valueOf(daoReturn));
 		
-		lomo.mapCreator(lomo.getLevel());
+		lorannmodel.mapCreator(lorannmodel.getLevel());
 
+		LorannController loranncontroller = new LorannController(lorannmodel);
 		
+		MainFrame lorannview = new MainFrame(loranncontroller,lorannmodel, lorannmodel);
 		
-		// need to add more
+		loranncontroller.setViewSystem(lorannview);
 		
+		loranncontroller.play();
+				
 	}
 }
