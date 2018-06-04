@@ -10,7 +10,7 @@ package MonModele;
 **********************************************************************************/
 public class STACKABLE_SuperBall extends STACKABLE_StackableItem {
 	
-	private String image = "../model/images/crystal_ball.png";
+	private String image = "crystal_ball.png";
 	
 	public STACKABLE_SuperBall( )
 	{

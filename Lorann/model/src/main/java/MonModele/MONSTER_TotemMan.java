@@ -12,7 +12,7 @@ package MonModele;
 public class MONSTER_TotemMan extends MOVABLEITEM_Ennemy {
 
 	//IMAGE = "/images/monster_3";
-	private String image = "../model/images/monster_3.png";
+	private String image = "monster_3.png";
 	public MONSTER_TotemMan() 
 	{
 		this.setName("TotemMan");

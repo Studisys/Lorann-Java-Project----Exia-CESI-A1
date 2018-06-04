@@ -11,7 +11,7 @@ package MonModele;
 public class MONSTER_Ghost extends MOVABLEITEM_Ennemy {
 
 	//	IMAGE = "/images/monster_1";
-	private String image = "../model/images/monster_1.png";
+	private String image = "monster_1.png";
 	public MONSTER_Ghost() 
 	{
 		this.setName("Ghost");

@@ -10,7 +10,7 @@ package MonModele;
 **********************************************************************************/
 public class STACKABLE_Purse extends STACKABLE_StackableItem {
 	
-	private String image = "../model/images/purse.png";
+	private String image = "purse.png";
 	
 	public STACKABLE_Purse( )
 	{

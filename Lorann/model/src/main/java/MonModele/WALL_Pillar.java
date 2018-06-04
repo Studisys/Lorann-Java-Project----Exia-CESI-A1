@@ -11,7 +11,7 @@ package MonModele;
 public class WALL_Pillar extends WALL_Wall {
 	
 	//IMAGE bone
-	private String image = "../model/images/bone.png";
+	private String image = "bone.png";
 	
 	public WALL_Pillar()
 	{

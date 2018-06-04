@@ -11,7 +11,7 @@ package MonModele;
 public class WALL_BoneWallY extends WALL_Wall {
 
 	//IMAGE vertical_bone
-	private String image = "../model/images/vertical_bone.png";
+	private String image = "vertical_bone.png";
 	
 	public WALL_BoneWallY( )
 	{

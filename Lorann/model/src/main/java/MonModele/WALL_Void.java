@@ -11,7 +11,7 @@ package MonModele;
 public class WALL_Void extends WALL_Wall {
 
 	//IMAGE gate-closed
-	private String image = "../model/images/void.png";
+	private String image = "void.png";
 	public WALL_Void()
 	{
 		this.setName("void");
