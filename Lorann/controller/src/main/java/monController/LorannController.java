@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import MonModele.Direction;
 import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
@@ -21,10 +22,11 @@ public class LorannController implements iOrderPerformer
 	private int width =20, height = 12;
 	private Item hero;
 	private char[][] map;
-	private MonModele.Direction direction = null;
 	
+	private MonModele.Direction direction = null;
 	private MonModele.SPRITE_MeSprite heroSprite = null; 
 	
+	private int posX, posY;
 	
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
@@ -37,99 +39,23 @@ public class LorannController implements iOrderPerformer
 	public void orderPerform(iKeyOrder keyOrder) 
 	{
 		
-		int posX = this.hero.getPosition().getX();
-		int posY = this.hero.getPosition().getY();
+		this.posX = this.hero.getPosition().getX();
+		this.posY = this.hero.getPosition().getY();
 		
 			
 			switch (keyOrder.getOrder())
 			{
 			case UP:
-				
-				if (this.map[posY-1][posX] == 'Y')
-				{
-					this.direction = MonModele.Direction.UP;
-					this.hero.setImage("lorann_u.png");
-					this.hero.setPosition(
-							new Position(
-									posX, 
-									posY - 1));
-				}
-				else if (this.map[posY-1][posX] == 'S' || this.map[posY-1][posX] == 'T' || this.map[posY-1][posX] == 'U' || this.map[posY-1][posX] == 'V' || this.map[posY-1][posX] == 'H')
-				{
-					UserDied dead = new UserDied();
-					try {
-						dead.UserDiedPopup();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+				this.getCollider(posX, posY - 1, Direction.UP);
 				break;
-			
 			case DOWN:
-				if(this.map[posY+1][posX] == 'Y')
-				{
-				this.direction = MonModele.Direction.DOWN;
-				this.hero.setImage("lorann_b.png");
-				this.hero.setPosition(
-						new Position(
-								posX, 
-								posY+1));
-				}
-				else if (this.map[posY+1][posX] == 'S' || this.map[posY+1][posX] == 'T' || this.map[posY+1][posX] == 'U' || this.map[posY+1][posX] == 'V' || this.map[posY+1][posX] == 'H')
-				{
-					UserDied dead = new UserDied();
-					try {
-						dead.UserDiedPopup();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+				this.getCollider(posX, posY + 1, Direction.DOWN);
 				break;
-			
 			case RIGHT:
-				if(this.map[posY][posX+1] == 'Y')
-				{
-				this.direction = MonModele.Direction.RIGHT;
-				this.hero.setImage("lorann_r.png");
-				this.hero.setPosition(
-						new Position(
-								posX+1, 
-								posY));
-				}
-				else if (this.map[posY][posX+1] == 'S' || this.map[posY][posX+1] == 'T' || this.map[posY][posX+1] == 'U' || this.map[posY][posX+1] == 'V' || this.map[posY][posX+1] == 'H')
-				{
-					UserDied dead = new UserDied();
-					try {
-						dead.UserDiedPopup();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+				this.getCollider(posX +1 , posY, Direction.RIGHT);
 				break;
-			
 			case LEFT:
-				if(this.map[posY][posX-1] == 'Y')
-				{
-				this.direction = MonModele.Direction.LEFT;
-				this.hero.setImage("lorann_l.png");
-				this.hero.setPosition(
-						new Position(
-								posX -1, 
-								posY));
-				}
-				else if (this.map[posY][posX-1] == 'S' || this.map[posY][posX-1] == 'T' || this.map[posY][posX-1] == 'U' || this.map[posY][posX-1] == 'V' || this.map[posY][posX-1] == 'H')
-				{
-					UserDied dead = new UserDied();
-					try {
-						dead.UserDiedPopup();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+				this.getCollider(posX -1, posY, Direction.LEFT);
 				break;
 				
 			case SHOOT:
@@ -142,6 +68,7 @@ public class LorannController implements iOrderPerformer
 				{
 					e.printStackTrace();
 				}
+				break;
 				
 			case STATIC:
 				default:
@@ -150,7 +77,27 @@ public class LorannController implements iOrderPerformer
 				
 		}
 	}
-	
+	public void getCollider(int x, int y, Direction direction)
+	{
+		
+		Item item;
+		item = this.LorannModel.getItemList()[y][x];
+		
+		switch(item.getColliderPermission())
+		{
+		case 0:  this.hero.setPosition(new Position(this.posX, this.posY));
+			break;
+		case 1: this.hero.setPosition(new Position (x,y));
+			break;
+		case 2:  this.hero.setPosition(new Position(this.posX, this.posY));
+			break;
+		case 3: this.hero.setPosition(new Position (x,y));
+			break;
+		default:  this.hero.setPosition(new Position(this.posX, this.posY));
+			break;
+		}
+		this.direction = direction;
+	}
 	
 	public void play()
 	{
@@ -168,6 +115,7 @@ public class LorannController implements iOrderPerformer
 	{
 		return this.viewSystem;
 	}
+	
 	
 	private void launchSpell() throws IOException
 	{

@@ -27,6 +27,7 @@ public abstract class Item {
 	protected Image monImage;
 	protected String name;
 	protected Position position;
+	protected int colliderPermission;
 	
 	public Position getPosition() {
 		return position;
@@ -70,5 +71,17 @@ public abstract class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+	public int getColliderPermission() {
+		return colliderPermission;
+	}
+
+
+	public void setColliderPermission(int colliderPermission) {
+		this.colliderPermission = colliderPermission;
+	}
+	
+	
 
 }
