@@ -76,6 +76,7 @@ public class Map {
 	public void buildMap(String level)
 	{
 		this.setLevel(level);
+		
 		int h = 0;
 		for (int y = 0; y<=this.row - 1; y++)
 		{
