@@ -8,32 +8,37 @@ import maVue.iView;
 
 public class LorannControllerTest 
 {
-	
 	@Test
 	public void orderPerform () 
 	{
 
 	}
+	
 	@Test
 	public void play() 
 	{
 		iView.displayMessage("Game Over!");
 		iView.exit();
 	}
+	
 	@Test
 	public void setViewSystem() 
 	{
+		
 	}
+	
 	@Test
 	public void getViewSystem() 
 	{
 		
 	}
+	
 	@Test
 	public void launchSpell() 
 	{
 		
 	}
+	
 	@Test
 	public void gameLoop() 
 	{
