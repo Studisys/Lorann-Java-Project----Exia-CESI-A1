@@ -17,7 +17,8 @@ public class Event implements iEventPerformer{
 	}
 	
 	@Override
-	public void event(final KeyEvent keyCode) {
+	public void event(final KeyEvent keyCode) 
+	{
 		final iKeyOrder keyOrder = this.getKeyCode(keyCode.getKeyCode());
 		if (keyOrder != null) {
 			this.orderPerformer.orderPerform(keyOrder);

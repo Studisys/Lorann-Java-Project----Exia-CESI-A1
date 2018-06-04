@@ -96,12 +96,14 @@ public class Map {
 			for (int j=0; j<=this.columm - 1; j++)
 			{
 				this.map2D[i][j] = this.cast[z];
+				if(this.map2D[i][j] == 'K')
+					this.map2D[i][j] = 'Y';
 				z++;
 				System.out.print(this.map2D[i][j] + "   ");	
 			}
 			System.out.println("");
 		}
-		System.out.println("---------------------------------------------");
+		/*System.out.println("---------------------------------------------");
 		
 		for (int i = 0; i<=this.row - 1; i++)
 		{
@@ -109,7 +111,7 @@ public class Map {
 			{
 				System.out.println(this.listItem[i][j].toString());
 			}
-		}
+		}*/
 		
 		this.listMonster = this.factory.movable;
 		this.lorann = this.factory.lorann;

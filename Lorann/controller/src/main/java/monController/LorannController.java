@@ -20,6 +20,10 @@ public class LorannController implements iOrderPerformer
 	private Item hero;
 	private char[][] map;
 	private MonModele.Direction direction = null;
+	
+	private MonModele.SPRITE_MeSprite heroSprite = null; 
+	
+	
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
@@ -38,9 +42,11 @@ public class LorannController implements iOrderPerformer
 			switch (keyOrder.getOrder())
 			{
 			case UP:
-				this.direction = MonModele.Direction.UP;
+				
 				if (this.map[posY-1][posX] == 'Y')
 				{
+					this.direction = MonModele.Direction.UP;
+					this.hero.setImage("lorann_u.png");
 					this.hero.setPosition(
 							new Position(
 									posX, 
@@ -52,6 +58,7 @@ public class LorannController implements iOrderPerformer
 				if(this.map[posY+1][posX] == 'Y')
 				{
 				this.direction = MonModele.Direction.DOWN;
+				this.hero.setImage("lorann_b.png");
 				this.hero.setPosition(
 						new Position(
 								posX, 
@@ -63,6 +70,7 @@ public class LorannController implements iOrderPerformer
 				if(this.map[posY][posX+1] == 'Y')
 				{
 				this.direction = MonModele.Direction.RIGHT;
+				this.hero.setImage("lorann_r.png");
 				this.hero.setPosition(
 						new Position(
 								posX+1, 
@@ -74,13 +82,13 @@ public class LorannController implements iOrderPerformer
 				if(this.map[posY][posX-1] == 'Y')
 				{
 				this.direction = MonModele.Direction.LEFT;
+				this.hero.setImage("lorann_l.png");
 				this.hero.setPosition(
 						new Position(
 								posX -1, 
 								posY));
 				}
 				break;
-			case LEFT && UP:
 				
 			case SHOOT:
 				try
@@ -93,12 +101,12 @@ public class LorannController implements iOrderPerformer
 					e.printStackTrace();
 				}
 				
+			case STATIC:
+				default:
+					this.hero.setImage("crystal_ball.png");
+					break;
+				
 		}
-	}
-	
-	public void collision(Position position)
-	{
-		
 	}
 	
 	

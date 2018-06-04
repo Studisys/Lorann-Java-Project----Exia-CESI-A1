@@ -7,5 +7,6 @@ public enum Order
 	RIGHT,
 	DOWN,
 	LEFT,
-	SHOOT;
+	SHOOT,
+	STATIC;
 }

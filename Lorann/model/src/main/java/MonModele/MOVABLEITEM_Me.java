@@ -25,17 +25,7 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 	{
 		return this.weaponed;
 	}
-	
-	public void dontMove()
-	{
-		for(int i = 0; i<8;i++)
-		{
-			this.image = "C:/Users/Nicolas Drapier/git/Lorann-Java-Project----"
-					+ "Exia-CESI-A1/Lorann/model/images/" + SPRITE_MeSprite.values()[i].toString() + ".png";
-			this.setImage(this.image);
-		}
-	}
-	
+		
 	public int getSpeed()
 	{
 		return this.speed;
