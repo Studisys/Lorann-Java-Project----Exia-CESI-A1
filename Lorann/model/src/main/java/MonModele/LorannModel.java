@@ -1,5 +1,7 @@
 package MonModele;
 
+import java.sql.SQLException;
+
 /**********************************************************************************
 **																				 **
 **							      Main model								 	 **
@@ -12,6 +14,12 @@ package MonModele;
 
 import java.util.ArrayList;
 import java.util.Observable;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import model.Example;
+import model.dao.LorannDAO;
 
 public class LorannModel extends Observable implements INTERFACE_Model {
 

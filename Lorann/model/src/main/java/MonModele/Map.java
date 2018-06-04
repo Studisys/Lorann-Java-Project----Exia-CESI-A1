@@ -100,19 +100,15 @@ public class Map {
 		}
 		System.out.println("---------------------------------------------");
 		
-
-		/*for (int i = 0; i<=this.row - 1; i++)
+		for (int i = 0; i<=this.row - 1; i++)
 		{
 			for (int j=0; j<=this.columm - 1; j++)
 			{
 				System.out.println(this.listItem[i][j].toString());
 			}
-		}*/
+		}
 		
 		this.listMonster = this.factory.movable;
-		
-		
-		
 		
 		
 	}
