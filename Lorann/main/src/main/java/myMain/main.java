@@ -42,9 +42,13 @@ public class main {
 		// Assign Answer from Server to level string
 		String returnedLevelData = String.valueOf(daoReturn);
 		
+		
+		// Instantiate LorannModel
 		LorannModel lomo = new LorannModel();
 		
 		lomo.level = returnedLevelData;
+		
+		
 		
 	}
 }
