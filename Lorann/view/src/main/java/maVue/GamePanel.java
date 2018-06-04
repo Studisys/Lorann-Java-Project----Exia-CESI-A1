@@ -6,7 +6,7 @@ import java.util.Observer;
 
 
 //use grid panel
-class GamePanel extends JPanel implements Observer {
+public class GamePanel extends JPanel implements Observer {
 
 	private static final long serialVersionUID = 1L;
 	private final iGraphicsBuilder	graphicsBuilder;

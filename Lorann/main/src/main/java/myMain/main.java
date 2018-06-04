@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import MonModele.LorannModel;
+import maVue.*;
 import model.Example;
 import model.dao.LorannDAO;
 
@@ -39,15 +40,14 @@ public class main {
 		daoReturn=LorannDAO.getLevelMapById(userIntInput);
 		System.out.println("Map String Answer from MySQL server : " + daoReturn);
 		
-		// Assign Answer from Server to level string
-		String returnedLevelData = String.valueOf(daoReturn);
-		
-		
 		// Instantiate LorannModel
-		LorannModel lomo = new LorannModel();
+				LorannModel lomo = new LorannModel();
+				
+		// Assign Answer from Server to level string
+		lomo.setLevel(String.valueOf(daoReturn));
 		
-		lomo.level = returnedLevelData;
-		
+		lomo.mapCreator(lomo.getLevel());
+
 		
 		
 		// need to add more

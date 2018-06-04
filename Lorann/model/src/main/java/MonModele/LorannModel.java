@@ -27,13 +27,29 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	protected char map[][];
 	private Map myMap;
 	
-	public String level;
+	private String level;
+	
+	
 	public LorannModel()
 	{
 		this.mobile = new ArrayList<INTERFACE_Mobile>();
 		this.myMap = new Map();
-		
-		myMap.buildMap(level);
+	}
+	
+	
+	
+	public String getLevel() {
+		return level;
+	}
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+
+	public void mapCreator (String level)
+	{
+		this.myMap.buildMap(level);
 	}
 	
 	@Override
