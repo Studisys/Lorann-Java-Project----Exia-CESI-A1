@@ -1,12 +1,14 @@
 package monController;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
 import MonModele.Position;
+import MonModele.UserDied;
 import maVue.iView;
 
 //A class called LorannController
@@ -52,6 +54,16 @@ public class LorannController implements iOrderPerformer
 									posX, 
 									posY - 1));
 				}
+				else if (this.map[posY-1][posX] == 'S' || this.map[posY-1][posX] == 'T' || this.map[posY-1][posX] == 'U' || this.map[posY-1][posX] == 'V' || this.map[posY-1][posX] == 'H')
+				{
+					UserDied dead = new UserDied();
+					try {
+						dead.UserDiedPopup();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 				break;
 			
 			case DOWN:
@@ -63,6 +75,16 @@ public class LorannController implements iOrderPerformer
 						new Position(
 								posX, 
 								posY+1));
+				}
+				else if (this.map[posY+1][posX] == 'S' || this.map[posY+1][posX] == 'T' || this.map[posY+1][posX] == 'U' || this.map[posY+1][posX] == 'V' || this.map[posY+1][posX] == 'H')
+				{
+					UserDied dead = new UserDied();
+					try {
+						dead.UserDiedPopup();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 				break;
 			
@@ -76,6 +98,16 @@ public class LorannController implements iOrderPerformer
 								posX+1, 
 								posY));
 				}
+				else if (this.map[posY][posX+1] == 'S' || this.map[posY][posX+1] == 'T' || this.map[posY][posX+1] == 'U' || this.map[posY][posX+1] == 'V' || this.map[posY][posX+1] == 'H')
+				{
+					UserDied dead = new UserDied();
+					try {
+						dead.UserDiedPopup();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 				break;
 			
 			case LEFT:
@@ -87,6 +119,16 @@ public class LorannController implements iOrderPerformer
 						new Position(
 								posX -1, 
 								posY));
+				}
+				else if (this.map[posY][posX-1] == 'S' || this.map[posY][posX-1] == 'T' || this.map[posY][posX-1] == 'U' || this.map[posY][posX-1] == 'V' || this.map[posY][posX-1] == 'H')
+				{
+					UserDied dead = new UserDied();
+					try {
+						dead.UserDiedPopup();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 				break;
 				
