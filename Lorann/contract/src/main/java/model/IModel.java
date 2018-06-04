@@ -20,7 +20,7 @@ public interface IModel {
      * @throws SQLException
      *             the SQL exception
      */
-    Example getExampleById(int id) throws SQLException;
+    Example getLevelMapById(int id) throws SQLException;
 
 
   

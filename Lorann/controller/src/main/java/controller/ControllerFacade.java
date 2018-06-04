@@ -42,7 +42,7 @@ public class ControllerFacade implements IController {
      *             the SQL exception
      */
     public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
+        this.getView().displayMessage(this.getModel().getLevelMapById(1).toString());
         final StringBuilder message = new StringBuilder();
         this.getView().displayMessage(message.toString());
     }
