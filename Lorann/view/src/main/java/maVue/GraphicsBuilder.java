@@ -1,39 +1,27 @@
 package maVue;
 
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Transparency;
-import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
+import java.util.ArrayList;
 
-import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
 
 public class GraphicsBuilder implements iGraphicsBuilder{
 	
 	private final INTERFACE_Model lorannModel;
-	private String level = "AJJJJJJJJJJJJJJJJJJAXYYYUYYYYYYYYYYYYYYXXYYAJJJAYAJJJJJJAAYXXYAYYYYYYYYYYYYYXYYXXYXYAJJJJJJJJAYYXYHXXYXYXYYYYKYYYXYYXYAAXYXYXYYYYYYYYXYAASAAXYXYAJJJAYAJJAYYXYYXXYAYYYYYYYYYYYYBAYYXXYYAJJJJJJJJJJJJAAYXXYTYYYYYYYYYYYYYYYYXAJJJJJJJJJJJJJJJJAJA";
+	//private String level = "AJJJJJJJJJJJJJJJJJJAXYYYUYYYYYYYYYYYYYYXXYYAJJJAYAJJJJJJAAYXXYAYYYYYYYYYYYYYXYYXXYXYAJJJJJJJJAYYXYHXXYXYXYYYYKYYYXYYXYAAXYXYXYYYYYYYYXYAASAAXYXYAJJJAYAJJAYYXYYXXYAYYYYYYYYYYYYBAYYXXYYAJJJJJJJJJJJJAAYXXYTYYYYYYYYYYYYYYYYXAJJJJJJJJJJJJJJJJAJA";
 	int imageWidth= 48;
 	int imageHeight = 48;
 	
-	private Image gate;
-	private Image wallH;
-	private Image wallY;
-	private Image pillar;
-	private Image superball;
-	private Image m1;
-	private Image m2;
-	private Image m3;
-	private Image m4;
-	private Image lorann;
-	private Image purse;
-	private Image vide;
+	private Item[][] map;
+	private ArrayList<Item> monsterList;
 	
 	public GraphicsBuilder(INTERFACE_Model lorannModel)
 	{
 		this.lorannModel = lorannModel;
-
+		this.map = this.lorannModel.getItemList();
+		this.monsterList = this.lorannModel.getMonsterList();
 	}
 	private void drawMobile(Graphics g, ImageObserver observer)
 	{
@@ -41,10 +29,22 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 	}
 
 	@Override
-	public void applyModelToGraphic(Graphics graphics, ImageObserver observer) {
-
-		for (final mobile : this.lorannModel.getMobiles()) {
-			this.drawMobile(mobile.getImage(), graphics, observer);
+	public void applyModelToGraphic(Graphics graphics, ImageObserver observer) 
+	{
+		Item item;
+		for (int y = 0; y<=11; y++)
+		{
+			for (int x = 0; x<=19; x++)
+			{
+				item = this.map[y][x];
+				graphics.drawImage(item.getImage(), 48*x+50, 48*y+50, 48, 48, null);
+			}
+		}	
+		
+		for (Item items : this.monsterList) 
+		{
+			graphics.drawImage(items.getImage(), items.getPosition().getX()*48+50, items.getPosition().getY() *48+50, 48, 48, null);
+		}		
 		}
 	}
 	@Override

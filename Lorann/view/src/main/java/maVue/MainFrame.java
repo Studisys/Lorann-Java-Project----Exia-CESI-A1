@@ -18,8 +18,6 @@ public class MainFrame implements java.lang.Runnable,iView {
 	private final Event	eventPerformer;
 	private final Observable observable;
 	private GameFrame gameFrame;
-	private String level;
-	private Map myMap;
 	
 	public MainFrame(iOrderPerformer orderPerformer,INTERFACE_Model LorannModel,Observable observable)
 	{

@@ -19,5 +19,7 @@ public interface INTERFACE_Model {
 	public void removeMobile(INTERFACE_Mobile Mobile);
 	public ArrayList<INTERFACE_Mobile> getMobiles();
 	public void setMobilesHavedMove();
+	public Item[][] getItemList();
+	public ArrayList<Item> getMonsterList();
 	
 }

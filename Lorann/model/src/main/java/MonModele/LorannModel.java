@@ -74,11 +74,12 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	}
 
 
-
+	@Override
 	public Item[][] getItemList() {
 		return itemList;
 	}
 
+	@Override
 	public ArrayList<Item> getMonsterList() {
 		return monsterList;
 	}
