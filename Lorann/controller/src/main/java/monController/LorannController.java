@@ -1,5 +1,6 @@
 package monController;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import MonModele.INTERFACE_Mobile;
@@ -15,58 +16,73 @@ public class LorannController implements iOrderPerformer
 	private final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
-	//final INTERFACE_Mobile hero = this.LorannModel.getMobiles();
 	private int width =20, height = 12;
 	private Item hero;
-	
-	
+	private char[][] map;
+	private MonModele.Direction direction = null;
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
 		this.hero = this.LorannModel.getLorann();
+		this.map = this.LorannModel.getMap();
 	}
 	
 	@Override
 	public void orderPerform(iKeyOrder keyOrder) 
 	{
 		
-	
-			MonModele.Direction direction = null;
+		int posX = this.hero.getPosition().getX();
+		int posY = this.hero.getPosition().getY();
+		
+			
 			switch (keyOrder.getOrder())
 			{
 			case UP:
-				direction = MonModele.Direction.UP;
-				this.LorannModel.getLorann().setPosition(
-						new Position(
-								this.LorannModel.getLorann().getPosition().getX(), 
-								this.LorannModel.getLorann().getPosition().getY() -1));
+				this.direction = MonModele.Direction.UP;
+				if (this.map[posY-1][posX] == 'Y')
+				{
+					this.hero.setPosition(
+							new Position(
+									posX, 
+									posY - 1));
+				}
 				break;
 			
 			case DOWN:
-				direction = MonModele.Direction.DOWN;
-				this.LorannModel.getLorann().setPosition(
+				if(this.map[posY+1][posX] == 'Y')
+				{
+				this.direction = MonModele.Direction.DOWN;
+				this.hero.setPosition(
 						new Position(
-								this.LorannModel.getLorann().getPosition().getX(), 
-								this.LorannModel.getLorann().getPosition().getY() +1));
+								posX, 
+								posY+1));
+				}
 				break;
 			
 			case RIGHT:
-				direction = MonModele.Direction.RIGHT;
-				this.LorannModel.getLorann().setPosition(
+				if(this.map[posY][posX+1] == 'Y')
+				{
+				this.direction = MonModele.Direction.RIGHT;
+				this.hero.setPosition(
 						new Position(
-								this.LorannModel.getLorann().getPosition().getX() +1, 
-								this.LorannModel.getLorann().getPosition().getY()));
+								posX+1, 
+								posY));
+				}
 				break;
 			
 			case LEFT:
-				direction = MonModele.Direction.LEFT;
-				this.LorannModel.getLorann().setPosition(
+				if(this.map[posY][posX-1] == 'Y')
+				{
+				this.direction = MonModele.Direction.LEFT;
+				this.hero.setPosition(
 						new Position(
-								this.LorannModel.getLorann().getPosition().getX() -1, 
-								this.LorannModel.getLorann().getPosition().getY()));
+								posX -1, 
+								posY));
+				}
 				break;
-			
-			/*case SHOOT:
+			case LEFT && UP:
+				
+			case SHOOT:
 				try
 				{
 					this.launchSpell();
@@ -75,10 +91,16 @@ public class LorannController implements iOrderPerformer
 				catch (final IOException e)
 				{
 					e.printStackTrace();
-				}*/
+				}
 				
 		}
 	}
+	
+	public void collision(Position position)
+	{
+		
+	}
+	
 	
 	public void play()
 	{
@@ -97,9 +119,9 @@ public class LorannController implements iOrderPerformer
 		return this.viewSystem;
 	}
 	
-	/*private void launchSpell() throws IOException
+	private void launchSpell() throws IOException
 	{
-		if (hero != null)
+		/*if (hero != null)
 			
 		{
 			final Position position = new Position(this.hero.getPosition().getX() + ((this.width - this.spell.getWidthWithADirection(this.hero.getDirection())) / 2),
@@ -127,8 +149,8 @@ public class LorannController implements iOrderPerformer
 							break;
 
 					}
-		}
-	}*/
+		}*/
+	}
 
 	private void gameLoop()
 	{

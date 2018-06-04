@@ -16,7 +16,7 @@ import java.util.Observable;
 public class LorannModel extends Observable implements INTERFACE_Model {
 
 	private ArrayList<INTERFACE_Mobile> mobile;
-	protected char map[][];
+	public char map[][];
 	private Map myMap;
 	
 	private String level;
@@ -48,6 +48,7 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 		this.itemList = this.myMap.listItem;
 		this.monsterList = this.myMap.listMonster;
 		this.lorann = this.myMap.lorann;
+		this.map = this.myMap.map2D;
 	}
 	
 	@Override
@@ -90,6 +91,9 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 		return lorann;
 	}
 	
-	
+	public char[][] getMap() 
+	{
+		return map;
+	}
 	
 }

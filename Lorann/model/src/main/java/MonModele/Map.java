@@ -16,7 +16,7 @@ public class Map {
 	
 	private String level;
 	private char[] cast;
-	public char[][] map2D;
+	protected char[][] map2D;
 	public Item[][] listItem;
 	public ArrayList<Item> listMonster;
 	public Item lorann;

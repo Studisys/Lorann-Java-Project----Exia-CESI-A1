@@ -44,7 +44,7 @@ public abstract class Item {
 		this.image = new ImageIcon(this.source.getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT));*/
 		try
 		{
-			this.monImage = ImageIO.read(new File(image));
+			this.monImage = ImageIO.read(new File("../model/images/" + image));
 					
 		}
 		catch(IOException e)

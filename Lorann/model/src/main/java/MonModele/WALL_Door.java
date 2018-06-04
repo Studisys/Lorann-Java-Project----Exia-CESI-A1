@@ -11,7 +11,7 @@ package MonModele;
 public class WALL_Door extends WALL_Wall {
 
 	//IMAGE gate-closed
-	private String image = "../model/images/gate_closed.png";
+	private String image = "gate_closed.png";
 	
 	public WALL_Door()
 	{
