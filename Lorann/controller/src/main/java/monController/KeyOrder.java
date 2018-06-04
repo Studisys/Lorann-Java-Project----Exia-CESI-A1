@@ -3,7 +3,7 @@ package monController;
 //A class called KeyOrder
 public class KeyOrder implements iKeyOrder
 {	
-	private final Order order;
+	Order order;
 	
 	public KeyOrder(Order order)
 	{

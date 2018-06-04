@@ -2,11 +2,10 @@ package maVue;
 
 import java.awt.event.KeyEvent;
 
-import monController.iOrderPerformer;
-import monController.iKeyOrder;
-import monController.Order;
 import monController.KeyOrder;
-import maVue.iEventPerformer;
+import monController.Order;
+import monController.iKeyOrder;
+import monController.iOrderPerformer;
 
 public class Event implements iEventPerformer{
 	private final iOrderPerformer orderPerformer;
@@ -23,7 +22,7 @@ public class Event implements iEventPerformer{
 			this.orderPerformer.orderPerform(keyOrder);
 		}
 	}
-	private iKeyOrder getKeyCode(int keyCode) {
+	public iKeyOrder getKeyCode(int keyCode) {
 	iKeyOrder userOrder;
 	switch (keyCode) {
 		case KeyEvent.VK_Z:
@@ -37,6 +36,21 @@ public class Event implements iEventPerformer{
 			break;
 		case KeyEvent.VK_Q:
 			userOrder = new KeyOrder(Order.LEFT);
+			break;
+		case KeyEvent.VK_UP:
+			userOrder = new KeyOrder(Order.UP);
+			break;
+		case KeyEvent.VK_RIGHT:
+			userOrder = new KeyOrder(Order.RIGHT);
+			break;
+		case KeyEvent.VK_DOWN:
+			userOrder = new KeyOrder(Order.DOWN);
+			break;
+		case KeyEvent.VK_LEFT:
+			userOrder = new KeyOrder(Order.LEFT);
+			break;
+		case KeyEvent.VK_SPACE:
+			userOrder = new KeyOrder(Order.SHOOT);
 			break;
 		default:
 			userOrder = null;
