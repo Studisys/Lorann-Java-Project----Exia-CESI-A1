@@ -17,8 +17,11 @@ public class Map {
 	private String level;
 	private char[] cast;
 	public char[][] map2D;
-	protected ArrayList<Item>[][] listItem;
+	protected Item[][] listItem;
+	protected ArrayList<Item> listMonster;
 	private int row = 12, columm = 20;
+	
+	private int width = 48, height = 48;
 	
 	private FACTORY_FactoryStaticItem factory;
 
@@ -26,7 +29,7 @@ public class Map {
 	{
 		this.factory = new FACTORY_FactoryStaticItem();
 		this.map2D = new char[this.row][this.columm];
-		this.listItem = new ArrayList[this.row][this.columm];
+		this.listItem = new Item[this.row][this.columm];
 	}
 	
 	public String getLevel() {
@@ -52,17 +55,33 @@ public class Map {
 	public void setColumm(int columm) {
 		this.columm = columm;
 	}
+	
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
 
 	public void buildMap(String level)
 	{
 		this.setLevel(level);
 		int h = 0;
-		for (int i = 0; i<=this.row - 1; i++)
+		for (int y = 0; y<=this.row - 1; y++)
 		{
-			for (int j=0; j<=this.columm - 1; j++)
+			for (int x=0; x<=this.columm - 1; x++)
 			{
-				this.listItem[i][j] = new ArrayList();
-				this.listItem[i][j].add(this.factory.createItem(this.cast[h]));
+				this.listItem[y][x] = this.factory.createItem(this.cast[h], x, y);
 				h++;
 			}
 			
@@ -80,11 +99,17 @@ public class Map {
 			System.out.println("");
 		}
 		System.out.println("---------------------------------------------");
-		/*for (int i = 0; i<=this.listItem.size()-1;i++)
+		
+		for (int i = 0; i<=this.row - 1; i++)
 		{
-			System.out.println(this.listItem.get(i).toString());
-		}*/
-	
+			for (int j=0; j<=this.columm - 1; j++)
+			{
+				System.out.println(this.listItem[i][j].toString());
+			}
+		}
+		
+		this.listMonster = this.factory.movable;
+		
 		
 	}
 }

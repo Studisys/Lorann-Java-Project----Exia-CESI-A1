@@ -15,17 +15,22 @@ public class Position {
 	
 	public Position(int x, int y, int maxX, int maxY)
 	{
-		
+		this.setMaxX(maxX);
+		this.setX(x);
+		this.setY(y);
+		this.setMaxY(maxY);
 	}
 	
 	public Position(int x, int y)
 	{
-		
+		this.setX(x);
+		this.setY(y);
 	}
 	
 	public Position (Position position)
 	{
-		
+		this.setX(this.getX());
+		this.setY(this.getY());
 	}
 
 	public int getX() {

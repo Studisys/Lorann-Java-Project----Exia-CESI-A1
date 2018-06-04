@@ -1,5 +1,7 @@
 package MonModele;
 
+import java.util.ArrayList;
+
 /**********************************************************************************
 **																				 **
 **							  Factory StaticItem								 **
@@ -12,14 +14,14 @@ package MonModele;
 
 public class FACTORY_FactoryStaticItem {
 	
-	private Item item;
+	protected ArrayList<Item> movable;
 	
 	public FACTORY_FactoryStaticItem()
 	{
-		
+		this.movable = new ArrayList<Item>();
 	}
 	
-	public Item createItem(char changer)
+	public Item createItem(char changer, int x, int y)
 	{		
 		switch (changer)
 		{
@@ -42,16 +44,43 @@ public class FACTORY_FactoryStaticItem {
 		case 'A':
 			return new WALL_Pillar();
 			
-			
+	
 		case 'H':
 			return new WALL_Door();
 			
 		case 'Y':
 			return new WALL_Void();
+		case 'S':
+			Item monstre1 = new MONSTER_Ghost();
+			monstre1.setPosition(new Position(x,y));
+			this.movable.add(monstre1);
+			return new WALL_Void();
+			
+		case 'T':
+			Item monstre2 = new MONSTER_Skull();
+			monstre2.setPosition(new Position(x,y));
+			this.movable.add(monstre2);
+			return new WALL_Void();
+		case 'U':
+			Item monstre3 = new MONSTER_TotemMan();
+			monstre3.setPosition(new Position(x,y));
+			this.movable.add(monstre3);
+			return new WALL_Void();
+		case 'V':
+			Item monstre4 = new MONSTER_StormTrooper();
+			monstre4.setPosition(new Position(x,y));
+			this.movable.add(monstre4);
+			return new WALL_Void();
+		case 'K':
+			Item lorann = new MOVABLEITEM_Me();
+			lorann.setPosition(new Position(x,y));
+			this.movable.add(lorann);
+			return new WALL_Void();
+	
 			
 		default:
-			this.item = new FACTORY_MovableItem().createMoveItem(changer);
-			return this.item;
+			return new WALL_Void();
+		
 		}
 	}
 	

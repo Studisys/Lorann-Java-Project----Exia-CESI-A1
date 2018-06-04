@@ -59,7 +59,7 @@ public class main {
 	    window.setResizable(false);
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
-	    Panel pan = new Panel(maMap.map2D);
+	    Panel pan = new Panel(maMap.listItem, maMap.listMonster);
 	    
 	    
 	    window.setContentPane(pan);
