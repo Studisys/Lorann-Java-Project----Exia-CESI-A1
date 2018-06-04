@@ -23,6 +23,7 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	
 	private Item[][] itemList;
 	private ArrayList<Item> monsterList;
+	private Item lorann;
 	
 	public LorannModel()
 	{
@@ -46,6 +47,7 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 		this.myMap.buildMap(level);
 		this.itemList = this.myMap.listItem;
 		this.monsterList = this.myMap.listMonster;
+		this.lorann = this.myMap.lorann;
 	}
 	
 	@Override
@@ -83,6 +85,11 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	public ArrayList<Item> getMonsterList() {
 		return monsterList;
 	}
+
+	public Item getLorann() {
+		return lorann;
+	}
+	
 	
 	
 }
