@@ -1,13 +1,8 @@
 package MonModele;
 
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.Graphics;
 
-import javax.swing.Icon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class main {
 
@@ -15,7 +10,6 @@ public class main {
 	private static String level = "AJJJJJJJAYYYYAJJJJJAXYYYYYYYXYYYYXSYYYUXXYAJJJAYXYYYYXYYAYYXXYXYYYYYXYYYYXYYWYYXAYXYAJJJAJJJJAYYWYYXHYXYXYYYXYYKYXYAWBYXAYXYAYAYAYYYYXYYWYYXXYXYYYXYYYYYYXYYWYYXXYAJJJJJAJJJJAYYWYYXXYYYYYYYYYYYYYYYAYYXAYYYYYYYAJJJJATYYYVXAAJJJJJJAYYYYAJJJJJA";
 	
 	public static void main(String[] args) {
-		
 		Map maMap = new Map();
 		maMap.buildMap(level);
 		
@@ -26,9 +20,14 @@ public class main {
 	    window.setResizable(false);
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
-	    JPanel pan = new JPanel();
+	  /*  JPanel pan = new JPanel();
 	    pan.setBackground(Color.BLACK);
-	    pan.setLayout(new GridBagLayout());
+	    pan.setLayout(new GridBagLayout());*/
+	    
+	    Panel pan = new Panel();
+	   // pan.setBackground(Color.black);
+	    /*pan.setLayout(new GridBagLayout());
+	    pan.setBackground(Color.BLACK);
 	    GridBagConstraints caller = new GridBagConstraints();
 	    
 	    caller.gridheight = 1;
@@ -48,12 +47,17 @@ public class main {
 	    		caller.gridy = y;
 	    		pan.add(myLabel, caller);
 	    		h++;
+	    		
+	    		
 	    	}
-	    }
-	    
+	    }  
+	    */
 	    window.setContentPane(pan);
 		window.setVisible(true);
 
 	}
+	
+	
+	
 
 }

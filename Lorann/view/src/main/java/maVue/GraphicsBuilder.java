@@ -1,4 +1,4 @@
-package maVue;
+/*package maVue;
 
 import java.awt.Graphics;
 import java.awt.Transparency;
@@ -47,4 +47,4 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 		return 0;
 	}
 }
-
+*/
