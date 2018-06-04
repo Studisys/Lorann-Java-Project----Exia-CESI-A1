@@ -22,4 +22,6 @@ public interface INTERFACE_Model {
 	public Item[][] getItemList();
 	public ArrayList<Item> getMonsterList();
 	public Item getLorann();
+	public char[][] getMap();
+	
 }
