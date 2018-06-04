@@ -11,7 +11,7 @@ package MonModele;
 public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 
 	private int speed = 10;
-	private String image = "C:/Users/Nicolas Drapier/git/Lorann-Java-Project----Exia-CESI-A1/Lorann/model/images/lorann_l.png";
+	private String image = "../model/images/lorann_l.png";
 	private boolean weaponed = true;
 	
 	

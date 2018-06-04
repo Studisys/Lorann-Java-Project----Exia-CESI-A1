@@ -3,21 +3,19 @@ package model.dao;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 import model.Example;
 
 /**
- * <h1>The Class ExampleDAO.</h1>
+ * <h1>The Class LorannDAO.</h1>
  *
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public abstract class ExampleDAO extends AbstractDAO {
+public class LorannDAO extends AbstractDAO {
 
     /** The sql example by id. */
-    private static String sqlExampleById   = "{call findExampleById(?)}";
+    private static String sqlExampleById   = "{call get_map_data(?)}";
 
     /** The id column index. */
     private static int    idColumnIndex    = 1;
@@ -34,7 +32,7 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-    public static Example getExampleById(final int id) throws SQLException {
+    public static Example getLevelMapById(final int id) throws SQLException {
         final CallableStatement callStatement = prepareCall(sqlExampleById);
         Example example = null;
         callStatement.setInt(1, id);
