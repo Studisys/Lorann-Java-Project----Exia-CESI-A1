@@ -33,40 +33,6 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 		this.mobile = new ArrayList<INTERFACE_Mobile>();
 		this.myMap = new Map();
 		
-		JFrame frame = new JFrame("Lorann");
-		frame.setTitle("Lorann");
-		String userLevelInput = JOptionPane.showInputDialog(frame, "Please enter the level number you wish to be loaded :", "Lorann - Enter the desired level number", JOptionPane.PLAIN_MESSAGE);
-						
-		// If users closes Input Window, kill the process.
-		if (userLevelInput.equals(null)) {
-			System.out.println("User closed the input window ! Aborting...");
-			System.exit(0);
-		}
-		
-		// Cast user input (String) to Integer
-		int userIntInput = Integer.parseInt(userLevelInput); 
-		System.out.println("User chose the level number : " + userIntInput);
-		
-		// Instantiate LorannDAO to run getLevelMapById
-		LorannDAO dao = new LorannDAO();
-		
-		// New object of type Example
-		Example daoReturn = null;
-		
-		// Store answer from MySQL server to daoReturn object
-		try
-		{
-			daoReturn=LorannDAO.getLevelMapById(userIntInput);
-			System.out.println("Map String Answer from MySQL server : " + daoReturn);
-		}
-		catch (SQLException e)
-		{
-			e.printStackTrace();
-		}
-		
-		
-		// Assign Answer from Server to level string
-		level = String.valueOf(daoReturn);
 		myMap.buildMap(level);
 	}
 	
