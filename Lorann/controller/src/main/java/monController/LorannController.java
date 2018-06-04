@@ -47,15 +47,19 @@ public class LorannController implements iOrderPerformer
 			{
 			case UP:
 				this.getCollider(posX, posY - 1, Direction.UP);
+				this.hero.setImage("lorann_u.png");
 				break;
 			case DOWN:
 				this.getCollider(posX, posY + 1, Direction.DOWN);
+				this.hero.setImage("lorann_b.png");
 				break;
 			case RIGHT:
 				this.getCollider(posX +1 , posY, Direction.RIGHT);
+				this.hero.setImage("lorann_r.png");
 				break;
 			case LEFT:
 				this.getCollider(posX -1, posY, Direction.LEFT);
+				this.hero.setImage("lorann_l.png");
 				break;
 				
 			case SHOOT:
@@ -85,16 +89,11 @@ public class LorannController implements iOrderPerformer
 		
 		switch(item.getColliderPermission())
 		{
-		case 0:  this.hero.setPosition(new Position(this.posX, this.posY));
-			break;
-		case 1: this.hero.setPosition(new Position (x,y));
-			break;
-		case 2:  this.hero.setPosition(new Position(this.posX, this.posY));
-			break;
-		case 3: this.hero.setPosition(new Position (x,y));
-			break;
-		default:  this.hero.setPosition(new Position(this.posX, this.posY));
-			break;
+		case 0:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
+		case 1:  this.hero.setPosition(new Position (x,y)); 				break;
+		case 2:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
+		case 3:  this.hero.setPosition(new Position (x,y)); 				break;
+		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
 		}
 		this.direction = direction;
 	}
