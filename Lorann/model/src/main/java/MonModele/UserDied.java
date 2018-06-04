@@ -14,9 +14,10 @@ public class UserDied {
 	public void UserDiedPopup() throws SQLException
 	{
 
-JFrame frame = new JFrame("Lorann - You died !");
+
+		JFrame frame = new JFrame("Lorann - You died !");
 		frame.setTitle("Lorann - You died !");
-		String userLevelInput = JOptionPane.showInputDialog(frame, "You died ! Your score is : " + UserScore + "Please enter the level you wish to try : ", "Lorann - You died !", JOptionPane.PLAIN_MESSAGE);
+		String userLevelInput = JOptionPane.showInputDialog(frame, "You died ! Your score is : " + UserScore + ". "+ "Please enter the level you wish to try : ", "Lorann - You died !", JOptionPane.PLAIN_MESSAGE);
 						
 		// If users closes Input Window, kill the process.
 		if (userLevelInput.equals(null)) {
@@ -41,5 +42,7 @@ JFrame frame = new JFrame("Lorann - You died !");
 		// Assign Answer from Server to level string
 		level = String.valueOf(daoReturn);
     }
+	
+	
 
 }
