@@ -1,6 +1,7 @@
-/*package maVue;
+package maVue;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
@@ -15,18 +16,28 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 	private String level = "AJJJJJJJJJJJJJJJJJJAXYYYUYYYYYYYYYYYYYYXXYYAJJJAYAJJJJJJAAYXXYAYYYYYYYYYYYYYXYYXXYXYAJJJJJJJJAYYXYHXXYXYXYYYYKYYYXYYXYAAXYXYXYYYYYYYYXYAASAAXYXYAJJJAYAJJAYYXYYXXYAYYYYYYYYYYYYBAYYXXYYAJJJJJJJJJJJJAAYXXYTYYYYYYYYYYYYYYYYXAJJJJJJJJJJJJJJJJAJA";
 	int imageWidth= 48;
 	int imageHeight = 48;
+	
+	private Image gate;
+	private Image wallH;
+	private Image wallY;
+	private Image pillar;
+	private Image superball;
+	private Image m1;
+	private Image m2;
+	private Image m3;
+	private Image m4;
+	private Image lorann;
+	private Image purse;
+	private Image vide;
+	
 	public GraphicsBuilder(INTERFACE_Model lorannModel)
 	{
 		this.lorannModel = lorannModel;
-		this.lorannModel.buildMap(level);
-	}
-	private void drawMobile(Item mobile,Graphics graphics, ImageObserver observer)
-	{
-		final BufferedImage imageMobile = new BufferedImage(imageWidth, imageHeight, Transparency.TRANSLUCENT);
-		final Graphics graphicsMobile = imageMobile.getGraphics();
 
-		graphicsMobile.drawImage(mobile.getImage(), 0, 0, imageWidth, imageHeight, observer);
-		graphics.drawImage(imageMobile, mobile.getPosition().getX(), mobile.getPosition().getY(), observer);
+	}
+	private void drawMobile(Graphics g, ImageObserver observer)
+	{
+		
 	}
 
 	@Override
@@ -46,5 +57,5 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 }
-*/

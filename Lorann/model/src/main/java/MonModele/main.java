@@ -1,15 +1,9 @@
 package MonModele;
 
-import java.awt.Color;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.sql.SQLException;
 
-import javax.swing.Icon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 import model.Example;
 import model.dao.LorannDAO;
@@ -65,7 +59,8 @@ public class main {
 	    window.setResizable(false);
 	    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
-	    Panel pan = new Panel();
+	    Panel pan = new Panel(maMap.map2D);
+	    
 	    
 	    window.setContentPane(pan);
 		window.setVisible(true);

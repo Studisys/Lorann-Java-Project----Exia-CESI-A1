@@ -10,10 +10,12 @@ class GamePanel extends JPanel implements Observer {
 
 	private static final long serialVersionUID = 1L;
 	private final iGraphicsBuilder	graphicsBuilder;
+	private char map[][];
 
 	public GamePanel(iGraphicsBuilder graphicsBuilder)
 	{
 		this.graphicsBuilder = graphicsBuilder;
+		this.map = map;
 	}
 	@Override
 	public void update(Observable observable, Object arg0)

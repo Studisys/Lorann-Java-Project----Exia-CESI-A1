@@ -5,7 +5,7 @@ import java.awt.image.ImageObserver;
 
 
 public interface iGraphicsBuilder {
-	public void applyModelToGraphic(Graphics graphics,ImageObserver observer);
+	public void applyModelToGraphic(Graphics graphics,ImageObserver observer, String level);
 
 	public int getGlobalWidth();
 

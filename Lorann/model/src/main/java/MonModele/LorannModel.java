@@ -16,13 +16,14 @@ import java.util.Observable;
 public class LorannModel extends Observable implements INTERFACE_Model {
 
 	private ArrayList<INTERFACE_Mobile> mobile;
-	
+	protected char map[][];
+	private Map myMap;
 	public LorannModel()
 	{
 		this.mobile = new ArrayList<INTERFACE_Mobile>();
+		this.myMap = new Map();
+		//myMap.buildMap(level);
 	}
-	
-	
 	
 	@Override
 	public void addMobile(INTERFACE_Mobile Mobile) 
