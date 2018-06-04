@@ -17,8 +17,8 @@ public class Map {
 	private String level;
 	private char[] cast;
 	public char[][] map2D;
-	protected Item[][] listItem;
-	protected ArrayList<Item> listMonster;
+	public Item[][] listItem;
+	public ArrayList<Item> listMonster;
 	private int row = 12, columm = 20;
 	
 	private int width = 48, height = 48;

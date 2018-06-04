@@ -1,7 +1,5 @@
 package MonModele;
 
-import java.sql.SQLException;
-
 /**********************************************************************************
 **																				 **
 **							      Main model								 	 **
@@ -15,12 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
-import model.Example;
-import model.dao.LorannDAO;
-
 public class LorannModel extends Observable implements INTERFACE_Model {
 
 	private ArrayList<INTERFACE_Mobile> mobile;
@@ -29,6 +21,8 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	
 	private String level;
 	
+	private Item[][] itemList;
+	private ArrayList<Item> monsterList;
 	
 	public LorannModel()
 	{
@@ -50,6 +44,8 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	public void mapCreator (String level)
 	{
 		this.myMap.buildMap(level);
+		this.itemList = this.myMap.listItem;
+		this.monsterList = this.myMap.listMonster;
 	}
 	
 	@Override
@@ -77,4 +73,15 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 		this.notifyObservers();
 	}
 
+
+
+	public Item[][] getItemList() {
+		return itemList;
+	}
+
+	public ArrayList<Item> getMonsterList() {
+		return monsterList;
+	}
+	
+	
 }
