@@ -21,5 +21,5 @@ public interface INTERFACE_Model {
 	public void setMobilesHavedMove();
 	public Item[][] getItemList();
 	public ArrayList<Item> getMonsterList();
-	
+	public Item getLorann();
 }

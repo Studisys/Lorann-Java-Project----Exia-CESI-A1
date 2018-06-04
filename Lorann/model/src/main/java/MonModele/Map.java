@@ -19,6 +19,8 @@ public class Map {
 	public char[][] map2D;
 	public Item[][] listItem;
 	public ArrayList<Item> listMonster;
+	public Item lorann;
+	
 	private int row = 12, columm = 20;
 	
 	private int width = 48, height = 48;
@@ -110,6 +112,7 @@ public class Map {
 		}
 		
 		this.listMonster = this.factory.movable;
+		this.lorann = this.factory.lorann;
 		
 		
 	}

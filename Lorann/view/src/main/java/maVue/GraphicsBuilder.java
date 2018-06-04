@@ -10,7 +10,6 @@ import MonModele.Item;
 public class GraphicsBuilder implements iGraphicsBuilder{
 	
 	private final INTERFACE_Model lorannModel;
-	//private String level = "AJJJJJJJJJJJJJJJJJJAXYYYUYYYYYYYYYYYYYYXXYYAJJJAYAJJJJJJAAYXXYAYYYYYYYYYYYYYXYYXXYXYAJJJJJJJJAYYXYHXXYXYXYYYYKYYYXYYXYAAXYXYXYYYYYYYYXYAASAAXYXYAJJJAYAJJAYYXYYXXYAYYYYYYYYYYYYBAYYXXYYAJJJJJJJJJJJJAAYXXYTYYYYYYYYYYYYYYYYXAJJJJJJJJJJJJJJJJAJA";
 	int imageWidth= 48;
 	int imageHeight = 48;
 	
@@ -23,6 +22,7 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 		this.map = this.lorannModel.getItemList();
 		this.monsterList = this.lorannModel.getMonsterList();
 	}
+	
 	/*private void drawMobile(Graphics g, ImageObserver observer)
 	{
 		
@@ -37,25 +37,35 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 			for (int x = 0; x<=19; x++)
 			{
 				item = this.map[y][x];
-				graphics.drawImage(item.getImage(), 48*x+50, 48*y+50, 48, 48, null);
+				graphics.drawImage(item.getImage(), 48*x, 48*y, 48, 48, null);
 			}
 		}	
 		
 		for (Item items : this.monsterList) 
 		{
-			graphics.drawImage(items.getImage(), items.getPosition().getX()*48+50, items.getPosition().getY() *48+50, 48, 48, null);
-		}		
+			graphics.drawImage(items.getImage(), 
+					items.getPosition().getX()*48, 
+					items.getPosition().getY() *48, 
+					48, 48, null);
+		}	
+		
+		graphics.drawImage(this.lorannModel.getLorann().getImage(), 
+				48*this.lorannModel.getLorann().getPosition().getX(), 
+				48*this.lorannModel.getLorann().getPosition().getY(), 
+				48, 
+				48, 
+				null);
 		
 	}
 	@Override
-	public int getGlobalWidth() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getGlobalWidth() 
+	{
+		return this.imageWidth * 20;
 	}
 	@Override
-	public int getGlobalHeight() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getGlobalHeight() 
+	{
+		return this.imageHeight * 12;
 	}
 
 }

@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class FACTORY_FactoryStaticItem {
 	
 	protected ArrayList<Item> movable;
+	protected Item lorann;
 	
 	public FACTORY_FactoryStaticItem()
 	{
@@ -72,9 +73,8 @@ public class FACTORY_FactoryStaticItem {
 			this.movable.add(monstre4);
 			return new WALL_Void();
 		case 'K':
-			Item lorann = new MOVABLEITEM_Me();
+			this.lorann = new MOVABLEITEM_Me();
 			lorann.setPosition(new Position(x,y));
-			this.movable.add(lorann);
 			return new WALL_Void();
 	
 			

@@ -19,7 +19,7 @@ public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 
 		final GamePanel gamePanel = new GamePanel(graphicsBuilder);
 		this.setContentPane(gamePanel);
-		this.setSize(1200, 720);
+		this.setSize(966, 605);
 		this.setLocationRelativeTo(null);
 		observable.addObserver(gamePanel);
 
