@@ -8,6 +8,8 @@ import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
 import MonModele.Position;
+import MonModele.WALL_Door;
+import MonModele.WALL_Void;
 import maVue.iView;
 
 /**
@@ -25,7 +27,10 @@ public class LorannController implements iOrderPerformer
 	private boolean isGameOver = false;
 	private iView viewSystem;
 	private Item hero;
+	private int SCORE = 0;
 	
+	private int width = 20, height = 12;
+
 	private MonModele.Direction direction = null;
 	private MonModele.SPRITE_MeSprite heroSprite = null; 
 	
@@ -110,6 +115,22 @@ public class LorannController implements iOrderPerformer
 		case 2:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
 		case 3:  this.hero.setPosition(new Position (x,y)); 				break;
 		case 4:	
+			item = new WALL_Void();
+			this.LorannModel.setItemList(item, x, y);
+			this.setSCORE(this.SCORE + 500);
+			this.hero.setPosition(new Position (x,y));
+			break;
+			
+		case 5:
+			item = new WALL_Void();
+			this.LorannModel.setItemList(item, x, y);
+			this.setSCORE(this.SCORE + 500);
+			this.hero.setPosition(new Position(x,y));
+			Item door =  new WALL_Door();
+			door.setImage("gate_open.png");
+			door.setColliderPermission(1);
+			this.LorannModel.setItemList(door,this.LorannModel.getDoorPosition().getX(), this.LorannModel.getDoorPosition().getY());
+			
 			break;
 		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
 		}
@@ -232,6 +253,14 @@ public class LorannController implements iOrderPerformer
 			
 			this.LorannModel.setMobilesHavedMove();
 		}
+	}
+	
+	public int getSCORE() {
+		return SCORE;
+	}
+
+	public void setSCORE(int sCORE) {
+		SCORE = sCORE;
 	}
 
 }

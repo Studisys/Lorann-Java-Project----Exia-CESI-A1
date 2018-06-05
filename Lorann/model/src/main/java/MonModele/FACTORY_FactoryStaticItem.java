@@ -11,9 +11,10 @@ import java.util.ArrayList;
 
 public class FACTORY_FactoryStaticItem {
 	
-	protected ArrayList<MOVABLEITEM_MovableItem> movable;
-	protected Item lorann;
-	
+	private ArrayList<MOVABLEITEM_MovableItem> movable;
+	private Item lorann;
+	private Position doorPosition;
+
 	public FACTORY_FactoryStaticItem()
 	{
 		this.movable = new ArrayList<MOVABLEITEM_MovableItem>();
@@ -44,6 +45,7 @@ public class FACTORY_FactoryStaticItem {
 			
 	
 		case 'H':
+			this.setDoorPosition(new Position(x, y));
 			return new WALL_Door();
 			
 		case 'Y':
@@ -80,6 +82,19 @@ public class FACTORY_FactoryStaticItem {
 		
 		}
 	}
-	
+	public Position getDoorPosition() {
+		return doorPosition;
+	}
+
+	public void setDoorPosition(Position doorPosition) {
+		this.doorPosition = doorPosition;
+	}
+	public ArrayList<MOVABLEITEM_MovableItem> getMovable() {
+		return movable;
+	}
+
+	public Item getLorann() {
+		return lorann;
+	}
 	
 }
