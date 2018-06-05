@@ -32,11 +32,11 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable 
 		this.images[6] = "lorann_b";
 		this.images[7] = "lorann_bl";
 		
-		for(int i = 0; i<8; i++)
+		/*for(int i = 0; i<8; i++)
 		{
 			this.setImage(images[i] + ".png");
 			System.out.println(images[i].toString());
-		}
+		}*/
 	}
 	
 	public boolean isWeapon()
@@ -65,7 +65,14 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable 
 			{
 				this.setImage(this.images[i] + ".png");
 				System.out.println(Thread.currentThread().getName() + "lorann2" + Thread.currentThread().getState());
-				System.out.println(i);
+				System.out.println(this.getImage().toString());
+				
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 			}
 		}
