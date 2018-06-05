@@ -27,7 +27,7 @@ import maVue.iView;
 public class LorannController implements iOrderPerformer
 {
 	private int TIME_SLEEP = 30;
-	private final INTERFACE_Model LorannModel;
+	public final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
 	private ArrayList<MOVABLEITEM_Ennemy> movable;
