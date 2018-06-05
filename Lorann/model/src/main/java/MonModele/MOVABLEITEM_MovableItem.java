@@ -1,13 +1,4 @@
 package MonModele;
-/**
- * <h1>The Class MOVABLEITEM_MovableItem/h1>
- *
- * @author Nicolas DRAPIER
- * @version 0.1
- * @see Item, INTERFACE_Mobile
- */
-import java.awt.Point;
-
 import javax.swing.ImageIcon;
 
 public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
