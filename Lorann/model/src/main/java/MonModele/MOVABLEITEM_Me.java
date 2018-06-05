@@ -44,12 +44,11 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable 
 	public void run() {
 		while(true)
 		{
-			for(int i = 0; i<7; i++)
+			for(int i = 0; i<8; i++)
 			{
-				System.out.println(Thread.currentThread().getName());
-				System.out.println(i);
+				this.setImage(SPRITE);
 				try {
-					Thread.sleep(1000);
+					Thread.sleep(100);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
