@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import MonModele.LorannModel;
+import MonModele.levelCheck;
 import maVue.*;
 import model.Example;
 import model.dao.LorannDAO;
@@ -26,7 +27,8 @@ public class main {
 	{
 		try
 		{
-			
+				levelCheck levelTester = new levelCheck();
+				boolean levelChecker;
 				JFrame frame = new JFrame("Lorann");
 				frame.setTitle("Lorann");
 				String userLevelInput = JOptionPane.showInputDialog(frame, "Please enter the level number you wish to be loaded :", "Lorann - Enter the desired level number", JOptionPane.PLAIN_MESSAGE);
@@ -47,15 +49,25 @@ public class main {
 				System.out.println("Map String Answer from MySQL server : " + daoReturn);
 				
 				LorannModel lorannmodel = new LorannModel();		// Instantiate LorannModel
-						
-				lorannmodel.setLevel(String.valueOf(daoReturn));		// Assign Answer from Server to level string
-				lorannmodel.mapCreator(lorannmodel.getLevel());
-		
-				LorannController loranncontroller = new LorannController(lorannmodel);
-				MainFrame lorannview = new MainFrame(loranncontroller,lorannmodel, lorannmodel);
 				
-				loranncontroller.setViewSystem(lorannview);
-				loranncontroller.play();
+				levelChecker = levelTester.check(String.valueOf(daoReturn));
+				
+				if(levelChecker == true)
+				{
+					lorannmodel.setLevel(String.valueOf(daoReturn));		// Assign Answer from Server to level string
+					lorannmodel.mapCreator(lorannmodel.getLevel());
+		
+					LorannController loranncontroller = new LorannController(lorannmodel);
+					MainFrame lorannview = new MainFrame(loranncontroller,lorannmodel, lorannmodel);
+				
+					loranncontroller.setViewSystem(lorannview);
+					loranncontroller.play();
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Invalid String for DataBase");
+					System.out.println("Invalid string");
+				}
 		}
 		
 		catch (SQLException e)
