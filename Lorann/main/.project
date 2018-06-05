@@ -3,6 +3,9 @@
 	<name>main</name>
 	<comment></comment>
 	<projects>
+		<project>controller</project>
+		<project>model</project>
+		<project>view</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
