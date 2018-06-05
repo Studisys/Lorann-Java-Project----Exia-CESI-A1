@@ -11,6 +11,7 @@ package MonModele;
 import java.util.ArrayList;
 import java.util.Observable;
 
+@SuppressWarnings("deprecation")
 public class LorannModel extends Observable implements INTERFACE_Model {
 
 	private ArrayList<INTERFACE_Mobile> mobile;
