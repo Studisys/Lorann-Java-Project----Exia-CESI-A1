@@ -3,10 +3,14 @@ package monController;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import MonModele.Direction;
 import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
+import MonModele.MOVABLEITEM_Ennemy;
 import MonModele.Position;
 import MonModele.WALL_Door;
 import MonModele.WALL_Void;
@@ -101,6 +105,7 @@ public class LorannController implements iOrderPerformer
 					break;
 				
 		}
+
 	}
 	public void getCollider(int x, int y, Direction direction)
 	{
@@ -128,17 +133,27 @@ public class LorannController implements iOrderPerformer
 			this.hero.setPosition(new Position(x,y));
 			Item door =  new WALL_Door();
 			door.setImage("gate_open.png");
-			door.setColliderPermission(1);
+			door.setColliderPermission(6);
 			this.LorannModel.setItemList(door,this.LorannModel.getDoorPosition().getX(), this.LorannModel.getDoorPosition().getY());
-			
 			break;
+		case 6:
+			this.hero.setPosition(new Position(x,y));
+			JFrame frame = new JFrame("Lorann - You Won !");
+	        frame.setTitle("Lorann - You Won !");
+	        JOptionPane.showMessageDialog(frame, "You Won !", "Lorann - You Won !", JOptionPane.PLAIN_MESSAGE);
+	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        System.exit(JFrame.EXIT_ON_CLOSE);
+			break;
+			
 		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
 		}
 		this.direction = direction;
 		
 
 	}
-	public boolean getColliderMonster(int x, int y, Direction direction)
+	
+	
+	public boolean getColliderMonster(int x, int y)
 	{
 		
 		Item item;
@@ -156,29 +171,30 @@ public class LorannController implements iOrderPerformer
 
 	}
 	
-	public Direction getDir(Direction direction)
+	public void myIa(MOVABLEITEM_Ennemy monster, int x, int y)
 	{
 		
-		Direction tabIn[] = {Direction.UP, Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT};
-		Direction tabOut[] = {Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT, Direction.UP};
-		
-		Direction myDir = null;
-		for(int i = 0; i<=7; i++)
+		if(this.getColliderMonster(monster.getPositionT(monster.getPosition(), monster.getDirection()).getX(), monster.getPositionT(monster.getPosition(), monster.getDirection()).getY()))
 		{
-			if(direction == tabIn[i])
+			if(this.getColliderMonster(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)).getX(), monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)).getY()))
 			{
-				myDir = tabOut[i];
+				monster.setDirection(monster.changeDir(monster.getDirection()));
+				this.myIa(monster, monster.getPosition().getX(), monster.getPosition().getY());
 			}
+			else //avance vers position du joueur
+			{
+				monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
+			}
+			
 		}
-		return myDir;
+		else
+		{
+			
+			monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
+			
+		}
 	}
-	
-	public void myIa()
-	{
-		
-	}
-	
-	
+
 	public void play()
 	{
 		this.gameLoop();

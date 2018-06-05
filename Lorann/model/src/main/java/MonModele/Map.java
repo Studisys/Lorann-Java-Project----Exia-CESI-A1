@@ -17,7 +17,6 @@ public class Map {
 	private Item[][] listItem;
 	private ArrayList<MOVABLEITEM_MovableItem> listMonster;
 	private Item lorann;
-	private Position doorPosition;
 
 	private int row = 12, columm = 20;
 	
@@ -97,9 +96,7 @@ public class Map {
 				if(this.map2D[i][j] == 'K')
 					this.map2D[i][j] = 'Y';
 				z++;
-				System.out.print(this.map2D[i][j] + "   ");	
 			}
-			System.out.println("");
 		}
 		
 		this.listMonster = this.factory.getMovable();
