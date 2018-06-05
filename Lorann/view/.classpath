@@ -19,5 +19,11 @@
 	</classpathentry>
 	<classpathentry combineaccessrules="false" kind="src" path="/controller"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/model"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
