@@ -6,7 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import MonModele.LorannModel;
-import maVue.*;
+import MonModele.MOVABLEITEM_Ennemy;
+import MonModele.MOVABLEITEM_Me;
+import maVue.MainFrame;
 import model.Example;
 import model.dao.LorannDAO;
 import monController.LorannController;
@@ -26,7 +28,10 @@ public class main {
 	{
 		try
 		{
-			
+			Thread ennemy = new Thread(new MOVABLEITEM_Ennemy());
+			Thread moi = new Thread(new MOVABLEITEM_Me());
+			moi.start();
+			ennemy.start();
 				JFrame frame = new JFrame("Lorann");
 				frame.setTitle("Lorann");
 				String userLevelInput = JOptionPane.showInputDialog(frame, "Please enter the level number you wish to be loaded :", "Lorann - Enter the desired level number", JOptionPane.PLAIN_MESSAGE);
@@ -56,6 +61,7 @@ public class main {
 				
 				loranncontroller.setViewSystem(lorannview);
 				loranncontroller.play();
+
 		}
 		
 		catch (SQLException e)

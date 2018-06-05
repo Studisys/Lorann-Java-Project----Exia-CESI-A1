@@ -1,6 +1,6 @@
 package monController;
 
-import java.io.IOException;
+import java.lang.Thread.State;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -30,9 +30,14 @@ public class LorannController implements iOrderPerformer
 	private final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
+	private ArrayList<MOVABLEITEM_Ennemy> movable;
 	private Item hero;
 	private int SCORE = 0;
 
+	private Thread m1, m2, m3, m4;
+	private ThreadGroup monsterThread;
+	
+	
 	private MonModele.Direction direction = null;
 	
 
@@ -42,15 +47,27 @@ public class LorannController implements iOrderPerformer
 	{
 		this.LorannModel = LorannModel;
 		this.hero = this.LorannModel.getLorann();
+		/*this.monsterThread = new ThreadGroup("Monster");
+		
+		this.m1=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
+		this.m2=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
+		this.m3=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
+		this.m4=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
+		
+		this.m1.start();
+		this.m2.start();
+		this.m3.start();
+		this.m4.start();*/
+		
 	}
 	
 	@Override
-	public void orderPerform(iKeyOrder keyOrder) 
-	{
+	public void orderPerform(iKeyOrder keyOrder)
+	{	
 		
 		this.posX = this.hero.getPosition().getX();
 		this.posY = this.hero.getPosition().getY();
-			
+		
 			switch (keyOrder.getOrder())
 			{
 			case UP:
@@ -86,7 +103,7 @@ public class LorannController implements iOrderPerformer
 				this.hero.setImage("lorann_ul.png");
 	            break;
 				
-			case SHOOT:
+			/*case SHOOT:
 				try
 				{
 					this.launchSpell();
@@ -96,17 +113,12 @@ public class LorannController implements iOrderPerformer
 				{
 					e.printStackTrace();
 				}
-				break;
+				break;*/
 				
 			case STATIC:
 				default: this.hero.setImage("crystal_ball.png");
 					break;
 				
-			}
-			
-			for(MOVABLEITEM_Ennemy ennemy: this.LorannModel.getMonsterList())
-			{
-					this.myIa(ennemy, ennemy.getPosition().getX(), ennemy.getPosition().getY());
 			}
 
 	}
@@ -127,7 +139,7 @@ public class LorannController implements iOrderPerformer
 	        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        System.exit(JFrame.EXIT_ON_CLOSE);
 	        break;
-		case 3:  this.hero.setPosition(new Position (x,y)); 				break;
+		case 3:  this.hero.setPosition(new Position (x,y)); break;
 		case 4:	
 			item = new WALL_Void();
 			this.LorannModel.setItemList(item, x, y);
@@ -159,46 +171,6 @@ public class LorannController implements iOrderPerformer
 		this.direction = direction;
 		
 	}
-	
-	
-	public boolean getColliderMonster(int x, int y)
-	{
-		
-		Item item;
-		item = this.LorannModel.getItemList()[y][x];
-				
-		switch(item.getColliderPermission())
-		{
-		case 0:  return true;
-		case 1:  return false;
-		case 2:  return true;
-		case 3:  return true;
-		case 4:  return true;
-		default: return false;
-		}
-
-	}
-	
-	public void myIa(MOVABLEITEM_Ennemy monster, int x, int y)
-	{
-		
-		if(this.getColliderMonster(monster.getPositionT(monster.getPosition(), monster.getDirection()).getX(), monster.getPositionT(monster.getPosition(), monster.getDirection()).getY()))
-		{
-			if(this.getColliderMonster(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)).getX(), monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)).getY()))
-			{
-				monster.setDirection(monster.changeDir(monster.getDirection()));
-				this.myIa(monster, monster.getPosition().getX(), monster.getPosition().getY());
-			}
-			else //go to player position
-			{
-				monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
-			}
-		}
-		else
-		{
-			monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
-		}
-	}
 
 	public void play()
 	{
@@ -218,14 +190,16 @@ public class LorannController implements iOrderPerformer
 	}
 	
 	
-	private void launchSpell() throws IOException
+	/*private void launchSpell() throws IOException
 	{
-		/*if (hero != null)
+		
 			
 		{
-			final Position position = new Position(this.hero.getPosition().getX() + ((this.width - this.spell.getWidthWithADirection(this.hero.getDirection())) / 2),
+			final Position position = new Position(
+					this.hero.getPosition().getX() + ((this.width - this.spell.getWidthWithADirection(this.hero.getDirection())) / 2),
 					hero.getPosition().getY() + ((this.height - this.spell.getHeightWithADirection(this.hero.getDirection())) / 2));
-					this.LorannModel.addMobile(new MOVABLEITEM_Spell(this.hero.getDirection(), position));
+					
+			this.LorannModel.addMobile(new MOVABLEITEM_Spell(this.hero.getDirection(), position));
 					switch (hero.getDirection()) 
 					{
 						case UP:
@@ -248,8 +222,8 @@ public class LorannController implements iOrderPerformer
 							break;
 
 					}
-		}*/
-	}
+		}
+	}*/
 
 	private void gameLoop()
 	{
@@ -291,5 +265,6 @@ public class LorannController implements iOrderPerformer
 	public MonModele.Direction getDirection() {
 		return direction;
 	}
+
 
 }

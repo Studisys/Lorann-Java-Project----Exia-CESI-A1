@@ -10,7 +10,7 @@ package MonModele;
 **																				 **
 **********************************************************************************/
 
-public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
+public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable {
 
 	private int speed = 48;
 	private String image = "lorann_l.png";
@@ -37,6 +37,25 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 	}
 	public void update()
 	{
+		
+	}
+
+	@Override
+	public void run() {
+		while(true)
+		{
+			for(int i = 0; i<7; i++)
+			{
+				System.out.println(Thread.currentThread().getName());
+				System.out.println(i);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
 		
 	}
 }

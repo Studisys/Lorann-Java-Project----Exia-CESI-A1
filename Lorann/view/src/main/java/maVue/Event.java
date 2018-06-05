@@ -75,7 +75,7 @@ public class Event implements iEventPerformer{
             userOrder = new KeyOrder(Order.UPLEFT);
             break;
 		default:
-			userOrder = null;
+			userOrder = new KeyOrder(Order.STATIC);
 	}
 	return userOrder;
 }

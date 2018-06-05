@@ -15,7 +15,8 @@ import javax.swing.WindowConstants;
 public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 	private static final long serialVersionUID = 1L;
 	private final iEventPerformer	eventPerformer;
-	public boolean isKeyPressed;
+	public boolean[] isKeyPressed;
+	
 	public GameFrame(String title,iEventPerformer performer, iGraphicsBuilder graphicsBuilder, Observable observable)
 	{
 		this.eventPerformer = performer;
@@ -38,12 +39,13 @@ public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 	@Override
 	public void keyPressed(KeyEvent keyEvent)
 	{
+	
 		this.eventPerformer.event(keyEvent);
 	}
 	@Override
 	public void keyReleased(KeyEvent keyEvent)
 	{
-		isKeyPressed = false;
+		//isKeyPressed = false;
 	}
 	@Override
 	public void keyTyped(KeyEvent keyEvent)

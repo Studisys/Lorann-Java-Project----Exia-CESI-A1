@@ -6,12 +6,8 @@ package MonModele;
  * @version 0.1
  * @see MOVABLEITEM_MovableItem
  */
-public abstract class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem {
+public class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem implements Runnable {
 
-	@SuppressWarnings("unused")
-	private int speed;
-	@SuppressWarnings("unused")
-	private boolean alive;
 	
 	public MOVABLEITEM_Ennemy(Direction direction, Position position, String image) 
 	{
@@ -27,9 +23,28 @@ public abstract class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem {
 		
 	}
 	
+	@Override
+	public void run()
+	{
+		while(true)
+		{
+			for(int i = 0; i<7; i++)
+			{
+				System.out.println(Thread.currentThread().getName());
+				System.out.println(i);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
 
 	
-	public Direction getDirectionThroughPlayer(MOVABLEITEM_MovableItem monstre, Item player)
+	/*public Direction getDirectionThroughPlayer(MOVABLEITEM_MovableItem monstre, Item player)
 	{
 	
 		if(monstre.getPosition().getX()>player.getPosition().getX() && monstre.getPosition().getY()>player.getPosition().getY())
@@ -65,6 +80,7 @@ public abstract class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem {
 			return Direction.LEFT;
 		}
 		return Direction.STATIC;
+		
 	}
 	
 	public Position getPositionT(Position position, Direction direction)
@@ -102,4 +118,48 @@ public abstract class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem {
 		}
 		return myDir;
 	}
+	
+	public boolean getColliderMonster(int x, int y)
+	{
+		
+		Item item;
+		item = this.LorannModel.getItemList()[y][x];
+				
+		switch(item.getColliderPermission())
+		{
+		case 0:  return true;
+		case 1:  return false;
+		case 2:  return true;
+		case 3:  return true;
+		case 4:  return true;
+		default: return false;
+		}
+
+	}
+	
+	public void myIa(MOVABLEITEM_Ennemy monster, int x, int y)
+	{
+		
+		if(this.getColliderMonster(monster.getPositionT(monster.getPosition(), monster.getDirection()).getX(), monster.getPositionT(monster.getPosition(), monster.getDirection()).getY()))
+		{
+			if(this.getColliderMonster(
+					monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)
+							).getX(), 
+					monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)
+							).getY()))
+			{
+				monster.setDirection(monster.changeDir(monster.getDirection()));
+				this.myIa(monster, monster.getPosition().getX(), monster.getPosition().getY());
+			}
+			else //go to player position
+			{
+				monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
+			}
+		}
+		else
+		{
+			monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
+		}
+	}*/
+	
 }

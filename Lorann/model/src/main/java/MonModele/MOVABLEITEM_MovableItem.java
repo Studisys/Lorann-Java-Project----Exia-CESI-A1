@@ -1,17 +1,7 @@
 package MonModele;
-import javax.swing.ImageIcon;
 
 public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
 
-	
-	@SuppressWarnings("unused")
-	private int speed;
-	@SuppressWarnings("unused")
-	private Position position;
-	@SuppressWarnings("unused")
-	private ImageIcon img;
-	@SuppressWarnings("unused")
-	private String chemin;
 	
 
 	public MOVABLEITEM_MovableItem()
@@ -26,30 +16,6 @@ public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_
 		return false;
 	}
 	
-
-	@SuppressWarnings("unused")
-	private void moveUp(String image)
-	{
-		this.setImage(image);
-	}
-
-	@SuppressWarnings("unused")
-	private void moveDown(String image)
-	{
-		this.setImage(image);
-	}
-	
-	@SuppressWarnings("unused")
-	private void moveLeft(String image)
-	{
-		this.setImage(image);
-	}
-	
-	@SuppressWarnings("unused")
-	private void moveRight(String image)
-	{
-		this.setImage(image);
-	}
 
 	
 	public void placeInMap(Position position)
@@ -69,5 +35,17 @@ public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_
 		
 	}
 	
+	public int getXWithDirection(int x, Direction direction)
+	{
+		switch (direction)
+		{
+		case UP: return 0;
+
+		case DOWN:
+			break;
+			default: return 0;
+		}
+		return 0;
+	}
 	
 }
