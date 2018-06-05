@@ -34,8 +34,8 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable 
 		
 		for(int i = 0; i<8; i++)
 		{
-			this.setImage(images[i]);
-			System.out.println(images[i]);
+			this.setImage(images[i] + ".png");
+			System.out.println(images[i].toString());
 		}
 	}
 	
