@@ -1,4 +1,5 @@
 package MonModele;
+
 /**********************************************************************************
 **																				 **
 **							  	   Class Hero								 	 **
@@ -8,12 +9,12 @@ package MonModele;
 **							       Copyright 									 **
 **																				 **
 **********************************************************************************/
+
 public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 
-	private int speed = 10;
+	private int speed = 48;
 	private String image = "lorann_l.png";
 	private boolean weaponed = true;
-	
 	
 	public MOVABLEITEM_Me()
 	{
@@ -34,6 +35,5 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 	{
 		this.speed = speed;
 	}
-	
-	
+
 }
