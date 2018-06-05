@@ -6,7 +6,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>lorann</name>
-  <description>Base project to start BoulderDash software</description>
+  <description>Base project for Lorann Game.</description>
   <build>
     <plugins>
       <plugin>
