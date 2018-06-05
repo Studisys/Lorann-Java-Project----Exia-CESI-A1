@@ -10,6 +10,7 @@ package MonModele;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
@@ -25,20 +26,18 @@ public abstract class Item {
 	protected Position position;
 	protected int colliderPermission;
 	
+	protected ArrayList<Image> myImages;
+	
 	public Position getPosition() {
 		return position;
 	}
-
 
 	public void setPosition(Position position) {
 		this.position = position;
 	}
 
-
 	public void setImage(String image)
 	{
-		/*this.source = new ImageIcon(image);
-		this.image = new ImageIcon(this.source.getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT));*/
 		try
 		{
 			this.monImage = ImageIO.read(new File("../model/images/" + image));
@@ -48,36 +47,29 @@ public abstract class Item {
 		{
 			e.printStackTrace();
 		}
-		
-		
+
 	}
-	
 	
 	public Image getImage()
 	{
 		return this.monImage;
 	}
 
-
 	public String getName() {
 		return name;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
-
 	public int getColliderPermission() {
 		return colliderPermission;
 	}
 
-
 	public void setColliderPermission(int colliderPermission) {
 		this.colliderPermission = colliderPermission;
 	}
-	
 	
 
 }
