@@ -6,28 +6,26 @@ import java.util.ArrayList;
 
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
-import MonModele.MOVABLEITEM_MovableItem;
+import MonModele.MOVABLEITEM_Ennemy;
+import monController.LorannController;
 
 public class GraphicsBuilder implements iGraphicsBuilder{
 	
 	private final INTERFACE_Model lorannModel;
+	private final LorannController controller;
 	int imageWidth= 48;
 	int imageHeight = 48;
 	
 	private Item[][] map;
-	private ArrayList<MOVABLEITEM_MovableItem> monsterList;
+	private ArrayList<MOVABLEITEM_Ennemy> monsterList;
 	
 	public GraphicsBuilder(INTERFACE_Model lorannModel)
 	{
 		this.lorannModel = lorannModel;
 		this.map = this.lorannModel.getItemList();
 		this.monsterList = this.lorannModel.getMonsterList();
+		this.controller = new LorannController(this.lorannModel);
 	}
-	
-	/*private void drawMobile(Graphics g, ImageObserver observer)
-	{
-		
-	}*/
 	
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver observer) 
@@ -42,12 +40,14 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 			}
 		}	
 		
-		for (Item items : this.monsterList) 
+		for (MOVABLEITEM_Ennemy items : this.monsterList) 
 		{
+			//this.controller.myIa(items, items.getPosition().getX(), items.getPosition().getY());
 			graphics.drawImage(items.getImage(), 
 					items.getPosition().getX()*48, 
 					items.getPosition().getY() *48, 
 					48, 48, null);
+			
 		}	
 		
 		graphics.drawImage(this.lorannModel.getLorann().getImage(), 
