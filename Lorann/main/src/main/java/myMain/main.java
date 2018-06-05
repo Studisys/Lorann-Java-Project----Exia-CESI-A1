@@ -37,14 +37,16 @@ public class main {
 
 				levelCheck levelTester = new levelCheck();
 				boolean levelChecker;
-				JFrame frame = new JFrame("Lorann");
-				frame.setTitle("Lorann");
-				String userLevelInput = JOptionPane.showInputDialog(frame, "Please enter the level number you wish to be loaded :", "Lorann - Enter the desired level number", JOptionPane.PLAIN_MESSAGE);
-								
+				JFrame frame3 = new JFrame("Lorann");
+				frame3.setTitle("Lorann");
+				String userLevelInput = JOptionPane.showInputDialog(frame3, "Please enter the level number you wish to be loaded :", "Lorann - Enter the desired level number", JOptionPane.PLAIN_MESSAGE);
+				frame3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				System.exit(JFrame.EXIT_ON_CLOSE);
+		        
 				if (userLevelInput.equals(null)) 		// If users closes Input Window, kill the process.
 				{
 					System.out.println("User closed the input window ! Aborting...");
-					System.exit(0);
+					System.exit(JFrame.EXIT_ON_CLOSE);
 				}
 				
 		
