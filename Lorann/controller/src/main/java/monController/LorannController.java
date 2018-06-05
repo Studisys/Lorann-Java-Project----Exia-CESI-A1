@@ -102,7 +102,12 @@ public class LorannController implements iOrderPerformer
 				default: this.hero.setImage("crystal_ball.png");
 					break;
 				
-		}
+			}
+			
+			for(MOVABLEITEM_Ennemy ennemy: this.LorannModel.getMonsterList())
+			{
+					this.myIa(ennemy, ennemy.getPosition().getX(), ennemy.getPosition().getY());
+			}
 
 	}
 	public void getCollider(int x, int y, Direction direction)
@@ -153,7 +158,6 @@ public class LorannController implements iOrderPerformer
 		}
 		this.direction = direction;
 		
-
 	}
 	
 	
@@ -185,17 +189,14 @@ public class LorannController implements iOrderPerformer
 				monster.setDirection(monster.changeDir(monster.getDirection()));
 				this.myIa(monster, monster.getPosition().getX(), monster.getPosition().getY());
 			}
-			else //avance vers position du joueur
+			else //go to player position
 			{
 				monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
 			}
-			
 		}
 		else
 		{
-			
 			monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
-			
 		}
 	}
 
