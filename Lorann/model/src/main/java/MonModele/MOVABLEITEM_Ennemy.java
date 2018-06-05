@@ -8,7 +8,9 @@ package MonModele;
  */
 public abstract class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem {
 
+	@SuppressWarnings("unused")
 	private int speed;
+	@SuppressWarnings("unused")
 	private boolean alive;
 	
 	public MOVABLEITEM_Ennemy(Direction direction, Position position, String image) 

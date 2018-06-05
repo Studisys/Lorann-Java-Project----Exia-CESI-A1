@@ -12,6 +12,7 @@ import monController.LorannController;
 public class GraphicsBuilder implements iGraphicsBuilder{
 	
 	private final INTERFACE_Model lorannModel;
+	@SuppressWarnings("unused")
 	private final LorannController controller;
 	int imageWidth= 48;
 	int imageHeight = 48;
