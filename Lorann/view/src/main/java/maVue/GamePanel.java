@@ -31,4 +31,5 @@ public class GamePanel extends JPanel implements Observer {
 	{
 		this.graphicsBuilder.applyModelToGraphic(graphics, this);
 	}
+	
 }

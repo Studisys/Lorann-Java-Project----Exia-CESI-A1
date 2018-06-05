@@ -33,8 +33,7 @@ public class LorannController implements iOrderPerformer
 	private Item hero;
 	private int SCORE = 0;
 
-	private Thread m1, m2, m3, m4;
-	private ThreadGroup monsterThread;
+
 	
 	
 	private MonModele.Direction direction = null;
@@ -45,19 +44,7 @@ public class LorannController implements iOrderPerformer
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
-		this.hero = this.LorannModel.getLorann();
-		/*this.monsterThread = new ThreadGroup("Monster");
-		
-		this.m1=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		this.m2=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		this.m3=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		this.m4=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		
-		this.m1.start();
-		this.m2.start();
-		this.m3.start();
-		this.m4.start();*/
-		
+		this.hero = this.LorannModel.getLorann();		
 	}
 	
 	@Override

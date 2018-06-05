@@ -9,6 +9,7 @@ import MonModele.LorannModel;
 import MonModele.MOVABLEITEM_Ennemy;
 import MonModele.MOVABLEITEM_Me;
 import MonModele.levelCheck;
+import maVue.GamePanel;
 import maVue.MainFrame;
 import model.Example;
 import model.dao.LorannDAO;

@@ -19,7 +19,6 @@ import javax.swing.ImageIcon;
 public abstract class Item {
 	
 	protected int x, y;
-	protected Icon image;
 	protected ImageIcon source;
 	protected Image monImage;
 	protected String name;

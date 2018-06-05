@@ -30,7 +30,7 @@ public class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem implements Runna
 		{
 			for(int i = 0; i<7; i++)
 			{
-				System.out.println(Thread.currentThread().getName());
+				System.out.println(Thread.currentThread().getName() + " ennemy" + Thread.currentThread().getState());
 				System.out.println(i);
 				try {
 					Thread.sleep(1000);

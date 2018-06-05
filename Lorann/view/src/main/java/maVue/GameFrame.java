@@ -28,6 +28,8 @@ public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 		this.setVisible(true);
 		
 		final GamePanel gamePanel = new GamePanel(graphicsBuilder);
+	
+		
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setContentPane(gamePanel);
 		this.setSize(966, 605);
