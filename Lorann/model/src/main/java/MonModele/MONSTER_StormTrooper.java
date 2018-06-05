@@ -1,14 +1,13 @@
 package MonModele;
 
-/**********************************************************************************
-**																				 **
-**							  		MONSTER 4								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class MONSTER_StormTrooper/h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see MOVABLEITEM_Ennemy
+ */
+
 public class MONSTER_StormTrooper extends MOVABLEITEM_Ennemy {
 
 //	IMAGE = "/images/monster_4";

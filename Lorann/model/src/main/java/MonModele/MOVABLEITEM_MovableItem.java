@@ -1,13 +1,11 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**						   General Class MovableItem							 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class MOVABLEITEM_MovableItem/h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see Item, INTERFACE_Mobile
+ */
 import java.awt.Point;
 
 import javax.swing.ImageIcon;
@@ -20,6 +18,7 @@ public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_
 	private ImageIcon img;
 	private String chemin;
 	
+
 	public MOVABLEITEM_MovableItem()
 	{
 		
@@ -52,7 +51,6 @@ public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_
 	{
 		this.setImage(image);
 	}
-	
 
 	
 	public void placeInMap(Position position)

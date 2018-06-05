@@ -1,14 +1,12 @@
 package MonModele;
 
-/**********************************************************************************
-**																				 **
-**							      Main model								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class LorannModel</h1>
+ *
+ * @author Joël DIDIER and Nicolas DRAPIER
+ * @version 0.1
+ * @see INTERFACE_Model
+ */
 
 import java.util.ArrayList;
 import java.util.Observable;

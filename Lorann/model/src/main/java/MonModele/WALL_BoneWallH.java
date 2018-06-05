@@ -1,13 +1,11 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**							  Class Wall_Horizontal								 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class WALL_BoneWallH/h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see WALL_Wall
+ */
 import java.awt.Image;
 
 public class WALL_BoneWallH extends WALL_Wall {

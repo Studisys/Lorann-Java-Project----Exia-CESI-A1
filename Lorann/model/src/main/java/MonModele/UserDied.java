@@ -7,6 +7,13 @@ import model.Example;
 import model.dao.LorannDAO;
 import java.sql.SQLException;
 
+/**
+ * <h1>The Class UserDied</h1>
+ *
+ * @author Joël DIDIER
+ * @version 0.1
+ */
+
 public class UserDied {
 	
 	public String UserScore;

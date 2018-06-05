@@ -1,13 +1,11 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**							  	   Class Purse								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class STACKABLE_Purse</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see STACKABLE_StackableItem
+ */
 public class STACKABLE_Purse extends STACKABLE_StackableItem {
 	
 	private String image = "purse.png";

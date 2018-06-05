@@ -12,6 +12,13 @@ import MonModele.Position;
 import MonModele.UserDied;
 import maVue.iView;
 
+/**
+ * <h1>The Class LorannController.</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see IOrderPerformer
+ */
 //A class called LorannController
 public class LorannController implements iOrderPerformer
 {
@@ -41,7 +48,6 @@ public class LorannController implements iOrderPerformer
 		
 		this.posX = this.hero.getPosition().getX();
 		this.posY = this.hero.getPosition().getY();
-		
 			
 			switch (keyOrder.getOrder())
 			{
@@ -61,6 +67,22 @@ public class LorannController implements iOrderPerformer
 				this.getCollider(posX -1, posY, Direction.LEFT);
 				this.hero.setImage("lorann_l.png");
 				break;
+	        case DOWNRIGHT:
+				this.getCollider(posX +1, posY +1, Direction.DOWNRIGHT);
+				this.hero.setImage("lorann_br.png");
+	            break;
+	        case DOWNLEFT:
+				this.getCollider(posX -1, posY +1, Direction.DOWNLEFT);
+				this.hero.setImage("lorann_bl.png");
+	            break;
+	        case UPRIGHT:
+				this.getCollider(posX +1, posY -1, Direction.UPRIGHT);
+				this.hero.setImage("lorann_ur.png");
+	            break;
+	        case UPLEFT:
+				this.getCollider(posX -1, posY -1, Direction.UPLEFT);
+				this.hero.setImage("lorann_ul.png");
+	            break;
 				
 			case SHOOT:
 				try
@@ -75,8 +97,7 @@ public class LorannController implements iOrderPerformer
 				break;
 				
 			case STATIC:
-				default:
-					this.hero.setImage("crystal_ball.png");
+				default: this.hero.setImage("crystal_ball.png");
 					break;
 				
 		}
@@ -96,6 +117,8 @@ public class LorannController implements iOrderPerformer
 		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
 		}
 		this.direction = direction;
+		
+
 	}
 	
 	public void play()

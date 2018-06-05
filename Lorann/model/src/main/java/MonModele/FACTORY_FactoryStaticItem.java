@@ -2,15 +2,12 @@ package MonModele;
 
 import java.util.ArrayList;
 
-/**********************************************************************************
-**																				 **
-**							  Factory StaticItem								 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class FACTORY_FactoryStaticItem</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ */
 
 public class FACTORY_FactoryStaticItem {
 	

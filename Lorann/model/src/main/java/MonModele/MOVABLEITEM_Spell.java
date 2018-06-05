@@ -1,13 +1,11 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**							  	   Class Spell								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class MOVABLEITEM_Spell/h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see MOVABLEITEM_MovableItem
+ */
 public class MOVABLEITEM_Spell extends MOVABLEITEM_MovableItem {
 
 	

@@ -1,13 +1,11 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**							  	  Class Void							 		 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class WALL_Void</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see WALL_Wall
+ */
 public class WALL_Void extends WALL_Wall {
 
 	//IMAGE gate-closed

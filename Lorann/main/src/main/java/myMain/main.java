@@ -11,6 +11,12 @@ import model.Example;
 import model.dao.LorannDAO;
 import monController.LorannController;
 
+/**
+ * <h1>The Class Main</h1>
+ *
+ * @author Joël DIDIER and Nicolas DRAPIER
+ * @version 0.1
+ */
 public class main {
 
 	public String level;

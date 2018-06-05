@@ -1,5 +1,14 @@
 package maVue;
 
+
+/**
+ * <h1>The Class Event n</h1>
+ *
+ * @author Joël DIDIER and Nicolas DRAPIER
+ * @version 0.1
+ * @see iEventPerformer
+ */
+
 import java.awt.event.KeyEvent;
 
 import monController.KeyOrder;
@@ -53,6 +62,18 @@ public class Event implements iEventPerformer{
 		case KeyEvent.VK_SPACE:
 			userOrder = new KeyOrder(Order.SHOOT);
 			break;
+        case KeyEvent.VK_L:
+            userOrder = new KeyOrder(Order.DOWNLEFT);
+            break;
+        case KeyEvent.VK_M:
+            userOrder = new KeyOrder(Order.DOWNRIGHT);
+            break;
+        case KeyEvent.VK_P:
+            userOrder = new KeyOrder(Order.UPRIGHT);
+            break;
+        case KeyEvent.VK_O:
+            userOrder = new KeyOrder(Order.UPLEFT);
+            break;
 		default:
 			userOrder = null;
 	}

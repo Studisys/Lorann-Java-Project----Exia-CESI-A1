@@ -2,16 +2,12 @@ package MonModele;
 
 import java.util.ArrayList;
 
-/**********************************************************************************
-**																				 **
-**								Interface Model									 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
-
+/**
+ * <h1>The Interface INTERFACE_Model</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ */
 public interface INTERFACE_Model {
 
 	

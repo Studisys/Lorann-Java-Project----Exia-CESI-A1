@@ -1,13 +1,11 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**							  	   Class Ennemy								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Abstract Class MOVABLEITEM_Ennemy/h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see MOVABLEITEM_MovableItem
+ */
 public abstract class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem {
 
 	

@@ -3,10 +3,17 @@ import java.awt.event.KeyEvent;
 import java.util.Observable;
 import javax.swing.JFrame;
 
+/**
+ * <h1>The Class GameFrame</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see JFrame
+ */
 public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 	private static final long serialVersionUID = 1L;
 	private final iEventPerformer	eventPerformer;
-	
+	public boolean isKeyPressed;
 	public GameFrame(String title,iEventPerformer performer, iGraphicsBuilder graphicsBuilder, Observable observable)
 	{
 		this.eventPerformer = performer;
@@ -33,7 +40,7 @@ public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 	@Override
 	public void keyReleased(KeyEvent keyEvent)
 	{
-		
+		isKeyPressed = false;
 	}
 	@Override
 	public void keyTyped(KeyEvent keyEvent)

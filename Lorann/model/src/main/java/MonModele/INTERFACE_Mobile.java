@@ -1,14 +1,11 @@
 package MonModele;
 
-/**********************************************************************************
-**																				 **
-**								Interface Mobile								 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Interface INTERFACE_Mobile</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ */
 
 public interface INTERFACE_Mobile {
 

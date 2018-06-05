@@ -4,7 +4,13 @@ import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
 
-
+/**
+ * <h1>The Class GamePanel</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see JPanel
+ */
 //use grid panel
 public class GamePanel extends JPanel implements Observer {
 

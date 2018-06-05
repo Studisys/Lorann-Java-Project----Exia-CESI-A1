@@ -1,13 +1,11 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**							       Class Door								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class WALL_Door</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see WALL_Wall
+ */
 public class WALL_Door extends WALL_Wall {
 
 	//IMAGE gate-closed

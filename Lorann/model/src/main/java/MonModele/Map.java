@@ -2,15 +2,12 @@ package MonModele;
 
 import java.util.ArrayList;
 
-/**********************************************************************************
-**																				 **
-**							  		Class Map								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class Map/h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ */
 
 public class Map {
 	

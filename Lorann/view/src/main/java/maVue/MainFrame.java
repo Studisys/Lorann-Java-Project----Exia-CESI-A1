@@ -12,6 +12,13 @@ import model.Example;
 import model.dao.LorannDAO;
 import monController.iOrderPerformer;
 
+/**
+ * <h1>The Class MainFrame</h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ * @see java.lang.Runnable,iView
+ */
 
 public class MainFrame implements java.lang.Runnable,iView {
 	private final GraphicsBuilder graphicsBuilder;

@@ -1,15 +1,11 @@
 package MonModele;
 
-/**********************************************************************************
-**																				 **
-**																				 **
-**									Class Item									 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Abstract Class Item</h1>
+ *
+ * @author Joël DIDIER and Nicolas DRAPIER
+ * @version 0.1
+ */
 
 import java.awt.Image;
 import java.io.File;

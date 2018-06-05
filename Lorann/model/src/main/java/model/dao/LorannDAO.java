@@ -9,7 +9,7 @@ import model.Example;
 /**
  * <h1>The Class LorannDAO.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Jean-Aymeric DIET jadiet@cesi.fr (original code) and Joël DIDIER
  * @version 1.0
  */
 public class LorannDAO extends AbstractDAO {

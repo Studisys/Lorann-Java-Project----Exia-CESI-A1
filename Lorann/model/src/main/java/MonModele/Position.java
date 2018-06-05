@@ -1,13 +1,10 @@
 package MonModele;
-/**********************************************************************************
-**																				 **
-**							  	 Class Position								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+/**
+ * <h1>The Class Position/h1>
+ *
+ * @author Nicolas DRAPIER
+ * @version 0.1
+ */
 public class Position {
 
 	private int x, y, maxX,maxY;
