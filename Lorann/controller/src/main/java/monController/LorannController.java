@@ -32,12 +32,10 @@ public class LorannController implements iOrderPerformer
 	private iView viewSystem;
 	private Item hero;
 	private int SCORE = 0;
-	
-	private int width = 20, height = 12;
 
 	private MonModele.Direction direction = null;
-	private MonModele.SPRITE_MeSprite heroSprite = null; 
 	
+
 	private int posX, posY;
 	
 	public LorannController(final INTERFACE_Model LorannModel) 
@@ -283,6 +281,14 @@ public class LorannController implements iOrderPerformer
 
 	public void setSCORE(int sCORE) {
 		SCORE = sCORE;
+	}
+
+	
+	
+	
+	// No warning with this
+	public MonModele.Direction getDirection() {
+		return direction;
 	}
 
 }

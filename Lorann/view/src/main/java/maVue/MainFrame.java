@@ -1,15 +1,13 @@
 package maVue;
-import java.sql.SQLException;
+
 import java.util.Observable;
 
-import javax.swing.JFrame;
+
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import MonModele.INTERFACE_Model;
-import MonModele.Map;
-import model.Example;
-import model.dao.LorannDAO;
+
 import monController.iOrderPerformer;
 
 /**
