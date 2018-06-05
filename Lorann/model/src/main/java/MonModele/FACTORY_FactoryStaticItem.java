@@ -11,12 +11,13 @@ import java.util.ArrayList;
 
 public class FACTORY_FactoryStaticItem {
 	
-	protected ArrayList<MOVABLEITEM_MovableItem> movable;
-	protected Item lorann;
-	
+	private ArrayList<MOVABLEITEM_Ennemy> movable;
+	private Item lorann;
+	private Position doorPosition;
+
 	public FACTORY_FactoryStaticItem()
 	{
-		this.movable = new ArrayList<MOVABLEITEM_MovableItem>();
+		this.movable = new ArrayList<MOVABLEITEM_Ennemy>();
 	}
 	
 	public Item createItem(char changer, int x, int y)
@@ -44,28 +45,29 @@ public class FACTORY_FactoryStaticItem {
 			
 	
 		case 'H':
+			this.setDoorPosition(new Position(x, y));
 			return new WALL_Door();
 			
 		case 'Y':
 			return new WALL_Void();
 		case 'S':
-			MOVABLEITEM_MovableItem monstre1 = new MONSTER_Ghost();
+			MOVABLEITEM_Ennemy monstre1 = new MONSTER_Ghost();
 			monstre1.setPosition(new Position(x,y));
 			this.movable.add(monstre1);
 			return new WALL_Void();
 			
 		case 'T':
-			MOVABLEITEM_MovableItem monstre2 = new MONSTER_Skull();
+			MOVABLEITEM_Ennemy monstre2 = new MONSTER_Skull();
 			monstre2.setPosition(new Position(x,y));
 			this.movable.add(monstre2);
 			return new WALL_Void();
 		case 'U':
-			MOVABLEITEM_MovableItem monstre3 = new MONSTER_TotemMan();
+			MOVABLEITEM_Ennemy monstre3 = new MONSTER_TotemMan();
 			monstre3.setPosition(new Position(x,y));
 			this.movable.add(monstre3);
 			return new WALL_Void();
 		case 'V':
-			MOVABLEITEM_MovableItem monstre4 = new MONSTER_StormTrooper();
+			MOVABLEITEM_Ennemy monstre4 = new MONSTER_StormTrooper();
 			monstre4.setPosition(new Position(x,y));
 			this.movable.add(monstre4);
 			return new WALL_Void();
@@ -80,6 +82,19 @@ public class FACTORY_FactoryStaticItem {
 		
 		}
 	}
-	
+	public Position getDoorPosition() {
+		return doorPosition;
+	}
+
+	public void setDoorPosition(Position doorPosition) {
+		this.doorPosition = doorPosition;
+	}
+	public ArrayList<MOVABLEITEM_Ennemy> getMovable() {
+		return movable;
+	}
+
+	public Item getLorann() {
+		return lorann;
+	}
 	
 }

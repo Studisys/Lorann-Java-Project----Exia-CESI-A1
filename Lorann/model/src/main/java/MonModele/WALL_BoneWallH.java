@@ -6,7 +6,7 @@ package MonModele;
  * @version 0.1
  * @see WALL_Wall
  */
-import java.awt.Image;
+
 
 public class WALL_BoneWallH extends WALL_Wall {
 

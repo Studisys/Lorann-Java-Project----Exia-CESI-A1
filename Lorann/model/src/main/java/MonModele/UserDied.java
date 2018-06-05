@@ -36,9 +36,7 @@ public class UserDied {
 		int userIntInput = Integer.parseInt(userLevelInput); 
 		System.out.println("User chose the level number : " + userIntInput);
 		
-		// Instantiate LorannDAO to run getLevelMapById
-		LorannDAO dao = new LorannDAO();
-		
+		// Instantiate LorannDAO to run getLevelMapById		
 		// New object of type Example
 		Example daoReturn;
 		

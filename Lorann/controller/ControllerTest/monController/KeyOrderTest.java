@@ -8,8 +8,9 @@ public class KeyOrderTest {
 	@Test
 	public void getOrder() 
 	{
+		@SuppressWarnings("unused")
 		Order testorder = null;
-		KeyOrder testOrder = new KeyOrder(testorder.LEFT);
+		KeyOrder testOrder = new KeyOrder(Order.LEFT);
 		testOrder.getOrder();
 	}
 }

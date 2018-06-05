@@ -14,6 +14,7 @@ import java.util.Observer;
  * @see ISquare
  * @see IPawn
  */
+@SuppressWarnings("deprecation")
 public interface IBoard {
 
     /**

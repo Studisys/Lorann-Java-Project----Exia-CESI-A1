@@ -14,10 +14,10 @@ public class Map {
 	private String level;
 	private char[] cast;
 	protected char[][] map2D;
-	public Item[][] listItem;
-	public ArrayList<MOVABLEITEM_MovableItem> listMonster;
-	public Item lorann;
-	
+	private Item[][] listItem;
+	private ArrayList<MOVABLEITEM_Ennemy> listMonster;
+	private Item lorann;
+
 	private int row = 12, columm = 20;
 	
 	private int width = 48, height = 48;
@@ -96,13 +96,11 @@ public class Map {
 				if(this.map2D[i][j] == 'K')
 					this.map2D[i][j] = 'Y';
 				z++;
-				System.out.print(this.map2D[i][j] + "   ");	
 			}
-			System.out.println("");
 		}
 		
-		this.listMonster = this.factory.movable;
-		this.lorann = this.factory.lorann;
+		this.listMonster = this.factory.getMovable();
+		this.lorann = this.factory.getLorann();
 		
 		
 	}
@@ -111,7 +109,15 @@ public class Map {
 		return listItem;
 	}
 
-	public ArrayList<MOVABLEITEM_MovableItem> getListMonster() {
+	public ArrayList<MOVABLEITEM_Ennemy> getListMonster() {
 		return listMonster;
+	}
+	
+	public Item getLorann() {
+		return lorann;
+	}
+	public Position getDoorPosition()
+	{
+		return this.factory.getDoorPosition();
 	}
 }

@@ -1,7 +1,9 @@
 package maVue;
 import java.awt.event.KeyEvent;
 import java.util.Observable;
+
 import javax.swing.JFrame;
+import javax.swing.WindowConstants;
 
 /**
  * <h1>The Class GameFrame</h1>
@@ -23,8 +25,9 @@ public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 		this.setResizable(false);
 		this.addKeyListener(this);
 		this.setVisible(true);
-
+		
 		final GamePanel gamePanel = new GamePanel(graphicsBuilder);
+		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.setContentPane(gamePanel);
 		this.setSize(966, 605);
 		this.setLocationRelativeTo(null);

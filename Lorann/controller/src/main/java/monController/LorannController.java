@@ -3,11 +3,17 @@ package monController;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import MonModele.Direction;
 import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
+import MonModele.MOVABLEITEM_Ennemy;
 import MonModele.Position;
+import MonModele.WALL_Door;
+import MonModele.WALL_Void;
 import maVue.iView;
 
 /**
@@ -25,10 +31,11 @@ public class LorannController implements iOrderPerformer
 	private boolean isGameOver = false;
 	private iView viewSystem;
 	private Item hero;
-	
+	private int SCORE = 0;
+
 	private MonModele.Direction direction = null;
-	private MonModele.SPRITE_MeSprite heroSprite = null; 
 	
+
 	private int posX, posY;
 	
 	public LorannController(final INTERFACE_Model LorannModel) 
@@ -95,7 +102,13 @@ public class LorannController implements iOrderPerformer
 				default: this.hero.setImage("crystal_ball.png");
 					break;
 				
-		}
+			}
+			
+			for(MOVABLEITEM_Ennemy ennemy: this.LorannModel.getMonsterList())
+			{
+					this.myIa(ennemy, ennemy.getPosition().getX(), ennemy.getPosition().getY());
+			}
+
 	}
 	public void getCollider(int x, int y, Direction direction)
 	{
@@ -107,17 +120,48 @@ public class LorannController implements iOrderPerformer
 		{
 		case 0:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
 		case 1:  this.hero.setPosition(new Position (x,y)); 				break;
-		case 2:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
+		case 2:  
+			JFrame frame1 = new JFrame("Lorann - You Lost !");
+	        frame1.setTitle("Lorann - You Lost !");
+	        JOptionPane.showMessageDialog(frame1, "You Lost !", "Lorann - You Lost !", JOptionPane.PLAIN_MESSAGE);
+	        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        System.exit(JFrame.EXIT_ON_CLOSE);
+	        break;
 		case 3:  this.hero.setPosition(new Position (x,y)); 				break;
 		case 4:	
+			item = new WALL_Void();
+			this.LorannModel.setItemList(item, x, y);
+			this.setSCORE(this.SCORE + 500);
+			this.hero.setPosition(new Position (x,y));
 			break;
+			
+		case 5:
+			item = new WALL_Void();
+			this.LorannModel.setItemList(item, x, y);
+			this.setSCORE(this.SCORE + 500);
+			this.hero.setPosition(new Position(x,y));
+			Item door =  new WALL_Door();
+			door.setImage("gate_open.png");
+			door.setColliderPermission(6);
+			this.LorannModel.setItemList(door,this.LorannModel.getDoorPosition().getX(), this.LorannModel.getDoorPosition().getY());
+			break;
+		case 6:
+			this.hero.setPosition(new Position(x,y));
+			JFrame frame2 = new JFrame("Lorann - You Won !");
+	        frame2.setTitle("Lorann - You Won !");
+	        JOptionPane.showMessageDialog(frame2, "You Won !", "Lorann - You Won !", JOptionPane.PLAIN_MESSAGE);
+	        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        System.exit(JFrame.EXIT_ON_CLOSE);
+			break;
+			
 		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
 		}
 		this.direction = direction;
 		
-
 	}
-	public boolean getColliderMonster(int x, int y, Direction direction)
+	
+	
+	public boolean getColliderMonster(int x, int y)
 	{
 		
 		Item item;
@@ -135,29 +179,27 @@ public class LorannController implements iOrderPerformer
 
 	}
 	
-	public Direction getDir(Direction direction)
+	public void myIa(MOVABLEITEM_Ennemy monster, int x, int y)
 	{
 		
-		Direction tabIn[] = {Direction.UP, Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT};
-		Direction tabOut[] = {Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT, Direction.UP};
-		
-		Direction myDir = null;
-		for(int i = 0; i<=7; i++)
+		if(this.getColliderMonster(monster.getPositionT(monster.getPosition(), monster.getDirection()).getX(), monster.getPositionT(monster.getPosition(), monster.getDirection()).getY()))
 		{
-			if(direction == tabIn[i])
+			if(this.getColliderMonster(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)).getX(), monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)).getY()))
 			{
-				myDir = tabOut[i];
+				monster.setDirection(monster.changeDir(monster.getDirection()));
+				this.myIa(monster, monster.getPosition().getX(), monster.getPosition().getY());
+			}
+			else //go to player position
+			{
+				monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
 			}
 		}
-		return myDir;
+		else
+		{
+			monster.setPosition(monster.getPositionT(monster.getPosition(), monster.getDirectionThroughPlayer(monster, this.hero)));
+		}
 	}
-	
-	public void myIa()
-	{
-		
-	}
-	
-	
+
 	public void play()
 	{
 		this.gameLoop();
@@ -232,6 +274,22 @@ public class LorannController implements iOrderPerformer
 			
 			this.LorannModel.setMobilesHavedMove();
 		}
+	}
+	
+	public int getSCORE() {
+		return SCORE;
+	}
+
+	public void setSCORE(int sCORE) {
+		SCORE = sCORE;
+	}
+
+	
+	
+	
+	// No warning with this
+	public MonModele.Direction getDirection() {
+		return direction;
 	}
 
 }

@@ -3,9 +3,11 @@ package monController;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+
 import MonModele.INTERFACE_Model;
 import maVue.iView;
 
+@SuppressWarnings("unused")
 public class LorannControllerTest 
 {
 	@Test
