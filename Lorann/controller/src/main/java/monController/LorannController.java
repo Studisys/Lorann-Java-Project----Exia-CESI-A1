@@ -1,7 +1,6 @@
 package monController;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import MonModele.Direction;
@@ -9,7 +8,6 @@ import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
 import MonModele.Position;
-import MonModele.UserDied;
 import maVue.iView;
 
 /**
@@ -26,9 +24,7 @@ public class LorannController implements iOrderPerformer
 	private final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
-	private int width =20, height = 12;
 	private Item hero;
-	private char[][] map;
 	
 	private MonModele.Direction direction = null;
 	private MonModele.SPRITE_MeSprite heroSprite = null; 
@@ -39,7 +35,6 @@ public class LorannController implements iOrderPerformer
 	{
 		this.LorannModel = LorannModel;
 		this.hero = this.LorannModel.getLorann();
-		this.map = this.LorannModel.getMap();
 	}
 	
 	@Override
@@ -114,12 +109,54 @@ public class LorannController implements iOrderPerformer
 		case 1:  this.hero.setPosition(new Position (x,y)); 				break;
 		case 2:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
 		case 3:  this.hero.setPosition(new Position (x,y)); 				break;
+		case 4:	
+			break;
 		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
 		}
 		this.direction = direction;
 		
 
 	}
+	public boolean getColliderMonster(int x, int y, Direction direction)
+	{
+		
+		Item item;
+		item = this.LorannModel.getItemList()[y][x];
+				
+		switch(item.getColliderPermission())
+		{
+		case 0:  return true;
+		case 1:  return false;
+		case 2:  return true;
+		case 3:  return true;
+		case 4:  return true;
+		default: return false;
+		}
+
+	}
+	
+	public Direction getDir(Direction direction)
+	{
+		
+		Direction tabIn[] = {Direction.UP, Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT};
+		Direction tabOut[] = {Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT, Direction.UP};
+		
+		Direction myDir = null;
+		for(int i = 0; i<=7; i++)
+		{
+			if(direction == tabIn[i])
+			{
+				myDir = tabOut[i];
+			}
+		}
+		return myDir;
+	}
+	
+	public void myIa()
+	{
+		
+	}
+	
 	
 	public void play()
 	{

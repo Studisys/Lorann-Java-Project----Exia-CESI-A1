@@ -15,7 +15,7 @@ public class Map {
 	private char[] cast;
 	protected char[][] map2D;
 	public Item[][] listItem;
-	public ArrayList<Item> listMonster;
+	public ArrayList<MOVABLEITEM_MovableItem> listMonster;
 	public Item lorann;
 	
 	private int row = 12, columm = 20;
@@ -111,7 +111,7 @@ public class Map {
 		return listItem;
 	}
 
-	public ArrayList<Item> getListMonster() {
+	public ArrayList<MOVABLEITEM_MovableItem> getListMonster() {
 		return listMonster;
 	}
 }

@@ -9,7 +9,7 @@ package MonModele;
 public class STACKABLE_Purse extends STACKABLE_StackableItem {
 	
 	private String image = "purse.png";
-	private int collider = 1; //STACKABLE
+	private int collider = 4; //STACKABLE
 	
 	public STACKABLE_Purse( )
 	{

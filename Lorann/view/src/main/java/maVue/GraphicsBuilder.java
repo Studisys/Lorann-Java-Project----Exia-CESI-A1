@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
+import MonModele.MOVABLEITEM_MovableItem;
 
 public class GraphicsBuilder implements iGraphicsBuilder{
 	
@@ -14,7 +15,7 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 	int imageHeight = 48;
 	
 	private Item[][] map;
-	private ArrayList<Item> monsterList;
+	private ArrayList<MOVABLEITEM_MovableItem> monsterList;
 	
 	public GraphicsBuilder(INTERFACE_Model lorannModel)
 	{

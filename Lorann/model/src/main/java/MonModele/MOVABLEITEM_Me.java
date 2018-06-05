@@ -35,5 +35,8 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 	{
 		this.speed = speed;
 	}
-
+	public void update()
+	{
+		
+	}
 }

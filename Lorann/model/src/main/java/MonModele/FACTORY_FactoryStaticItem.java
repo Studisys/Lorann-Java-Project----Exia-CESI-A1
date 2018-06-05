@@ -11,12 +11,12 @@ import java.util.ArrayList;
 
 public class FACTORY_FactoryStaticItem {
 	
-	protected ArrayList<Item> movable;
+	protected ArrayList<MOVABLEITEM_MovableItem> movable;
 	protected Item lorann;
 	
 	public FACTORY_FactoryStaticItem()
 	{
-		this.movable = new ArrayList<Item>();
+		this.movable = new ArrayList<MOVABLEITEM_MovableItem>();
 	}
 	
 	public Item createItem(char changer, int x, int y)
@@ -49,23 +49,23 @@ public class FACTORY_FactoryStaticItem {
 		case 'Y':
 			return new WALL_Void();
 		case 'S':
-			Item monstre1 = new MONSTER_Ghost();
+			MOVABLEITEM_MovableItem monstre1 = new MONSTER_Ghost();
 			monstre1.setPosition(new Position(x,y));
 			this.movable.add(monstre1);
 			return new WALL_Void();
 			
 		case 'T':
-			Item monstre2 = new MONSTER_Skull();
+			MOVABLEITEM_MovableItem monstre2 = new MONSTER_Skull();
 			monstre2.setPosition(new Position(x,y));
 			this.movable.add(monstre2);
 			return new WALL_Void();
 		case 'U':
-			Item monstre3 = new MONSTER_TotemMan();
+			MOVABLEITEM_MovableItem monstre3 = new MONSTER_TotemMan();
 			monstre3.setPosition(new Position(x,y));
 			this.movable.add(monstre3);
 			return new WALL_Void();
 		case 'V':
-			Item monstre4 = new MONSTER_StormTrooper();
+			MOVABLEITEM_MovableItem monstre4 = new MONSTER_StormTrooper();
 			monstre4.setPosition(new Position(x,y));
 			this.movable.add(monstre4);
 			return new WALL_Void();
