@@ -117,7 +117,13 @@ public class LorannController implements iOrderPerformer
 		{
 		case 0:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
 		case 1:  this.hero.setPosition(new Position (x,y)); 				break;
-		case 2:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
+		case 2:  
+			JFrame frame1 = new JFrame("Lorann - You Lost !");
+	        frame1.setTitle("Lorann - You Lost !");
+	        JOptionPane.showMessageDialog(frame1, "You Lost !", "Lorann - You Lost !", JOptionPane.PLAIN_MESSAGE);
+	        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	        System.exit(JFrame.EXIT_ON_CLOSE);
+	        break;
 		case 3:  this.hero.setPosition(new Position (x,y)); 				break;
 		case 4:	
 			item = new WALL_Void();
@@ -138,10 +144,10 @@ public class LorannController implements iOrderPerformer
 			break;
 		case 6:
 			this.hero.setPosition(new Position(x,y));
-			JFrame frame = new JFrame("Lorann - You Won !");
-	        frame.setTitle("Lorann - You Won !");
-	        JOptionPane.showMessageDialog(frame, "You Won !", "Lorann - You Won !", JOptionPane.PLAIN_MESSAGE);
-	        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			JFrame frame2 = new JFrame("Lorann - You Won !");
+	        frame2.setTitle("Lorann - You Won !");
+	        JOptionPane.showMessageDialog(frame2, "You Won !", "Lorann - You Won !", JOptionPane.PLAIN_MESSAGE);
+	        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        System.exit(JFrame.EXIT_ON_CLOSE);
 			break;
 			
