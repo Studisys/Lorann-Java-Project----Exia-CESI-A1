@@ -14,10 +14,11 @@ public class Map {
 	private String level;
 	private char[] cast;
 	protected char[][] map2D;
-	public Item[][] listItem;
-	public ArrayList<MOVABLEITEM_MovableItem> listMonster;
-	public Item lorann;
-	
+	private Item[][] listItem;
+	private ArrayList<MOVABLEITEM_MovableItem> listMonster;
+	private Item lorann;
+	private Position doorPosition;
+
 	private int row = 12, columm = 20;
 	
 	private int width = 48, height = 48;
@@ -101,8 +102,8 @@ public class Map {
 			System.out.println("");
 		}
 		
-		this.listMonster = this.factory.movable;
-		this.lorann = this.factory.lorann;
+		this.listMonster = this.factory.getMovable();
+		this.lorann = this.factory.getLorann();
 		
 		
 	}
@@ -113,5 +114,13 @@ public class Map {
 
 	public ArrayList<MOVABLEITEM_MovableItem> getListMonster() {
 		return listMonster;
+	}
+	
+	public Item getLorann() {
+		return lorann;
+	}
+	public Position getDoorPosition()
+	{
+		return this.factory.getDoorPosition();
 	}
 }

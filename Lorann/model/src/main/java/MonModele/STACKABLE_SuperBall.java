@@ -9,7 +9,7 @@ package MonModele;
 public class STACKABLE_SuperBall extends STACKABLE_StackableItem {
 	
 	private String image = "crystal_ball.png";
-	private int collider = 4; //DEAD OF PLAYER
+	private int collider = 5; //DEAD OF PLAYER
 	
 	public STACKABLE_SuperBall( )
 	{

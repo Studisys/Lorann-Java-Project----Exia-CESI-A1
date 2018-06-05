@@ -22,7 +22,8 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	private Item[][] itemList;
 	private ArrayList<MOVABLEITEM_MovableItem> monsterList;
 	private Item lorann;
-	
+	private Position doorPosition;
+
 	public LorannModel()
 	{
 		this.mobile = new ArrayList<INTERFACE_Mobile>();
@@ -43,9 +44,10 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	public void mapCreator (String level)
 	{
 		this.myMap.buildMap(level);
-		this.itemList = this.myMap.listItem;
-		this.monsterList = this.myMap.listMonster;
-		this.lorann = this.myMap.lorann;
+		this.itemList = this.myMap.getListItem();
+		this.monsterList = this.myMap.getListMonster();
+		this.lorann = this.myMap.getLorann();
+		this.doorPosition = this.myMap.getDoorPosition();
 		this.map = this.myMap.map2D;
 	}
 	
@@ -81,11 +83,9 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	}
 	
 
-	public void setItemList(Item[][] itemList) {
-		this.itemList = itemList;
+	public void setItemList(Item item, int x, int y) {
+		this.itemList[y][x] = item;
 	}
-
-
 
 	@Override
 	public ArrayList<MOVABLEITEM_MovableItem> getMonsterList() {
@@ -99,6 +99,9 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	public char[][] getMap() 
 	{
 		return map;
+	}
+	public Position getDoorPosition() {
+		return doorPosition;
 	}
 	
 }
