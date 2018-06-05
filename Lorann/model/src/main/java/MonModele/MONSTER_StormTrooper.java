@@ -1,7 +1,7 @@
 package MonModele;
 
 /**
- * <h1>The Class MONSTER_StormTrooper/h1>
+ * <h1>The Class MONSTER_StormTrooper</h1>
  *
  * @author Nicolas DRAPIER
  * @version 0.1

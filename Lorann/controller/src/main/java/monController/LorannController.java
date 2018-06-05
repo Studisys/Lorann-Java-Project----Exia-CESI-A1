@@ -20,7 +20,6 @@ import maVue.iView;
  *
  * @author Nicolas DRAPIER
  * @version 0.1
- * @see IOrderPerformer
  */
 //A class called LorannController
 public class LorannController implements iOrderPerformer

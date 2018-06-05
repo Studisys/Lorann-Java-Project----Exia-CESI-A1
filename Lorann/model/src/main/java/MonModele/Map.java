@@ -3,7 +3,7 @@ package MonModele;
 import java.util.ArrayList;
 
 /**
- * <h1>The Class Map/h1>
+ * <h1>The Class Map</h1>
  *
  * @author Nicolas DRAPIER
  * @version 0.1

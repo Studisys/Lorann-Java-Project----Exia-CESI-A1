@@ -1,6 +1,6 @@
 package MonModele;
 /**
- * <h1>The Class WALL_BoneWallY/h1>
+ * <h1>The Class WALL_BoneWallY</h1>
  *
  * @author Nicolas DRAPIER
  * @version 0.1
