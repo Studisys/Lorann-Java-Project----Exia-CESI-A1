@@ -13,7 +13,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-//test of a popup displayer used for exemple when an incorrect string is returned by the database
+/** test of a popup displayer used for exemple when an incorrect string is returned by the database */
+@SuppressWarnings("unused")
 public class MainFrameTest 
 {
 	@Test

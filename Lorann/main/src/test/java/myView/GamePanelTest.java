@@ -9,6 +9,7 @@ import java.util.Observer;
 
 import org.junit.Test;
 
+@SuppressWarnings("deprecation")
 public abstract class GamePanelTest implements Observer 
 {
 	@Test

@@ -20,6 +20,7 @@ public class EventTest {
 		/*to verify if the keyCode match with the KeyEvent used in the Event class*/
 	
 	    @Test 
+	    /** Check keycode up */
 	    public void getKeyCodeUp()
 	    {
 	    	int keyCode = 90; /**keyCode initialization to Z key to simulate a key pressed*/
@@ -46,6 +47,7 @@ public class EventTest {
 			}
 	    }
 	    
+	    /** Check keycode down */
 	    @Test public void getKeyCodeDown()
 	    {
 	    	// S key
@@ -72,6 +74,7 @@ public class EventTest {
 			}
 	    }
 	    
+	    /** Check keycode right */
 	    @Test public void getKeyCodeRight()
 	    {
 	    	// D key
@@ -98,6 +101,7 @@ public class EventTest {
 			}
 	    }
 	    
+	    /** Check keycode left */
 	    @Test public void getKeyCodeLeft()
 	    {
 	    	// Q key

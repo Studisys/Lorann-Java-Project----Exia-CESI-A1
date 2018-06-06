@@ -20,6 +20,7 @@ import myController.LorannController;
  * @author Joël DIDIER and Nicolas DRAPIER
  * @version 0.1
  */
+@SuppressWarnings("unused")
 public class main {
 
 	public String level;

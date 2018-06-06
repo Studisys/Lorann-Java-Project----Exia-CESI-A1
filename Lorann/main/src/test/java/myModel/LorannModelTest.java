@@ -16,6 +16,7 @@ import org.junit.Test;
 
 import myModel.LorannModel;
 /*testing the setLevel method in comparison of a String*/
+@SuppressWarnings("unused")
 public class LorannModelTest {
 	@Test
 	public void test()
