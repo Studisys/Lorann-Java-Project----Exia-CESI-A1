@@ -42,9 +42,9 @@ final class LorannBDDConnector {
     }
 
     /**
-     * Gets the single instance of BoulderDashBDDConnector.
+     * Gets the single instance of LorannBDDConnector.
      *
-     * @return single instance of BoulderDashBDDConnector
+     * @return single instance of LorannBDDConnector
      */
     public static LorannBDDConnector getInstance() {
         if (instance == null) {

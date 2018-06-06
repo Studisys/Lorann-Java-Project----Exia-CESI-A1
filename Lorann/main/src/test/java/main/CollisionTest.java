@@ -7,9 +7,9 @@ package main;
  */
 import org.junit.Test;
 
-import MonModele.Item;
-import MonModele.LorannModel;
-import monController.LorannController;
+import myModel.Item;
+import myModel.LorannModel;
+import myController.LorannController;
 
 public class CollisionTest {
 	

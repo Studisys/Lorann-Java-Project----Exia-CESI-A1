@@ -1,9 +1,9 @@
 controller
-maVue
 model
 model.dao
-monController
-MonModele
+myController
 myMain
+myModel
+myView
 showboard
 view

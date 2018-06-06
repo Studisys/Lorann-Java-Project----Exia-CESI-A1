@@ -14,7 +14,7 @@ import model.Example;
  */
 public class LorannDAO extends AbstractDAO {
 
-    /** The sql example by id. */
+    /** The map data string from DB by id. */
     private static String sqlExampleById   = "{call get_map_data(?)}";
 
     /** The id column index. */

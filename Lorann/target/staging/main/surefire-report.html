@@ -107,7 +107,7 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>1.869</td></tr></table><br />
+<td>1.157</td></tr></table><br />
 <p>Note: failures are anticipated and checked for with assertions while errors are unanticipated.</p><br /></div>
 <div class="section">
 <h2>Package List<a name="Package_List"></a></h2><a name="Package_List"></a>
@@ -122,15 +122,15 @@ function toggleDisplay(elementId) {
 <th>Success Rate</th>
 <th>Time</th></tr>
 <tr class="b">
-<td><a href="#main">main</a></td>
-<td>1</td>
+<td><a href="#myView">myView</a></td>
+<td>15</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.187</td></tr>
+<td>0.872</td></tr>
 <tr class="a">
-<td><a href="#monController">monController</a></td>
+<td><a href="#myController">myController</a></td>
 <td>7</td>
 <td>0</td>
 <td>0</td>
@@ -138,22 +138,100 @@ function toggleDisplay(elementId) {
 <td>100%</td>
 <td>0</td></tr>
 <tr class="b">
-<td><a href="#MonModele">MonModele</a></td>
+<td><a href="#main">main</a></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.215</td></tr>
+<tr class="a">
+<td><a href="#myModel">myModel</a></td>
 <td>2</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.067</td></tr>
+<td>0.07</td></tr></table><br />
+<p>Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.</p>
+<div class="section">
+<h3>myView<a name="myView"></a></h3><a name="myView"></a>
+<table border="1" class="bodyTable">
 <tr class="a">
-<td><a href="#maVue">maVue</a></td>
-<td>15</td>
+<th></th>
+<th>Class</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th></tr>
+<tr class="b">
+<td><a href="#myViewEventTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myViewEventTest">EventTest</a></td>
+<td>5</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>1.615</td></tr></table><br />
-<p>Note: package statistics are not computed recursively, they only sum up all of its testsuites numbers.</p>
+<td>0</td></tr>
+<tr class="a">
+<td><a href="#myViewGameFrameTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myViewGameFrameTest">GameFrameTest</a></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0</td></tr>
+<tr class="b">
+<td><a href="#myViewGraphicsBuilderTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myViewGraphicsBuilderTest">GraphicsBuilderTest</a></td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0</td></tr>
+<tr class="a">
+<td><a href="#myViewMainFrameTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myViewMainFrameTest">MainFrameTest</a></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0.872</td></tr></table></div>
+<div class="section">
+<h3>myController<a name="myController"></a></h3><a name="myController"></a>
+<table border="1" class="bodyTable">
+<tr class="a">
+<th></th>
+<th>Class</th>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th></tr>
+<tr class="b">
+<td><a href="#myControllerKeyOrderTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myControllerKeyOrderTest">KeyOrderTest</a></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0</td></tr>
+<tr class="a">
+<td><a href="#myControllerLorannControllerTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myControllerLorannControllerTest">LorannControllerTest</a></td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+<td>0</td></tr></table></div>
 <div class="section">
 <h3>main<a name="main"></a></h3><a name="main"></a>
 <table border="1" class="bodyTable">
@@ -174,9 +252,9 @@ function toggleDisplay(elementId) {
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.187</td></tr></table></div>
+<td>0.215</td></tr></table></div>
 <div class="section">
-<h3>monController<a name="monController"></a></h3><a name="monController"></a>
+<h3>myModel<a name="myModel"></a></h3><a name="myModel"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <th></th>
@@ -188,101 +266,23 @@ function toggleDisplay(elementId) {
 <th>Success Rate</th>
 <th>Time</th></tr>
 <tr class="b">
-<td><a href="#monControllerKeyOrderTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#monControllerKeyOrderTest">KeyOrderTest</a></td>
+<td><a href="#myModelCollisionTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myModelCollisionTest">CollisionTest</a></td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0</td></tr>
+<td>0.07</td></tr>
 <tr class="a">
-<td><a href="#monControllerLorannControllerTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#monControllerLorannControllerTest">LorannControllerTest</a></td>
-<td>6</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>0</td></tr></table></div>
-<div class="section">
-<h3>MonModele<a name="MonModele"></a></h3><a name="MonModele"></a>
-<table border="1" class="bodyTable">
-<tr class="a">
-<th></th>
-<th>Class</th>
-<th>Tests</th>
-<th>Errors </th>
-<th>Failures</th>
-<th>Skipped</th>
-<th>Success Rate</th>
-<th>Time</th></tr>
-<tr class="b">
-<td><a href="#MonModeleCollisionTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#MonModeleCollisionTest">CollisionTest</a></td>
+<td><a href="#myModelLorannModelTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
+<td><a href="#myModelLorannModelTest">LorannModelTest</a></td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-<td>0.067</td></tr>
-<tr class="a">
-<td><a href="#MonModeleLorannModelTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#MonModeleLorannModelTest">LorannModelTest</a></td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>0</td></tr></table></div>
-<div class="section">
-<h3>maVue<a name="maVue"></a></h3><a name="maVue"></a>
-<table border="1" class="bodyTable">
-<tr class="a">
-<th></th>
-<th>Class</th>
-<th>Tests</th>
-<th>Errors </th>
-<th>Failures</th>
-<th>Skipped</th>
-<th>Success Rate</th>
-<th>Time</th></tr>
-<tr class="b">
-<td><a href="#maVueEventTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#maVueEventTest">EventTest</a></td>
-<td>5</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>0</td></tr>
-<tr class="a">
-<td><a href="#maVueGameFrameTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#maVueGameFrameTest">GameFrameTest</a></td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>0</td></tr>
-<tr class="b">
-<td><a href="#maVueGraphicsBuilderTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#maVueGraphicsBuilderTest">GraphicsBuilderTest</a></td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>0</td></tr>
-<tr class="a">
-<td><a href="#maVueMainFrameTest"><img src="images/icon_success_sml.gif" alt="" /></a></td>
-<td><a href="#maVueMainFrameTest">MainFrameTest</a></td>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-<td>1.615</td></tr></table></div><br /></div>
+<td>0</td></tr></table></div><br /></div>
 <div class="section">
 <h2>Test Cases<a name="Test_Cases"></a></h2><a name="Test_Cases"></a>
 <p>[<a href="#Summary">Summary</a>] [<a href="#Package_List">Package List</a>] [<a href="#Test_Cases">Test Cases</a>]</p>
@@ -292,127 +292,127 @@ function toggleDisplay(elementId) {
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
 <td><a name="TC_main.CollisionTest.testCollision"></a>testCollision</td>
-<td>0.187</td></tr></table></div>
+<td>0.215</td></tr></table></div>
 <div class="section">
-<h3>EventTest<a name="EventTest"></a></h3><a name="maVueEventTest"></a>
+<h3>KeyOrderTest<a name="KeyOrderTest"></a></h3><a name="myControllerKeyOrderTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.EventTest.getKeyCodeRight"></a>getKeyCodeRight</td>
-<td>0</td></tr>
-<tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.EventTest.getKeyCodeShoot"></a>getKeyCodeShoot</td>
-<td>0</td></tr>
-<tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.EventTest.getKeyCodeDown"></a>getKeyCodeDown</td>
-<td>0</td></tr>
-<tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.EventTest.getKeyCodeLeft"></a>getKeyCodeLeft</td>
-<td>0</td></tr>
-<tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.EventTest.getKeyCodeUp"></a>getKeyCodeUp</td>
+<td><a name="TC_myController.KeyOrderTest.getOrder"></a>getOrder</td>
 <td>0</td></tr></table></div>
 <div class="section">
-<h3>GameFrameTest<a name="GameFrameTest"></a></h3><a name="maVueGameFrameTest"></a>
+<h3>LorannControllerTest<a name="LorannControllerTest"></a></h3><a name="myControllerLorannControllerTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.GameFrameTest.keyReleased"></a>keyReleased</td>
+<td><a name="TC_myController.LorannControllerTest.gameLoop"></a>gameLoop</td>
 <td>0</td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.GameFrameTest.keyPressed"></a>keyPressed</td>
+<td><a name="TC_myController.LorannControllerTest.setViewSystem"></a>setViewSystem</td>
 <td>0</td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.GameFrameTest.keyTyped"></a>keyTyped</td>
+<td><a name="TC_myController.LorannControllerTest.launchSpell"></a>launchSpell</td>
+<td>0</td></tr>
+<tr class="b">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myController.LorannControllerTest.play"></a>play</td>
+<td>0</td></tr>
+<tr class="a">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myController.LorannControllerTest.orderPerform"></a>orderPerform</td>
+<td>0</td></tr>
+<tr class="b">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myController.LorannControllerTest.getViewSystem"></a>getViewSystem</td>
 <td>0</td></tr></table></div>
 <div class="section">
-<h3>GraphicsBuilderTest<a name="GraphicsBuilderTest"></a></h3><a name="maVueGraphicsBuilderTest"></a>
+<h3>CollisionTest<a name="CollisionTest"></a></h3><a name="myModelCollisionTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.GraphicsBuilderTest.getGlobalWidth"></a>getGlobalWidth</td>
-<td>0</td></tr>
-<tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.GraphicsBuilderTest.drawMobile"></a>drawMobile</td>
-<td>0</td></tr>
+<td><a name="TC_myModel.CollisionTest.testCollision"></a>testCollision</td>
+<td>0.07</td></tr></table></div>
+<div class="section">
+<h3>LorannModelTest<a name="LorannModelTest"></a></h3><a name="myModelLorannModelTest"></a>
+<table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.GraphicsBuilderTest.getGlobalHeight"></a>getGlobalHeight</td>
-<td>0</td></tr>
-<tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.GraphicsBuilderTest.applyModelToGraphic"></a>applyModelToGraphic</td>
+<td><a name="TC_myModel.LorannModelTest.test"></a>test</td>
 <td>0</td></tr></table></div>
 <div class="section">
-<h3>MainFrameTest<a name="MainFrameTest"></a></h3><a name="maVueMainFrameTest"></a>
+<h3>EventTest<a name="EventTest"></a></h3><a name="myViewEventTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.MainFrameTest.displayMessage"></a>displayMessage</td>
-<td>1.615</td></tr>
+<td><a name="TC_myView.EventTest.getKeyCodeRight"></a>getKeyCodeRight</td>
+<td>0</td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.MainFrameTest.run"></a>run</td>
+<td><a name="TC_myView.EventTest.getKeyCodeShoot"></a>getKeyCodeShoot</td>
 <td>0</td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_maVue.MainFrameTest.exit"></a>exit</td>
+<td><a name="TC_myView.EventTest.getKeyCodeDown"></a>getKeyCodeDown</td>
+<td>0</td></tr>
+<tr class="b">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myView.EventTest.getKeyCodeLeft"></a>getKeyCodeLeft</td>
+<td>0</td></tr>
+<tr class="a">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myView.EventTest.getKeyCodeUp"></a>getKeyCodeUp</td>
 <td>0</td></tr></table></div>
 <div class="section">
-<h3>KeyOrderTest<a name="KeyOrderTest"></a></h3><a name="monControllerKeyOrderTest"></a>
+<h3>GameFrameTest<a name="GameFrameTest"></a></h3><a name="myViewGameFrameTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_monController.KeyOrderTest.getOrder"></a>getOrder</td>
+<td><a name="TC_myView.GameFrameTest.keyReleased"></a>keyReleased</td>
+<td>0</td></tr>
+<tr class="b">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myView.GameFrameTest.keyPressed"></a>keyPressed</td>
+<td>0</td></tr>
+<tr class="a">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myView.GameFrameTest.keyTyped"></a>keyTyped</td>
 <td>0</td></tr></table></div>
 <div class="section">
-<h3>LorannControllerTest<a name="LorannControllerTest"></a></h3><a name="monControllerLorannControllerTest"></a>
+<h3>GraphicsBuilderTest<a name="GraphicsBuilderTest"></a></h3><a name="myViewGraphicsBuilderTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_monController.LorannControllerTest.gameLoop"></a>gameLoop</td>
+<td><a name="TC_myView.GraphicsBuilderTest.getGlobalWidth"></a>getGlobalWidth</td>
 <td>0</td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_monController.LorannControllerTest.setViewSystem"></a>setViewSystem</td>
+<td><a name="TC_myView.GraphicsBuilderTest.drawMobile"></a>drawMobile</td>
 <td>0</td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_monController.LorannControllerTest.launchSpell"></a>launchSpell</td>
+<td><a name="TC_myView.GraphicsBuilderTest.getGlobalHeight"></a>getGlobalHeight</td>
 <td>0</td></tr>
 <tr class="b">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_monController.LorannControllerTest.play"></a>play</td>
-<td>0</td></tr>
-<tr class="a">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_monController.LorannControllerTest.orderPerform"></a>orderPerform</td>
-<td>0</td></tr>
-<tr class="b">
-<td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_monController.LorannControllerTest.getViewSystem"></a>getViewSystem</td>
+<td><a name="TC_myView.GraphicsBuilderTest.applyModelToGraphic"></a>applyModelToGraphic</td>
 <td>0</td></tr></table></div>
 <div class="section">
-<h3>CollisionTest<a name="CollisionTest"></a></h3><a name="MonModeleCollisionTest"></a>
+<h3>MainFrameTest<a name="MainFrameTest"></a></h3><a name="myViewMainFrameTest"></a>
 <table border="1" class="bodyTable">
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_MonModele.CollisionTest.testCollision"></a>testCollision</td>
-<td>0.067</td></tr></table></div>
-<div class="section">
-<h3>LorannModelTest<a name="LorannModelTest"></a></h3><a name="MonModeleLorannModelTest"></a>
-<table border="1" class="bodyTable">
+<td><a name="TC_myView.MainFrameTest.displayMessage"></a>displayMessage</td>
+<td>0.871</td></tr>
+<tr class="b">
+<td><img src="images/icon_success_sml.gif" alt="" /></td>
+<td><a name="TC_myView.MainFrameTest.run"></a>run</td>
+<td>0</td></tr>
 <tr class="a">
 <td><img src="images/icon_success_sml.gif" alt="" /></td>
-<td><a name="TC_MonModele.LorannModelTest.test"></a>test</td>
-<td>0</td></tr></table></div><br /></div>
+<td><a name="TC_myView.MainFrameTest.exit"></a>exit</td>
+<td>0.001</td></tr></table></div><br /></div>
       </div>
     </div>
     <div class="clear">

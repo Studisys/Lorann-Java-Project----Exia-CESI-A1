@@ -5,14 +5,14 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import MonModele.LorannModel;
-import MonModele.MOVABLEITEM_Ennemy;
-import MonModele.MOVABLEITEM_Me;
-import MonModele.levelCheck;
-import maVue.MainFrame;
+import myModel.LorannModel;
+import myModel.MOVABLEITEM_Ennemy;
+import myModel.MOVABLEITEM_Me;
+import myModel.levelCheck;
+import myView.MainFrame;
 import model.Example;
 import model.dao.LorannDAO;
-import monController.LorannController;
+import myController.LorannController;
 
 /**
  * <h1>The Class Main</h1>
@@ -68,9 +68,6 @@ public class main {
 				loranncontroller.setViewSystem(lorannview);
 				loranncontroller.play();
 
-
-					loranncontroller.setViewSystem(lorannview);
-					loranncontroller.play();
 				}
 				else
 				{

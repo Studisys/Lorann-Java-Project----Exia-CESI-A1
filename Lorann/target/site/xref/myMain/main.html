@@ -13,14 +13,14 @@
 <a class="jxr_linenumber" name="L5" href="#L5">5</a>   <strong class="jxr_keyword">import</strong> javax.swing.JFrame;
 <a class="jxr_linenumber" name="L6" href="#L6">6</a>   <strong class="jxr_keyword">import</strong> javax.swing.JOptionPane;
 <a class="jxr_linenumber" name="L7" href="#L7">7</a>   
-<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> MonModele.LorannModel;
-<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> MonModele.MOVABLEITEM_Ennemy;
-<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> MonModele.MOVABLEITEM_Me;
-<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> MonModele.levelCheck;
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> maVue.MainFrame;
+<a class="jxr_linenumber" name="L8" href="#L8">8</a>   <strong class="jxr_keyword">import</strong> myModel.LorannModel;
+<a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">import</strong> myModel.MOVABLEITEM_Ennemy;
+<a class="jxr_linenumber" name="L10" href="#L10">10</a>  <strong class="jxr_keyword">import</strong> myModel.MOVABLEITEM_Me;
+<a class="jxr_linenumber" name="L11" href="#L11">11</a>  <strong class="jxr_keyword">import</strong> myModel.levelCheck;
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">import</strong> myView.MainFrame;
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  <strong class="jxr_keyword">import</strong> model.Example;
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>  <strong class="jxr_keyword">import</strong> model.dao.LorannDAO;
-<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">import</strong> monController.LorannController;
+<a class="jxr_linenumber" name="L15" href="#L15">15</a>  <strong class="jxr_keyword">import</strong> myController.LorannController;
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  
 <a class="jxr_linenumber" name="L17" href="#L17">17</a>  <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  <em class="jxr_javadoccomment"> * &lt;h1&gt;The Class Main&lt;/h1&gt;</em>
@@ -37,7 +37,7 @@
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  	{
 <a class="jxr_linenumber" name="L30" href="#L30">30</a>  		<strong class="jxr_keyword">try</strong>
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>  		{
-<a class="jxr_linenumber" name="L32" href="#L32">32</a>  				levelCheck levelTester = <strong class="jxr_keyword">new</strong> <a href="../MonModele/levelCheck.html">levelCheck</a>();
+<a class="jxr_linenumber" name="L32" href="#L32">32</a>  				levelCheck levelTester = <strong class="jxr_keyword">new</strong> <a href="../myModel/levelCheck.html">levelCheck</a>();
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>  				<strong class="jxr_keyword">boolean</strong> levelChecker;
 <a class="jxr_linenumber" name="L34" href="#L34">34</a>  				JFrame frame3 = <strong class="jxr_keyword">new</strong> JFrame(<span class="jxr_string">"Lorann"</span>);
 <a class="jxr_linenumber" name="L35" href="#L35">35</a>  				frame3.setTitle(<span class="jxr_string">"Lorann"</span>);
@@ -58,7 +58,7 @@
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>  				daoReturn=LorannDAO.getLevelMapById(userIntInput);	<em class="jxr_comment">// Store answer from MySQL server to daoReturn object</em>
 <a class="jxr_linenumber" name="L51" href="#L51">51</a>  				System.out.println(<span class="jxr_string">"Map String Answer from MySQL server : "</span> + daoReturn);
 <a class="jxr_linenumber" name="L52" href="#L52">52</a>  				
-<a class="jxr_linenumber" name="L53" href="#L53">53</a>  				LorannModel lorannmodel = <strong class="jxr_keyword">new</strong> <a href="../MonModele/LorannModel.html">LorannModel</a>();		<em class="jxr_comment">// Instantiate LorannModel</em>
+<a class="jxr_linenumber" name="L53" href="#L53">53</a>  				LorannModel lorannmodel = <strong class="jxr_keyword">new</strong> <a href="../myModel/LorannModel.html">LorannModel</a>();		<em class="jxr_comment">// Instantiate LorannModel</em>
 <a class="jxr_linenumber" name="L54" href="#L54">54</a>  				
 <a class="jxr_linenumber" name="L55" href="#L55">55</a>  				levelChecker = levelTester.check(String.valueOf(daoReturn));
 <a class="jxr_linenumber" name="L56" href="#L56">56</a>  				
@@ -67,33 +67,34 @@
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>  					lorannmodel.setLevel(String.valueOf(daoReturn));		<em class="jxr_comment">// Assign Answer from Server to level string</em>
 <a class="jxr_linenumber" name="L60" href="#L60">60</a>  					lorannmodel.mapCreator(lorannmodel.getLevel());
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  		
-<a class="jxr_linenumber" name="L62" href="#L62">62</a>  					LorannController loranncontroller = <strong class="jxr_keyword">new</strong> <a href="../monController/LorannController.html">LorannController</a>(lorannmodel);
-<a class="jxr_linenumber" name="L63" href="#L63">63</a>  					MainFrame lorannview = <strong class="jxr_keyword">new</strong> <a href="../maVue/MainFrame.html">MainFrame</a>(loranncontroller,lorannmodel, lorannmodel);
+<a class="jxr_linenumber" name="L62" href="#L62">62</a>  					LorannController loranncontroller = <strong class="jxr_keyword">new</strong> <a href="../myController/LorannController.html">LorannController</a>(lorannmodel);
+<a class="jxr_linenumber" name="L63" href="#L63">63</a>  					MainFrame lorannview = <strong class="jxr_keyword">new</strong> <a href="../myView/MainFrame.html">MainFrame</a>(loranncontroller,lorannmodel, lorannmodel);
 <a class="jxr_linenumber" name="L64" href="#L64">64</a>  				
-<a class="jxr_linenumber" name="L65" href="#L65">65</a>  					Thread moi = <strong class="jxr_keyword">new</strong> Thread(<strong class="jxr_keyword">new</strong> <a href="../monController/LorannController.html">LorannController</a>(lorannmodel));
+<a class="jxr_linenumber" name="L65" href="#L65">65</a>  					Thread moi = <strong class="jxr_keyword">new</strong> Thread(<strong class="jxr_keyword">new</strong> <a href="../myController/LorannController.html">LorannController</a>(lorannmodel));
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>  					moi.start();
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>  					
 <a class="jxr_linenumber" name="L68" href="#L68">68</a>  				loranncontroller.setViewSystem(lorannview);
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>  				loranncontroller.play();
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>  
-<a class="jxr_linenumber" name="L71" href="#L71">71</a>  
-<a class="jxr_linenumber" name="L72" href="#L72">72</a>  					loranncontroller.setViewSystem(lorannview);
-<a class="jxr_linenumber" name="L73" href="#L73">73</a>  					loranncontroller.play();
-<a class="jxr_linenumber" name="L74" href="#L74">74</a>  				}
-<a class="jxr_linenumber" name="L75" href="#L75">75</a>  				<strong class="jxr_keyword">else</strong>
-<a class="jxr_linenumber" name="L76" href="#L76">76</a>  				{
-<a class="jxr_linenumber" name="L77" href="#L77">77</a>  					JOptionPane.showMessageDialog(<strong class="jxr_keyword">null</strong>, <span class="jxr_string">"Invalid String for DataBase"</span>);
-<a class="jxr_linenumber" name="L78" href="#L78">78</a>  					System.out.println(<span class="jxr_string">"Invalid string"</span>);
-<a class="jxr_linenumber" name="L79" href="#L79">79</a>  				}
-<a class="jxr_linenumber" name="L80" href="#L80">80</a>  
-<a class="jxr_linenumber" name="L81" href="#L81">81</a>  		}
-<a class="jxr_linenumber" name="L82" href="#L82">82</a>  		
-<a class="jxr_linenumber" name="L83" href="#L83">83</a>  		<strong class="jxr_keyword">catch</strong> (SQLException e)
-<a class="jxr_linenumber" name="L84" href="#L84">84</a>  		{
-<a class="jxr_linenumber" name="L85" href="#L85">85</a>  			e.printStackTrace();
-<a class="jxr_linenumber" name="L86" href="#L86">86</a>  		}
-<a class="jxr_linenumber" name="L87" href="#L87">87</a>  	}
-<a class="jxr_linenumber" name="L88" href="#L88">88</a>  }
+<a class="jxr_linenumber" name="L71" href="#L71">71</a>  				}
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>  				<strong class="jxr_keyword">else</strong>
+<a class="jxr_linenumber" name="L73" href="#L73">73</a>  				{
+<a class="jxr_linenumber" name="L74" href="#L74">74</a>  					JOptionPane.showMessageDialog(<strong class="jxr_keyword">null</strong>, <span class="jxr_string">"Invalid String for DataBase"</span>);
+<a class="jxr_linenumber" name="L75" href="#L75">75</a>  					System.out.println(<span class="jxr_string">"Invalid string"</span>);
+<a class="jxr_linenumber" name="L76" href="#L76">76</a>  				}
+<a class="jxr_linenumber" name="L77" href="#L77">77</a>  
+<a class="jxr_linenumber" name="L78" href="#L78">78</a>  		}
+<a class="jxr_linenumber" name="L79" href="#L79">79</a>  		
+<a class="jxr_linenumber" name="L80" href="#L80">80</a>  		<strong class="jxr_keyword">catch</strong> (SQLException e)
+<a class="jxr_linenumber" name="L81" href="#L81">81</a>  		{
+<a class="jxr_linenumber" name="L82" href="#L82">82</a>  			e.printStackTrace();
+<a class="jxr_linenumber" name="L83" href="#L83">83</a>  		}
+<a class="jxr_linenumber" name="L84" href="#L84">84</a>  		<strong class="jxr_keyword">catch</strong> (ArrayIndexOutOfBoundsException e2)
+<a class="jxr_linenumber" name="L85" href="#L85">85</a>  		{
+<a class="jxr_linenumber" name="L86" href="#L86">86</a>  			e2.printStackTrace();
+<a class="jxr_linenumber" name="L87" href="#L87">87</a>  		}
+<a class="jxr_linenumber" name="L88" href="#L88">88</a>  	}
+<a class="jxr_linenumber" name="L89" href="#L89">89</a>  }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2018. All rights reserved.</div>
