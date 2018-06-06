@@ -1,6 +1,6 @@
 package MonModele;
 /**
- * <h1>The Abstract Class MOVABLEITEM_Ennemy/h1>
+ * <h1>The Abstract Class MOVABLEITEM_Ennemy</h1>
  *
  * @author Nicolas DRAPIER
  * @version 0.1
@@ -30,7 +30,7 @@ public class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem implements Runna
 		{
 			for(int i = 0; i<7; i++)
 			{
-				System.out.println(Thread.currentThread().getName());
+				System.out.println(Thread.currentThread().getName() + " ennemy" + Thread.currentThread().getState());
 				System.out.println(i);
 				try {
 					Thread.sleep(1000);

@@ -1,6 +1,6 @@
 package MonModele;
 /**
- * <h1>The Class MONSTER_TotemMan/h1>
+ * <h1>The Class MONSTER_TotemMan</h1>
  *
  * @author Nicolas DRAPIER
  * @version 0.1

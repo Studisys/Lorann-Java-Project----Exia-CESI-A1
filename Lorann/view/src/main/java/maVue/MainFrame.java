@@ -15,7 +15,6 @@ import monController.iOrderPerformer;
  *
  * @author Nicolas DRAPIER
  * @version 0.1
- * @see java.lang.Runnable,iView
  */
 
 public class MainFrame implements java.lang.Runnable,iView {

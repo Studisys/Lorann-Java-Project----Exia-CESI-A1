@@ -11,6 +11,7 @@ import MonModele.INTERFACE_Model;
 import MonModele.Item;
 import MonModele.MOVABLEITEM_Ennemy;
 import MonModele.Position;
+import MonModele.SPRITE_MeSprite;
 import MonModele.WALL_Door;
 import MonModele.WALL_Void;
 import maVue.iView;
@@ -20,12 +21,12 @@ import maVue.iView;
  *
  * @author Nicolas DRAPIER
  * @version 0.1
- * @see IOrderPerformer
  */
 //A class called LorannController
-public class LorannController implements iOrderPerformer
+public class LorannController implements iOrderPerformer, Runnable
 {
 	private int TIME_SLEEP = 30;
+	private int speed = 200;
 	public final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
@@ -33,8 +34,7 @@ public class LorannController implements iOrderPerformer
 	private Item hero;
 	private int SCORE = 0;
 
-	private Thread m1, m2, m3, m4;
-	private ThreadGroup monsterThread;
+
 	
 	
 	private MonModele.Direction direction = null;
@@ -45,19 +45,7 @@ public class LorannController implements iOrderPerformer
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
-		this.hero = this.LorannModel.getLorann();
-		/*this.monsterThread = new ThreadGroup("Monster");
-		
-		this.m1=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		this.m2=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		this.m3=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		this.m4=new Thread(monsterThread, new MOVABLEITEM_Ennemy() );
-		
-		this.m1.start();
-		this.m2.start();
-		this.m3.start();
-		this.m4.start();*/
-		
+		this.hero = this.LorannModel.getLorann();		
 	}
 	
 	@Override
@@ -115,7 +103,7 @@ public class LorannController implements iOrderPerformer
 				break;*/
 				
 			case STATIC:
-				default: this.hero.setImage("crystal_ball.png");
+				default: this.hero.setImage("lorann_l.png");
 					break;
 				
 			}
@@ -168,7 +156,6 @@ public class LorannController implements iOrderPerformer
 		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
 		}
 		this.direction = direction;
-		
 	}
 
 	public void play()
@@ -257,7 +244,25 @@ public class LorannController implements iOrderPerformer
 		SCORE = sCORE;
 	}
 
-	
+	@Override
+	public void run() 
+	{
+		while(true)
+		{
+			for(int i = 0; i<8; i++)
+			{
+				this.hero.setImage(SPRITE_MeSprite.values()[i] + ".png");
+				try {
+					Thread.sleep(this.speed);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		}
+		
+	}
 	
 	
 	// No warning with this

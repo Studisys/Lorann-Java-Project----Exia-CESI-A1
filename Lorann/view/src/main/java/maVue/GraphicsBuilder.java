@@ -9,7 +9,7 @@ import MonModele.Item;
 import MonModele.MOVABLEITEM_Ennemy;
 import monController.LorannController;
 
-public class GraphicsBuilder implements iGraphicsBuilder{
+public class GraphicsBuilder implements iGraphicsBuilder {
 	
 	private final INTERFACE_Model lorannModel;
 	@SuppressWarnings("unused")
@@ -69,5 +69,6 @@ public class GraphicsBuilder implements iGraphicsBuilder{
 	{
 		return this.imageHeight * 12;
 	}
+
 
 }
