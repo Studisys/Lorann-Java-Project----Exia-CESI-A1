@@ -1,8 +1,5 @@
 package MonModele;
 
-import java.awt.Graphics;
-import java.applet.Applet;
-
 public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 
 	private int speed = 48;

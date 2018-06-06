@@ -12,7 +12,6 @@ import monController.LorannController;
 public class GraphicsBuilder implements iGraphicsBuilder {
 	
 	private final INTERFACE_Model lorannModel;
-	@SuppressWarnings("unused")
 	private final LorannController controller;
 	int imageWidth= 48;
 	int imageHeight = 48;
@@ -44,7 +43,6 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 		
 		for (MOVABLEITEM_MovableItem items : this.monsterList) 
 		{
-			//this.controller.myIa(items, items.getPosition().getX(), items.getPosition().getY());
 			graphics.drawImage(items.getImage(), 
 					items.getPosition().getX()*48, 
 					items.getPosition().getY() *48, 

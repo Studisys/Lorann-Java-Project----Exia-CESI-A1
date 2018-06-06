@@ -14,7 +14,6 @@ public class MOVABLEITEM_Spell extends MOVABLEITEM_MovableItem {
 	private int maxDistanceTraveled;
 	@SuppressWarnings("unused")
 	private int distanceTraveled;
-	private String image;
 
 	public MOVABLEITEM_Spell(Direction direction)
 	{
