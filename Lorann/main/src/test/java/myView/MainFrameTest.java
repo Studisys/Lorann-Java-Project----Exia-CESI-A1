@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package myView;
 /**
  * <h1>MainFrame JUnit test</h1>
@@ -13,16 +16,26 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/** test of a popup displayer used for exemple when an incorrect string is returned by the database */
+// TODO: Auto-generated Javadoc
+/**
+ *  test of a popup displayer used for exemple when an incorrect string is returned by the database.
+ */
 @SuppressWarnings("unused")
 public class MainFrameTest 
 {
+	
+	/**
+	 * Run.
+	 */
 	@Test
 	public void run() 
 	{
 			
 	}
 	
+	/**
+	 * Display message.
+	 */
 	@Test
 	public void displayMessage() 
 	{
@@ -30,6 +43,9 @@ public class MainFrameTest
 		JOptionPane.showMessageDialog(null, message);
 	}
 	
+	/**
+	 * Exit.
+	 */
 	@Test
 	public void exit() 
 	{

@@ -1,5 +1,9 @@
+/*
+ * 
+ */
 package myController;
 
+// TODO: Auto-generated Javadoc
 /**
  * <h1>The Enum Order.</h1>
  *
@@ -9,29 +13,34 @@ package myController;
 //An enumeration of the different actions that are used
 public enum Order 
 {
-	   /** Go up */
+	   
+   	/**  Go up. */
 	UP,
-	   /** To the right */
+	   
+   	/**  To the right. */
 	RIGHT,
-	   /** Go down */
+	   
+   	/**  Go down. */
 	DOWN,
-	   /** To the left */	
+	   
+   	/**  To the left. */	
 	LEFT,
-	   /** Diagonal Down - Right */
+	   
+   	/**  Diagonal Down - Right. */
     DOWNRIGHT,
     
-    /** Diagonal Down - Left */
+    /**  Diagonal Down - Left. */
     DOWNLEFT,
     
-    /** Diagonal Up - Left */
+    /**  Diagonal Up - Left. */
     UPLEFT,
     
-    /** Diagonal Up - Right */
+    /**  Diagonal Up - Right. */
     UPRIGHT,
     
     /** Shoot it !. */
     SHOOT,
 
-    /** Freeze ! Do not move ! (Lorann) */
+    /**  Freeze ! Do not move ! (Lorann). */
 	STATIC;
 }

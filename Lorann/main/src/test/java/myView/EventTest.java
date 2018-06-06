@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package myView;
 /**
  * <h1>EventTest JUnit test</h1>
@@ -15,11 +18,20 @@ import myController.KeyOrder;
 import myController.Order;
 import myController.iKeyOrder;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EventTest.
+ */
 public class EventTest {
 
 		/*to verify if the keyCode match with the KeyEvent used in the Event class*/
 	
-	    @Test 
+	    /**
+		 * Gets the key code up.
+		 *
+		 * @return the key code up
+		 */
+		@Test 
 	    /** Check keycode up */
 	    public void getKeyCodeUp()
 	    {
@@ -47,7 +59,11 @@ public class EventTest {
 			}
 	    }
 	    
-	    /** Check keycode down */
+	    /**
+    	 *  Check keycode down.
+    	 *
+    	 * @return the key code down
+    	 */
 	    @Test public void getKeyCodeDown()
 	    {
 	    	// S key
@@ -74,7 +90,11 @@ public class EventTest {
 			}
 	    }
 	    
-	    /** Check keycode right */
+	    /**
+    	 *  Check keycode right.
+    	 *
+    	 * @return the key code right
+    	 */
 	    @Test public void getKeyCodeRight()
 	    {
 	    	// D key
@@ -101,7 +121,11 @@ public class EventTest {
 			}
 	    }
 	    
-	    /** Check keycode left */
+	    /**
+    	 *  Check keycode left.
+    	 *
+    	 * @return the key code left
+    	 */
 	    @Test public void getKeyCodeLeft()
 	    {
 	    	// Q key
@@ -128,7 +152,12 @@ public class EventTest {
 			}
 	    }
 	    
-	    @Test public void getKeyCodeShoot()
+	    /**
+    	 * Gets the key code shoot.
+    	 *
+    	 * @return the key code shoot
+    	 */
+    	@Test public void getKeyCodeShoot()
 	    {
 	    	// Space key
 	    	int keyCode = 32; 

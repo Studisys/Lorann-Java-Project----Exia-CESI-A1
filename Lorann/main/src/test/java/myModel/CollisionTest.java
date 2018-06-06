@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package myModel;
 /**
  * <h1>CollisionTest JUnit test</h1>
@@ -15,24 +18,51 @@ import myController.LorannController;
 import myModel.Item;
 import myModel.LorannModel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CollisionTest.
+ */
 public class CollisionTest {
 
+	/**
+	 * Sets the up before class.
+	 *
+	 * @throws Exception the exception
+	 */
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
 
+	/**
+	 * Tear down after class.
+	 *
+	 * @throws Exception the exception
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test collision.
+	 */
 	@Test
 	public void testCollision() 
 	{
