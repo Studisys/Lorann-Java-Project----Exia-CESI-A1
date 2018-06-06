@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import org.junit.internal.runners.model.EachTestNotifier;
-
 import MonModele.Direction;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
@@ -31,7 +29,6 @@ public class LorannController implements iOrderPerformer, Runnable
 	public final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
-	private ArrayList<MOVABLEITEM_MovableItem> movable;
 	private Item hero;
 	private int SCORE = 0;
 
@@ -43,6 +40,7 @@ public class LorannController implements iOrderPerformer, Runnable
 	
 	private MOVABLEITEM_MovableItem spell;
 	
+	
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
@@ -53,6 +51,10 @@ public class LorannController implements iOrderPerformer, Runnable
 		this.LorannModel.getMonsterList().add(spell);
 	}
 	
+	public ArrayList<MOVABLEITEM_MovableItem> getMonsterList()
+	{
+		return this.LorannModel.getMonsterList();
+	}
 	
 	
 	public boolean isLaunched() {
@@ -135,6 +137,7 @@ public class LorannController implements iOrderPerformer, Runnable
 				
 			case SHOOT:
 				this.launchSpell(posX, posY, this.getDirection());
+				this.spell.setImage("fireball_1.png");
 				break;
 				
 			case STATIC:
@@ -142,22 +145,52 @@ public class LorannController implements iOrderPerformer, Runnable
 					break;
 				
 			}
-
 	}
+	
+	private void collision(int x, int y)
+	{
+		for(int i = 0; i<=this.LorannModel.getMonsterList().size()-1;i++)
+		{
+			if (x == this.LorannModel.getMonsterList().get(i).getPosition().getX() && y == this.LorannModel.getMonsterList().get(i).getPosition().getY())
+			{
+				this.LorannModel.getMonsterList().remove(i);
+				this.setSCORE(this.getSCORE()+1000);
+				spell.setPosition(new Position(x,y));
+				spell.setImage("fireball_1.png");
+			}
+		}
+	}
+	
+	
 	
 	private void launchSpell(int x, int y, Direction direction)
 	{
-
+		
+		
 		switch(direction)
 		{
 		
-		case UP: 		spell.setPosition(new Position(x,y-1));	break;
-		case DOWN: 		spell.setPosition(new Position(x,y+1));	break;
-		case RIGHT: 	spell.setPosition(new Position(x+1,y));	break;
-		case LEFT: 		spell.setPosition(new Position(x-1,y));	break;
-			default:this.hero.setImage("crystal_ball.png");
-				break;
+		case UP: 
+		this.collision(x, y-1);
+		break;
+	
+		case DOWN: 	
+		this.collision(x, y+1);
+		break;
+		
+		case RIGHT: 
+		this.collision(x+1, y);
+		break;
+		
+		case LEFT: 		
+		this.collision(x-1, y);
+		break;
+		
+		default:
+		this.spell.setImage("fireball_1.png");
+		break;
 		}
+		this.spell.setImage("fireball_1.png");
 	}
 	
 	public void getCollider(int x, int y, Direction direction)

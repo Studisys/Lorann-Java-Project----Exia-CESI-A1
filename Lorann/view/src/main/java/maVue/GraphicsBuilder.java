@@ -12,7 +12,6 @@ import monController.LorannController;
 public class GraphicsBuilder implements iGraphicsBuilder {
 	
 	private final INTERFACE_Model lorannModel;
-	@SuppressWarnings("unused")
 	private final LorannController controller;
 	int imageWidth= 48;
 	int imageHeight = 48;
@@ -24,13 +23,14 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 	{
 		this.lorannModel = lorannModel;
 		this.map = this.lorannModel.getItemList();
-		this.monsterList = this.lorannModel.getMonsterList();
 		this.controller = new LorannController(this.lorannModel);
 	}
 	
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver observer) 
 	{
+		this.monsterList = this.controller.getMonsterList();
+
 		Item item;
 		for (int y = 0; y<=11; y++)
 		{
@@ -43,7 +43,6 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 		
 		for (MOVABLEITEM_MovableItem items : this.monsterList) 
 		{
-			//this.controller.myIa(items, items.getPosition().getX(), items.getPosition().getY());
 			graphics.drawImage(items.getImage(), 
 					items.getPosition().getX()*48, 
 					items.getPosition().getY() *48, 
