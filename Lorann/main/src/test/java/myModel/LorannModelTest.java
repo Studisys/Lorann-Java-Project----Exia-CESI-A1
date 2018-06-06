@@ -1,6 +1,3 @@
-/*
- * 
- */
 package myModel;
 /**
  * <h1>CollisionTest JUnit test</h1>
@@ -18,19 +15,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import myModel.LorannModel;
-// TODO: Auto-generated Javadoc
-
-/**
- * The Class LorannModelTest.
- */
-
+/*testing the setLevel method in comparison of a String*/
 @SuppressWarnings("unused")
 public class LorannModelTest {
-	
-	/**
-	 * Test.
-	 * Testing the setLevel method in comparison of a String
-	 */
 	@Test
 	public void test()
 	{

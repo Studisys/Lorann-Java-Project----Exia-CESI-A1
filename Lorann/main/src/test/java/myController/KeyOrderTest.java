@@ -1,6 +1,3 @@
-/*
- * 
- */
 package myController;
 /**
  * <h1>KeyOrder JUnit test</h1>
@@ -13,17 +10,9 @@ import org.junit.Test;
 import myController.KeyOrder;
 import myController.Order;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class KeyOrderTest.
- */
 public class KeyOrderTest {
 
-/**
- * Test to try the KeyOrder class by creating a new KeyOrder object and displaying its order.
- *
- * @return the order
- */
+/**Test to try the KeyOrder class by creating a new KeyOrder object and displaying its order*/
 	@Test
 	public void getOrder() 
 	{

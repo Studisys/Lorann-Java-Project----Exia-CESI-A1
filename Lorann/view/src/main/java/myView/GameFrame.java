@@ -1,6 +1,3 @@
-/*
- * 
- */
 package myView;
 import java.awt.event.KeyEvent;
 import java.util.Observable;
@@ -8,7 +5,6 @@ import java.util.Observable;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-// TODO: Auto-generated Javadoc
 /**
  * <h1>The Class GameFrame</h1>
  * * * * To set the view and perform refresh
@@ -18,24 +14,10 @@ import javax.swing.WindowConstants;
  * @see JFrame
  */
 public class GameFrame extends JFrame implements java.awt.event.KeyListener{
-	
-	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
-	
-	/** The event performer. */
 	private final iEventPerformer	eventPerformer;
-	
-	/** The is key pressed. */
 	public boolean[] isKeyPressed;
 	
-	/**
-	 * Instantiates a new game frame.
-	 *
-	 * @param title the title
-	 * @param performer the performer
-	 * @param graphicsBuilder the graphics builder
-	 * @param observable the observable
-	 */
 	public GameFrame(String title,iEventPerformer performer, iGraphicsBuilder graphicsBuilder, Observable observable)
 	{
 		this.eventPerformer = performer;
@@ -57,29 +39,17 @@ public class GameFrame extends JFrame implements java.awt.event.KeyListener{
 
 		this.setVisible(true);
 	}
-	
-	/* (non-Javadoc)
-	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
-	 */
 	@Override
 	public void keyPressed(KeyEvent keyEvent)
 	{
 	
 		this.eventPerformer.event(keyEvent);
 	}
-	
-	/* (non-Javadoc)
-	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
-	 */
 	@Override
 	public void keyReleased(KeyEvent keyEvent)
 	{
 		//isKeyPressed = false;
 	}
-	
-	/* (non-Javadoc)
-	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
-	 */
 	@Override
 	public void keyTyped(KeyEvent keyEvent)
 	{

@@ -1,6 +1,3 @@
-/*
- * 
- */
 package myController;
 
 import java.util.ArrayList;
@@ -18,7 +15,6 @@ import myModel.WALL_Door;
 import myModel.WALL_Void;
 import myView.iView;
 
-// TODO: Auto-generated Javadoc
 /**
  * <h1>The Class LorannController.</h1>
  * @author Nicolas DRAPIER
@@ -27,47 +23,60 @@ import myView.iView;
 //A class called LorannController
 public class LorannController implements iOrderPerformer, Runnable
 {
-	
-	/** TIME SLEEP. */
+	/**
+	 * TIME SLEEP
+	 */
 	private int TIME_SLEEP = 30;
-	
-	/** SPEED. */
+	/**
+	 * SPEED
+	 */
 	private int speed = 200;
-	
-	/** LorannModel of type INTERFACE_Model. */
+	/**
+	 * LorannModel of type INTERFACE_Model
+	 */
 	public final INTERFACE_Model LorannModel;
-	
-	/** ISGAMEOVER BOOLEAN. */
+	/**
+	 * ISGAMEOVER BOOLEAN
+	 */
 	private boolean isGameOver = false;
-	
-	/** VIEWSYSTEM. */
+	/**
+	 * VIEWSYSTEM
+	 */
 	private iView viewSystem;
-	
-	/** HERO ITEM. */
+	/**
+	 * HERO ITEM
+	 */
 	private Item hero;
-	
-	/** SCORE. */
+	/**
+	 * SCORE
+	 */
 	private int SCORE = 0;
-	
-	/** LAUNCHED BOOLEAN. */
+	/**
+	 * LAUNCHED BOOLEAN
+	 */
 	private boolean launched = false;
-	
-	/** POSITION POSX & POSY. */
+	/**
+	 * POSITION POSX & POSY
+	 */
 	private int posX, posY;
 	
-	/** POSITION X & Y. */
+	/**
+	 * POSITION X & Y
+	 */
 	private int x,y;
 	
-	/** DIRECTION. */
+	/**
+	 * DIRECTION
+	 */
 	private myModel.Direction direction = null;
 	
-	/** SPELL ITEM. */
+	/**
+	 * SPELL ITEM
+	 */
 	private MOVABLEITEM_MovableItem spell;
 	
-	/**
-	 * LorannController constructor.
-	 *
-	 * @param LorannModel the lorann model
+	/**LorannController constructor
+	 * @param LorannModel
 	 */
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
@@ -79,88 +88,50 @@ public class LorannController implements iOrderPerformer, Runnable
 		this.LorannModel.getMonsterList().add(spell);
 	}
 	
-	/**
-	 * Gets the monster list.
-	 *
-	 * @return the monster list
-	 */
 	public ArrayList<MOVABLEITEM_MovableItem> getMonsterList()
 	{
 		return this.LorannModel.getMonsterList();
 	}
 	
 	
-	/**
-	 * Checks if is launched.
-	 *
-	 * @return true, if is launched
-	 */
 	public boolean isLaunched() {
 		return launched;
 	}
 
 
 
-	/**
-	 * Sets the launched.
-	 *
-	 * @param launched the new launched
-	 */
 	public void setLaunched(boolean launched) {
 		this.launched = launched;
 	}
 
 	
 
-	/**
-	 * Gets the x.
-	 *
-	 * @return the x
-	 */
 	public int getX() {
 		return x;
 	}
 
 
 
-	/**
-	 * Sets the x.
-	 *
-	 * @param x the new x
-	 */
 	public void setX(int x) {
 		this.x = x;
 	}
 
 
 
-	/**
-	 * Gets the y.
-	 *
-	 * @return the y
-	 */
 	public int getY() {
 		return y;
 	}
 
 
 
-	/**
-	 * Sets the y.
-	 *
-	 * @param y the new y
-	 */
 	public void setY(int y) {
 		this.y = y;
 	}
 
 
-	/**
-	 *  Key manager
+	/** Key manager
 	 * Perform action on user Keyboard Input
-	 * - Set new position on array (x, y) and change sprite.
-	 *
-	 * @param keyOrder the key order
+	 * - Set new position on array (x, y) and change sprite
 	 */
 	@Override
 	public void orderPerform(iKeyOrder keyOrder)
@@ -216,11 +187,10 @@ public class LorannController implements iOrderPerformer, Runnable
 			}System.out.println(this.getSCORE());
 	}
 	
-	/**
-	 * Collision manager for spell .
-	 *
-	 * @param x the x
-	 * @param y the y
+	/**Collision manager for spell 
+	 * 
+	 * @param x
+	 * @param y
 	 */
 	
 	private void collision(int x, int y)
@@ -239,15 +209,13 @@ public class LorannController implements iOrderPerformer, Runnable
 		}
 	}
 	
-	/**
-	 *  launch spell 
+	/** launch spell 
 	 * x = theorical position
 	 * y = theorical position
-	 * direction = arrow direction.
-	 *
-	 * @param x the x
-	 * @param y the y
-	 * @param direction the direction
+	 * direction = arrow direction
+	 * @param x
+	 * @param y
+	 * @param direction
 	 */
 	
 	/**
@@ -285,16 +253,13 @@ public class LorannController implements iOrderPerformer, Runnable
 		this.spell.setImage("fireball_1.png");
 	}
 	
-	/**
-	 *  Collision manager for Lorann 
+	/** Collision manager for Lorann 
 	 * x = lorann's X
 	 * y = lorann's Y
-	 * direction is the arrow direction.
-	 *
-	 * @param x the x
-	 * @param y the y
-	 * @param direction the direction
-	 * @return the collider
+	 * direction is the arrow direction
+	 * @param x
+	 * @param y
+	 * @param direction
 	 */
 	
 	
@@ -373,9 +338,6 @@ public class LorannController implements iOrderPerformer, Runnable
 		
 	}
 
-	/**
-	 * Play.
-	 */
 	public void play()
 	{
 		this.gameLoop();
@@ -383,29 +345,16 @@ public class LorannController implements iOrderPerformer, Runnable
 		iView.exit();
 	}
 	
-	/**
-	 * Sets the view system.
-	 *
-	 * @param viewSystem the new view system
-	 */
 	public void setViewSystem(final iView viewSystem)
 	{
 		this.viewSystem = viewSystem;
 	}
 	
-	/**
-	 * Gets the view system.
-	 *
-	 * @return the view system
-	 */
 	public iView getViewSystem()
 	{
 		return this.viewSystem;
 	}
 
-	/**
-	 * Game loop.
-	 */
 	private void gameLoop()
 	{
 		while (!this.isGameOver)
@@ -424,26 +373,16 @@ public class LorannController implements iOrderPerformer, Runnable
 		}
 	}
 	
-	/**
-	 * Gets the score.
-	 *
-	 * @return the score
-	 */
 	public int getSCORE() {
 		return SCORE;
 	}
 
-	/**
-	 * Sets the score.
-	 *
-	 * @param sCORE the new score
-	 */
 	public void setSCORE(int sCORE) {
 		SCORE = sCORE;
 	}
 
-	/**
-	 *  Thread and change the sprite of the hero .
+	/** Thread and change the sprite of the hero 
+	 * 
 	 */
 	
 	@Override
@@ -466,13 +405,12 @@ public class LorannController implements iOrderPerformer, Runnable
 		
 	}
 	
-	/**
-	 *  change direction of a monster or the spell
+	/** change direction of a monster or the spell
 	 * 
-	 * not used yet.
-	 *
-	 * @param direction the direction
-	 * @return the direction
+	 * not used yet
+	 * 
+	 * @param direction
+	 * @return
 	 */
 	public Direction changeDir(Direction direction)
 	{
@@ -490,16 +428,10 @@ public class LorannController implements iOrderPerformer, Runnable
 		}
 		return myDir;
 	}
-	
-	/**
-	 * Collision method for monsters
+	/**Collision method for monsters
 	 * x = monster's X
-	 * y = monster's Y.
-	 *
-	 * @param x the x
-	 * @param y the y
-	 * @return the collider monster
-	 */
+	 * y = monster's Y
+	 * */
 	public boolean getColliderMonster(int x, int y)
 	{
 		
@@ -518,11 +450,7 @@ public class LorannController implements iOrderPerformer, Runnable
 
 	}
 	
-	/**
-	 * Get direction from model.
-	 *
-	 * @return the direction
-	 */
+	/**Get direction from model*/
 	public myModel.Direction getDirection() {
 		return direction;
 	}

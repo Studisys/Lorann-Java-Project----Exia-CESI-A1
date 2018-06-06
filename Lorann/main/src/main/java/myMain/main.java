@@ -1,6 +1,3 @@
-/*
- * 
- */
 package myMain;
 
 import java.sql.SQLException;
@@ -17,9 +14,8 @@ import model.Example;
 import model.dao.LorannDAO;
 import myController.LorannController;
 
-// TODO: Auto-generated Javadoc
 /**
- * <h1>The Class Main</h1>.
+ * <h1>The Class Main</h1>
  *
  * @author Joël DIDIER and Nicolas DRAPIER
  * @version 0.1
@@ -27,14 +23,8 @@ import myController.LorannController;
 @SuppressWarnings("unused")
 public class main {
 
-	/** The level. */
 	public String level;
 	
-	/**
-	 * The main method.
-	 *
-	 * @param args the arguments
-	 */
 	public static void main (String[] args) 
 	
 	{
@@ -73,8 +63,8 @@ public class main {
 					LorannController loranncontroller = new LorannController(lorannmodel);
 					MainFrame lorannview = new MainFrame(loranncontroller,lorannmodel, lorannmodel);
 				
-					Thread me = new Thread(new LorannController(lorannmodel));
-					me.start();
+					Thread moi = new Thread(new LorannController(lorannmodel));
+					moi.start();
 					
 				loranncontroller.setViewSystem(lorannview);
 				loranncontroller.play();
