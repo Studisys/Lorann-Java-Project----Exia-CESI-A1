@@ -84,5 +84,9 @@ public class main {
 		{
 			e.printStackTrace();
 		}
+		catch (ArrayIndexOutOfBoundsException e2)
+		{
+			e2.printStackTrace();
+		}
 	}
 }
