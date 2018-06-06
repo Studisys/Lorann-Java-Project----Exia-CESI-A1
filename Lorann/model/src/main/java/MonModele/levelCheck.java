@@ -58,6 +58,10 @@ public class levelCheck {
 		{
 			isCompatible = false;
 		}
+		if(level.length()!=240)
+		{
+			isCompatible = false;
+		}
 		return isCompatible;
 	}
 }
