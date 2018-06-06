@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
-import MonModele.MOVABLEITEM_Ennemy;
+import MonModele.MOVABLEITEM_MovableItem;
 import monController.LorannController;
 
 public class GraphicsBuilder implements iGraphicsBuilder {
@@ -18,7 +18,7 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 	int imageHeight = 48;
 	
 	private Item[][] map;
-	private ArrayList<MOVABLEITEM_Ennemy> monsterList;
+	private ArrayList<MOVABLEITEM_MovableItem> monsterList;
 	
 	public GraphicsBuilder(INTERFACE_Model lorannModel)
 	{
@@ -41,7 +41,7 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 			}
 		}	
 		
-		for (MOVABLEITEM_Ennemy items : this.monsterList) 
+		for (MOVABLEITEM_MovableItem items : this.monsterList) 
 		{
 			//this.controller.myIa(items, items.getPosition().getX(), items.getPosition().getY());
 			graphics.drawImage(items.getImage(), 

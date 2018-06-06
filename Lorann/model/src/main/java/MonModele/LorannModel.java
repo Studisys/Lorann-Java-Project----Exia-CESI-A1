@@ -21,7 +21,7 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	private String level;
 	
 	private Item[][] itemList;
-	private ArrayList<MOVABLEITEM_Ennemy> monsterList;
+	private ArrayList<MOVABLEITEM_MovableItem> monsterList;
 	private Item lorann;
 	private Position doorPosition;
 
@@ -89,9 +89,16 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 	}
 
 	@Override
-	public ArrayList<MOVABLEITEM_Ennemy> getMonsterList() {
+	public ArrayList<MOVABLEITEM_MovableItem> getMonsterList() {
 		return monsterList;
 	}
+	
+
+	public void setMonsterList(Item item) {
+		this.monsterList = monsterList;
+	}
+
+
 
 	public Item getLorann() {
 		return lorann;

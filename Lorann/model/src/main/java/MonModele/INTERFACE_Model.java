@@ -17,7 +17,8 @@ public interface INTERFACE_Model {
 	public void setMobilesHavedMove();
 	public Item[][] getItemList();
 	public void setItemList(Item item, int x, int y);
-	public ArrayList<MOVABLEITEM_Ennemy> getMonsterList();
+	public ArrayList<MOVABLEITEM_MovableItem> getMonsterList();
+	public void setMonsterList(Item item);
 	public Item getLorann();
 	public Position getDoorPosition();
 	public char[][] getMap();

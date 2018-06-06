@@ -8,6 +8,7 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 	private int speed = 48;
 	private String image = "lorann_l.png";
 	private boolean weaponed = true;
+
 	
 	public MOVABLEITEM_Me()
 	{
