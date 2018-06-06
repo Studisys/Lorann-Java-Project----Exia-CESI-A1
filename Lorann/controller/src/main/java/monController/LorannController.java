@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import org.junit.internal.runners.model.EachTestNotifier;
+
 import MonModele.Direction;
-import MonModele.INTERFACE_Mobile;
 import MonModele.INTERFACE_Model;
 import MonModele.Item;
-import MonModele.MOVABLEITEM_Ennemy;
+import MonModele.MOVABLEITEM_MovableItem;
 import MonModele.Position;
 import MonModele.SPRITE_MeSprite;
 import MonModele.WALL_Door;
@@ -30,24 +31,66 @@ public class LorannController implements iOrderPerformer, Runnable
 	public final INTERFACE_Model LorannModel;
 	private boolean isGameOver = false;
 	private iView viewSystem;
-	private ArrayList<MOVABLEITEM_Ennemy> movable;
+	private ArrayList<MOVABLEITEM_MovableItem> movable;
 	private Item hero;
 	private int SCORE = 0;
 
-
-	
+	private boolean launched = false;
+	private int posX, posY;
+	private int x,y;
 	
 	private MonModele.Direction direction = null;
 	
-
-	private int posX, posY;
+	private MOVABLEITEM_MovableItem spell;
 	
 	public LorannController(final INTERFACE_Model LorannModel) 
 	{
 		this.LorannModel = LorannModel;
-		this.hero = this.LorannModel.getLorann();		
+		this.hero = this.LorannModel.getLorann();	
+		this.spell = new MOVABLEITEM_MovableItem();
+		this.spell.setImage("fireball_1.png");
+		this.spell.setPosition(new Position(21,13));
+		this.LorannModel.getMonsterList().add(spell);
 	}
 	
+	
+	
+	public boolean isLaunched() {
+		return launched;
+	}
+
+
+
+	public void setLaunched(boolean launched) {
+		this.launched = launched;
+	}
+
+	
+
+	public int getX() {
+		return x;
+	}
+
+
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+
+
+	public int getY() {
+		return y;
+	}
+
+
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+
+
 	@Override
 	public void orderPerform(iKeyOrder keyOrder)
 	{	
@@ -90,17 +133,9 @@ public class LorannController implements iOrderPerformer, Runnable
 				this.hero.setImage("lorann_ul.png");
 	            break;
 				
-			/*case SHOOT:
-				try
-				{
-					this.launchSpell();
-				}
-				
-				catch (final IOException e)
-				{
-					e.printStackTrace();
-				}
-				break;*/
+			case SHOOT:
+				this.launchSpell(posX, posY, this.getDirection());
+				break;
 				
 			case STATIC:
 				default: this.hero.setImage("lorann_l.png");
@@ -109,53 +144,86 @@ public class LorannController implements iOrderPerformer, Runnable
 			}
 
 	}
+	
+	private void launchSpell(int x, int y, Direction direction)
+	{
+
+		switch(direction)
+		{
+		
+		case UP: 		spell.setPosition(new Position(x,y-1));	break;
+		case DOWN: 		spell.setPosition(new Position(x,y+1));	break;
+		case RIGHT: 	spell.setPosition(new Position(x+1,y));	break;
+		case LEFT: 		spell.setPosition(new Position(x-1,y));	break;
+			default:this.hero.setImage("crystal_ball.png");
+				break;
+		}
+	}
+	
 	public void getCollider(int x, int y, Direction direction)
 	{
 		
 		Item item;
 		item = this.LorannModel.getItemList()[y][x];
 		
-		switch(item.getColliderPermission())
+		for(int i = 0; i<=this.LorannModel.getMonsterList().size()-1;i++)
 		{
-		case 0:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
-		case 1:  this.hero.setPosition(new Position (x,y)); 				break;
-		case 2:  
-			JFrame frame1 = new JFrame("Lorann - You Lost !");
-	        frame1.setTitle("Lorann - You Lost !");
-	        JOptionPane.showMessageDialog(frame1, "You Lost !", "Lorann - You Lost !", JOptionPane.PLAIN_MESSAGE);
-	        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        System.exit(JFrame.EXIT_ON_CLOSE);
-	        break;
-		case 3:  this.hero.setPosition(new Position (x,y)); break;
-		case 4:	
-			item = new WALL_Void();
-			this.LorannModel.setItemList(item, x, y);
-			this.setSCORE(this.SCORE + 500);
-			this.hero.setPosition(new Position (x,y));
-			break;
-			
-		case 5:
-			item = new WALL_Void();
-			this.LorannModel.setItemList(item, x, y);
-			this.setSCORE(this.SCORE + 500);
-			this.hero.setPosition(new Position(x,y));
-			Item door =  new WALL_Door();
-			door.setImage("gate_open.png");
-			door.setColliderPermission(6);
-			this.LorannModel.setItemList(door,this.LorannModel.getDoorPosition().getX(), this.LorannModel.getDoorPosition().getY());
-			break;
-		case 6:
-			this.hero.setPosition(new Position(x,y));
-			JFrame frame2 = new JFrame("Lorann - You Won !");
-	        frame2.setTitle("Lorann - You Won !");
-	        JOptionPane.showMessageDialog(frame2, "You Won !", "Lorann - You Won !", JOptionPane.PLAIN_MESSAGE);
-	        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        System.exit(JFrame.EXIT_ON_CLOSE);
-			break;
-			
-		default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
+			if (x == this.LorannModel.getMonsterList().get(i).getPosition().getX() && y == this.LorannModel.getMonsterList().get(i).getPosition().getY())
+			{
+				JFrame frame1 = new JFrame("Lorann - You Lost !");
+		        frame1.setTitle("Lorann - You Lost !");
+		        JOptionPane.showMessageDialog(frame1, "You Lost !", "Lorann - You Lost !", JOptionPane.PLAIN_MESSAGE);
+		        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		        System.exit(JFrame.EXIT_ON_CLOSE);
+			}
+			else
+			{
+				switch(item.getColliderPermission())
+				{
+				case 0:  this.hero.setPosition(new Position(this.posX, this.posY)); break;
+				case 1:  this.hero.setPosition(new Position (x,y)); 				break;
+				case 2:  
+					JFrame frame1 = new JFrame("Lorann - You Lost !");
+			        frame1.setTitle("Lorann - You Lost !");
+			        JOptionPane.showMessageDialog(frame1, "You Lost !", "Lorann - You Lost !", JOptionPane.PLAIN_MESSAGE);
+			        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			        System.exit(JFrame.EXIT_ON_CLOSE);
+			        break;
+				case 3:  this.hero.setPosition(new Position (x,y)); break;
+				case 4:	
+					item = new WALL_Void();
+					this.LorannModel.setItemList(item, x, y);
+					this.setSCORE(this.SCORE + 500);
+					this.hero.setPosition(new Position (x,y));
+					break;
+					
+				case 5:
+					item = new WALL_Void();
+					this.LorannModel.setItemList(item, x, y);
+					this.setSCORE(this.SCORE + 500);
+					this.hero.setPosition(new Position(x,y));
+					Item door =  new WALL_Door();
+					door.setImage("gate_open.png");
+					door.setColliderPermission(6);
+					this.LorannModel.setItemList(door,this.LorannModel.getDoorPosition().getX(), this.LorannModel.getDoorPosition().getY());
+					break;
+				case 6:
+					this.hero.setPosition(new Position(x,y));
+					JFrame frame2 = new JFrame("Lorann - You Won !");
+			        frame2.setTitle("Lorann - You Won !");
+			        JOptionPane.showMessageDialog(frame2, "You Won !", "Lorann - You Won !", JOptionPane.PLAIN_MESSAGE);
+			        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			        System.exit(JFrame.EXIT_ON_CLOSE);
+					break;
+					
+				default: this.hero.setPosition(new Position(this.posX, this.posY));	break;
+				}
+				this.direction = direction;
+			}
 		}
-		this.direction = direction;
+		
+		
+		
 	}
 
 	public void play()
@@ -174,42 +242,6 @@ public class LorannController implements iOrderPerformer, Runnable
 	{
 		return this.viewSystem;
 	}
-	
-	
-	/*private void launchSpell() throws IOException
-	{
-		
-			
-		{
-			final Position position = new Position(
-					this.hero.getPosition().getX() + ((this.width - this.spell.getWidthWithADirection(this.hero.getDirection())) / 2),
-					hero.getPosition().getY() + ((this.height - this.spell.getHeightWithADirection(this.hero.getDirection())) / 2));
-					
-			this.LorannModel.addMobile(new MOVABLEITEM_Spell(this.hero.getDirection(), position));
-					switch (hero.getDirection()) 
-					{
-						case UP:
-							position.setY(position.getY() - 48 - this.hero.getSpeed());
-							break;
-							
-						case RIGHT:
-							position.setX(position.getX() + 48 + this.hero.getSpeed());
-							break;
-							
-						case DOWN:
-							position.setY(position.getY() + 48 + this.hero.getSpeed());
-							break;
-							
-						case LEFT:
-							position.setX(position.getX() - 48 - this.hero.getSpeed());
-							break;
-							
-						default:
-							break;
-
-					}
-		}
-	}*/
 
 	private void gameLoop()
 	{
@@ -224,14 +256,7 @@ public class LorannController implements iOrderPerformer, Runnable
 			{
 				Thread.currentThread().interrupt();
 			}
-			
-			final ArrayList<INTERFACE_Mobile> initialMobiles = new ArrayList<INTERFACE_Mobile>();
-			for (final INTERFACE_Mobile mobile : this.LorannModel.getMobiles())
-			{
-				initialMobiles.add(mobile);
-			}
-			
-			
+
 			this.LorannModel.setMobilesHavedMove();
 		}
 	}
@@ -258,12 +283,46 @@ public class LorannController implements iOrderPerformer, Runnable
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
 			}
+			
 		}
 		
 	}
 	
+	public Direction changeDir(Direction direction)
+	{
+		
+		Direction tabIn[] = {Direction.UP, Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT};
+		Direction tabOut[] = {Direction.UPRIGHT, Direction.RIGHT, Direction.DOWNRIGHT, Direction.DOWN, Direction.DOWNLEFT, Direction.LEFT, Direction.UPLEFT, Direction.UP};
+		
+		Direction myDir = null;
+		for(int i = 0; i<=7; i++)
+		{
+			if(direction == tabIn[i])
+			{
+				myDir = tabOut[i];
+			}
+		}
+		return myDir;
+	}
+	
+	public boolean getColliderMonster(int x, int y)
+	{
+		
+		Item item;
+		item = this.LorannModel.getItemList()[y][x];
+				
+		switch(item.getColliderPermission())
+		{
+		case 0:  return true;
+		case 1:  return false;
+		case 2:  return true;
+		case 3:  return true;
+		case 4:  return true;
+		default: return false;
+		}
+
+	}
 	
 	// No warning with this
 	public MonModele.Direction getDirection() {

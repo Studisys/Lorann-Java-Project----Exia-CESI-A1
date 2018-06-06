@@ -1,6 +1,6 @@
 package MonModele;
 
-public abstract class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
+public class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
 
 	
 
