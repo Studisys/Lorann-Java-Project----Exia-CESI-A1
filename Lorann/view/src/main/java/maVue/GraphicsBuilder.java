@@ -24,13 +24,14 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 	{
 		this.lorannModel = lorannModel;
 		this.map = this.lorannModel.getItemList();
-		this.monsterList = this.lorannModel.getMonsterList();
 		this.controller = new LorannController(this.lorannModel);
 	}
 	
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver observer) 
 	{
+		this.monsterList = this.controller.getMonsterList();
+
 		Item item;
 		for (int y = 0; y<=11; y++)
 		{
