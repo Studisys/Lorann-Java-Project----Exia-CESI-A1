@@ -38,11 +38,6 @@ public class mainTester
 		try
 		{
 
-			Thread ennemy = new Thread(new MOVABLEITEM_Ennemy());
-			Thread moi = new Thread(new MOVABLEITEM_Me());
-			moi.start();
-			ennemy.start();
-
 				levelCheck levelTester = new levelCheck();
 				boolean levelChecker;
 				JFrame frame3 = new JFrame("Lorann");

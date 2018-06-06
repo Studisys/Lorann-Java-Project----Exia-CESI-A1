@@ -1,16 +1,14 @@
-package MonModele;
+package main;
 /**
- * <h1>EventTest JUnit test</h1>
+ * <h1>main JUnit test</h1>
  *
  * @author Bastien Le Gall
  * @version 1.0
  */
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
+import MonModele.Item;
+import MonModele.LorannModel;
 import monController.LorannController;
 
 public class CollisionTest {
