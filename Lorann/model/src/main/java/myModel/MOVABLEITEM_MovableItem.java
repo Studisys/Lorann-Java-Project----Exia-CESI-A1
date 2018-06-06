@@ -1,15 +1,18 @@
 package myModel;
 
-/** The MOVABLEITEM_MovableItem Class
- * 
- * 
- * @author Nicolas DRAPIER
+// TODO: Auto-generated Javadoc
+/**
+ *  The MOVABLEITEM_MovableItem Class.
  *
+ * @author Nicolas DRAPIER
  */
 public class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
 
 	
 
+	/**
+	 * Instantiates a new MOVABLEITE M movable item.
+	 */
 	public MOVABLEITEM_MovableItem()
 	{
 		
@@ -27,6 +30,11 @@ public class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
 	
 
 	
+	/**
+	 * Place in map.
+	 *
+	 * @param position the position
+	 */
 	public void placeInMap(Position position)
 	{
 		
@@ -51,9 +59,11 @@ public class MOVABLEITEM_MovableItem extends Item implements INTERFACE_Mobile {
 	}
 	
 	/**
-	 * @param x
-	 * @param direction
-	 * @return
+	 * Gets the x with direction.
+	 *
+	 * @param x the x
+	 * @param direction the direction
+	 * @return the x with direction
 	 */
 	public int getXWithDirection(int x, Direction direction)
 	{

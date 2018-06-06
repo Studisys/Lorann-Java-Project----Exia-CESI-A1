@@ -19,16 +19,35 @@ import myModel.Item;
 import myModel.MOVABLEITEM_MovableItem;
 import myController.LorannController;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GraphicsBuilder.
+ */
 public class GraphicsBuilder implements iGraphicsBuilder {
 	
+	/** The lorann model. */
 	private final INTERFACE_Model lorannModel;
+	
+	/** The controller. */
 	private final LorannController controller;
+	
+	/** The image width. */
 	int imageWidth= 48;
+	
+	/** The image height. */
 	int imageHeight = 48;
 	
+	/** The map. */
 	private Item[][] map;
+	
+	/** The monster list. */
 	private ArrayList<MOVABLEITEM_MovableItem> monsterList;
 	
+	/**
+	 * Instantiates a new graphics builder.
+	 *
+	 * @param lorannModel the lorann model
+	 */
 	public GraphicsBuilder(INTERFACE_Model lorannModel)
 	{
 		this.lorannModel = lorannModel;
@@ -36,6 +55,9 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 		this.controller = new LorannController(this.lorannModel);
 	}
 	
+	/* (non-Javadoc)
+	 * @see myView.iGraphicsBuilder#applyModelToGraphic(java.awt.Graphics, java.awt.image.ImageObserver)
+	 */
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver observer) 
 	{
@@ -68,11 +90,19 @@ public class GraphicsBuilder implements iGraphicsBuilder {
 				null);
 		
 	}
+	
+	/* (non-Javadoc)
+	 * @see myView.iGraphicsBuilder#getGlobalWidth()
+	 */
 	@Override
 	public int getGlobalWidth() 
 	{
 		return this.imageWidth * 20;
 	}
+	
+	/* (non-Javadoc)
+	 * @see myView.iGraphicsBuilder#getGlobalHeight()
+	 */
 	@Override
 	public int getGlobalHeight() 
 	{

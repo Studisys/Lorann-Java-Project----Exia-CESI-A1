@@ -1,13 +1,17 @@
 package myModel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class levelCheck.
+ */
 public class levelCheck {
 
-	/**Check if there is any illegal character in the string grabbed from the string DBB
+	/**
+	 * Check if there is any illegal character in the string grabbed from the string DBB
 	 *  Also checks if the string is longer or shorter than 240 characters.
-	 * 
-	 * 
-	 * @param level
-	 * @return
+	 *
+	 * @param level the level
+	 * @return true, if successful
 	 */
 	
 	public boolean check(String level)

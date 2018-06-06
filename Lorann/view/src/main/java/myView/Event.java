@@ -16,14 +16,28 @@ import myController.Order;
 import myController.iKeyOrder;
 import myController.iOrderPerformer;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Event.
+ */
 public class Event implements iEventPerformer{
+	
+	/** The order performer. */
 	private final iOrderPerformer orderPerformer;
 
+	/**
+	 * Instantiates a new event.
+	 *
+	 * @param eventPerformer the event performer
+	 */
 	public Event(iOrderPerformer eventPerformer)
 	{
 		this.orderPerformer = eventPerformer;
 	}
 	
+	/* (non-Javadoc)
+	 * @see myView.iEventPerformer#event(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void event(final KeyEvent keyCode) 
 	{
@@ -32,6 +46,13 @@ public class Event implements iEventPerformer{
 			this.orderPerformer.orderPerform(keyOrder);
 		}
 	}
+	
+	/**
+	 * Gets the key code.
+	 *
+	 * @param keyCode the key code
+	 * @return the key code
+	 */
 	public iKeyOrder getKeyCode(int keyCode) {
 	iKeyOrder userOrder;
 	switch (keyCode) {

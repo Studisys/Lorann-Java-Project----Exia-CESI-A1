@@ -7,20 +7,34 @@ package myView;
  */
 import org.junit.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GameFrameTest.
+ */
 public class GameFrameTest
 {
+	
+	/**
+	 * Key pressed.
+	 */
 	@Test
 	public void keyPressed()
 	{
 		
 	}
 	
+	/**
+	 * Key released.
+	 */
 	@Test
 	public void keyReleased()
 	{
 		
 	}
 	
+	/**
+	 * Key typed.
+	 */
 	@Test
 	public void keyTyped()
 	{

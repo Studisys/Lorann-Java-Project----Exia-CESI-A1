@@ -11,9 +11,15 @@ import myModel.Item;
 import myModel.LorannModel;
 import myController.LorannController;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CollisionTest.
+ */
 public class CollisionTest {
 	
-	/**Testing of the collision class which look on the map and return a move possibility or not depending on what type of item it is*/
+	/**
+	 * Testing of the collision class which look on the map and return a move possibility or not depending on what type of item it is.
+	 */
 	
 
 	@Test

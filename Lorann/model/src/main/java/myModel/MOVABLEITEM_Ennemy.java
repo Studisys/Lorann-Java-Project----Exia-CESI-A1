@@ -1,7 +1,10 @@
 package myModel;
+// TODO: Auto-generated Javadoc
+
 /**
  * <h1>The Abstract Class MOVABLEITEM_Ennemy</h1>
- *	Ennemy thread, with Artificial Intelligence (not working and in comments because repaint fails) and collision manager (same as AI)
+ * 	Ennemy thread, with Artificial Intelligence (not working and in comments because repaint fails) and collision manager (same as AI).
+ *
  * @author Nicolas DRAPIER
  * @version 0.1
  * @see MOVABLEITEM_MovableItem
@@ -9,20 +12,37 @@ package myModel;
 public class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem implements Runnable {
 
 	
+	/**
+	 * Instantiates a new MOVABLEITE M ennemy.
+	 *
+	 * @param direction the direction
+	 * @param position the position
+	 * @param image the image
+	 */
 	public MOVABLEITEM_Ennemy(Direction direction, Position position, String image) 
 	{
 		
 	}
+	
+	/**
+	 * Instantiates a new MOVABLEITE M ennemy.
+	 */
 	public MOVABLEITEM_Ennemy()
 	{
 		
 	}
 	
+	/**
+	 * Checks if is alive.
+	 */
 	public void isAlive()
 	{
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Runnable#run()
+	 */
 	@Override
 	/** Run method for ennemies thread*/
 	public void run()
@@ -44,7 +64,13 @@ public class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem implements Runna
 	}
 	
 
-	/** Set direction for Monsters - IA part */
+	/**
+	 *  Set direction for Monsters - IA part.
+	 *
+	 * @param monstre the monstre
+	 * @param player the player
+	 * @return the direction through player
+	 */
 	public Direction getDirectionThroughPlayer(MOVABLEITEM_MovableItem monstre, Item player)
 	{
 	
@@ -84,7 +110,13 @@ public class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem implements Runna
 		
 	}
 	
-	/** Returns current position */
+	/**
+	 *  Returns current position.
+	 *
+	 * @param position the position
+	 * @param direction the direction
+	 * @return the position T
+	 */
 	public Position getPositionT(Position position, Direction direction)
 	{
 		
@@ -104,6 +136,12 @@ public class MOVABLEITEM_Ennemy extends MOVABLEITEM_MovableItem implements Runna
 	}
 	
 	
+	/**
+	 * Change dir.
+	 *
+	 * @param direction the direction
+	 * @return the direction
+	 */
 	public Direction changeDir(Direction direction)
 	{
 		

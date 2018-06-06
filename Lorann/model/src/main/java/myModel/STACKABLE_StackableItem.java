@@ -1,6 +1,7 @@
 package myModel;
+
 /**
- * <h1>The Abstract Class STACKABLE_StackableItem</h1>
+ * <h1>The Abstract Class STACKABLE_StackableItem</h1>.
  *
  * @author Nicolas DRAPIER
  * @version 0.1

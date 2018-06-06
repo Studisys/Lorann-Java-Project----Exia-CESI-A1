@@ -2,25 +2,36 @@ package myModel;
 
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 /**
  * <h1>The Class FACTORY_FactoryStaticItem</h1>
- * This Factory generates the items depending on the letters present in the passed string as parameter)
+ * This Factory generates the items depending on the letters present in the passed string as parameter).
+ *
  * @author Nicolas DRAPIER
  * @version 0.1
  */
 
 public class FACTORY_FactoryStaticItem {
 	
+	/** The movable. */
 	private ArrayList<MOVABLEITEM_MovableItem> movable;
+	
+	/** The lorann. */
 	private Item lorann;
+	
+	/** The door position. */
 	private Position doorPosition;
 
+	/**
+	 * Instantiates a new FACTOR Y factory static item.
+	 */
 	public FACTORY_FactoryStaticItem()
 	{
 		this.movable = new ArrayList<MOVABLEITEM_MovableItem>();
 	}
 	
-	/**createItem : return an item depending on a character from the string passed in parameter as changer
+	/**
+	 * createItem : return an item depending on a character from the string passed in parameter as changer
 	 * 
 	 * W = Purse
 	 * B = Crystal Ball
@@ -33,11 +44,12 @@ public class FACTORY_FactoryStaticItem {
 	 * T = monster 2
 	 * U = monster 3
 	 * V = monster 4
-	 * K = Lorann
-	 * @param changer
-	 * @param x
-	 * @param y
-	 * @return
+	 * K = Lorann.
+	 *
+	 * @param changer the changer
+	 * @param x the x
+	 * @param y the y
+	 * @return the item
 	 */
 	public Item createItem(char changer, int x, int y)
 	{		
@@ -101,17 +113,39 @@ public class FACTORY_FactoryStaticItem {
 		
 		}
 	}
+	
+	/**
+	 * Gets the door position.
+	 *
+	 * @return the door position
+	 */
 	public Position getDoorPosition() {
 		return doorPosition;
 	}
 
+	/**
+	 * Sets the door position.
+	 *
+	 * @param doorPosition the new door position
+	 */
 	public void setDoorPosition(Position doorPosition) {
 		this.doorPosition = doorPosition;
 	}
+	
+	/**
+	 * Gets the movable.
+	 *
+	 * @return the movable
+	 */
 	public ArrayList<MOVABLEITEM_MovableItem> getMovable() {
 		return movable;
 	}
 
+	/**
+	 * Gets the lorann.
+	 *
+	 * @return the lorann
+	 */
 	public Item getLorann() {
 		return lorann;
 	}

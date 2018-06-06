@@ -7,8 +7,9 @@ import model.Example;
 import model.dao.LorannDAO;
 import java.sql.SQLException;
 
+// TODO: Auto-generated Javadoc
 /**
- * <h1>The Class UserDied</h1>
+ * <h1>The Class UserDied</h1>.
  *
  * @author Joël DIDIER
  * @version 0.1
@@ -16,8 +17,17 @@ import java.sql.SQLException;
 
 public class UserDied {
 	
+	/** The User score. */
 	public String UserScore;
+	
+	/** The level. */
 	public String level;
+	
+	/**
+	 * User died popup.
+	 *
+	 * @throws SQLException the SQL exception
+	 */
 	public void UserDiedPopup() throws SQLException
 	{
 

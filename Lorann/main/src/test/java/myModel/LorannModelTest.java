@@ -15,9 +15,18 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import myModel.LorannModel;
+// TODO: Auto-generated Javadoc
+
+/**
+ * The Class LorannModelTest.
+ */
 /*testing the setLevel method in comparison of a String*/
 @SuppressWarnings("unused")
 public class LorannModelTest {
+	
+	/**
+	 * Test.
+	 */
 	@Test
 	public void test()
 	{
