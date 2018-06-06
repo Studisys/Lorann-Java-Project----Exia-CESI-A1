@@ -1,42 +1,18 @@
 package MonModele;
 
-/**********************************************************************************
-**																				 **
-**							  	   Class Hero								 	 **
-**																				 **
-**							@author Nicolas Drapier								 **
-**																				 **
-**							       Copyright 									 **
-**																				 **
-**********************************************************************************/
+import java.awt.Graphics;
+import java.applet.Applet;
 
-public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable {
+public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem {
 
 	private int speed = 48;
-	//private String[] images = {"lorann_l.png","lorann_ul.png","lorann_u.png","lorann_ur.png","lorann_r.png","lorann_br.png","lorann_b.png","lorann_bl.png"};
-	private String[] images;
+	private String image = "lorann_l.png";
 	private boolean weaponed = true;
 	
 	public MOVABLEITEM_Me()
 	{
 		this.setName("Lorann");
-		// Crystal_ball for testing
-		this.setImage("crystal_ball.png");
-		this.images = new String[8];
-		this.images[0] = "lorann_l";
-		this.images[1] = "lorann_ul";
-		this.images[2] = "lorann_u";
-		this.images[3] = "lorann_ur";
-		this.images[4] = "lorann_r";
-		this.images[5] = "lorann_br";
-		this.images[6] = "lorann_b";
-		this.images[7] = "lorann_bl";
-		
-		/*for(int i = 0; i<8; i++)
-		{
-			this.setImage(images[i] + ".png");
-			System.out.println(images[i].toString());
-		}*/
+		this.setImage(image);		
 	}
 	
 	public boolean isWeapon()
@@ -57,15 +33,16 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable 
 		
 	}
 
-	@Override
-	public void run() {
+	/*@Override
+	public void run() 
+	{
 		while(true)
 		{
 			for(int i = 0; i<8; i++)
 			{
-				this.setImage(this.images[i] + ".png");
-				System.out.println(Thread.currentThread().getName() + "lorann2" + Thread.currentThread().getState());
-				System.out.println(this.getImage().toString());
+				//this.setImage(this.images[i] + ".png");
+				
+				System.out.println(Thread.currentThread().getName() + "lorann2" + Thread.currentThread().getState() +"       " + i);
 				
 				try {
 					Thread.sleep(1000);
@@ -77,5 +54,6 @@ public class MOVABLEITEM_Me extends MOVABLEITEM_MovableItem implements Runnable 
 			}
 		}
 		
-	}
+	}*/
+	
 }

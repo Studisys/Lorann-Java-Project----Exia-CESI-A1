@@ -2,6 +2,8 @@ package MonModele;
 
 import java.util.ArrayList;
 
+import monController.LorannController;
+
 /**
  * <h1>The Class FACTORY_FactoryStaticItem</h1>
  *

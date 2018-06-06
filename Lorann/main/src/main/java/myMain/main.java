@@ -29,12 +29,6 @@ public class main {
 	{
 		try
 		{
-
-			Thread ennemy = new Thread(new MOVABLEITEM_Ennemy());
-			Thread moi = new Thread(new MOVABLEITEM_Me());
-			moi.start();
-			ennemy.start();
-
 				levelCheck levelTester = new levelCheck();
 				boolean levelChecker;
 				JFrame frame3 = new JFrame("Lorann");
@@ -68,7 +62,9 @@ public class main {
 					LorannController loranncontroller = new LorannController(lorannmodel);
 					MainFrame lorannview = new MainFrame(loranncontroller,lorannmodel, lorannmodel);
 				
-
+					Thread moi = new Thread(new LorannController(lorannmodel));
+					moi.start();
+					
 				loranncontroller.setViewSystem(lorannview);
 				loranncontroller.play();
 
