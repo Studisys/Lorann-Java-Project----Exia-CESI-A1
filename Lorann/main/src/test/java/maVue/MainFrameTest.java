@@ -1,5 +1,10 @@
 package maVue;
-
+/**
+ * <h1>MainFrame JUnit test</h1>
+ *
+ * @author Bastien Le Gall
+ * @version 1.0
+ */
 import javax.swing.JOptionPane;
 
 import org.junit.After;
@@ -8,33 +13,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-
+//test of a popup displayer used for exemple when an incorrect string is returned by the database
 public class MainFrameTest 
 {
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception 
-	{
-		
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception 
-	{
-		
-	}
-
-	@Before
-	public void setUp() throws Exception 
-	{
-		
-	}
-
-	@After
-	public void tearDown() throws Exception 
-	{
-		
-	}
-
 	@Test
 	public void run() 
 	{
@@ -44,7 +25,7 @@ public class MainFrameTest
 	@Test
 	public void displayMessage() 
 	{
-		String message = "test";
+		String message = "test"; /**assign String "test" to a String variable which will be used for the popup*/
 		JOptionPane.showMessageDialog(null, message);
 	}
 	
