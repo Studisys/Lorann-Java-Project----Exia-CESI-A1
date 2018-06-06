@@ -2,6 +2,14 @@ package MonModele;
 
 public class levelCheck {
 
+	/**Check if there is any illegal character in the string grabbed from the string DBB
+	 * 
+	 * 
+	 * 
+	 * @param level
+	 * @return
+	 */
+	
 	public boolean check(String level)
 	{
 		int hasInvalid=0;

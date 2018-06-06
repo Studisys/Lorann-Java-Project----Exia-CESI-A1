@@ -20,6 +20,15 @@ public class FACTORY_FactoryStaticItem {
 		this.movable = new ArrayList<MOVABLEITEM_MovableItem>();
 	}
 	
+	/**createItem : return an item depending on a character
+	 * 
+	 * 
+	 * 
+	 * @param changer
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public Item createItem(char changer, int x, int y)
 	{		
 		switch (changer)

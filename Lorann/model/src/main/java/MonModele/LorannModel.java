@@ -41,7 +41,15 @@ public class LorannModel extends Observable implements INTERFACE_Model {
 		this.level = level;
 	}
 
-
+	/** Build map from the level setting
+	 * 
+	 * 
+	 * 
+	 * 
+	 * @param level
+	 */
+	
+	
 	public void mapCreator (String level)
 	{
 		this.myMap.buildMap(level);

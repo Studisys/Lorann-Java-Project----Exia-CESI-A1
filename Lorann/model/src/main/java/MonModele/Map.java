@@ -72,6 +72,14 @@ public class Map {
 		this.height = height;
 	}
 
+	/**Buildmap : transform a string to a 2D Item Array
+	 * 
+	 * 
+	 * 
+	 * @param level
+	 */
+	
+	
 	public void buildMap(String level)
 	{
 		this.setLevel(level);
