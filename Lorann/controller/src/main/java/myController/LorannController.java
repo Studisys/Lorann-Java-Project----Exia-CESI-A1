@@ -308,6 +308,7 @@ public class LorannController implements iOrderPerformer, Runnable
 		
 		for(int i = 0; i<=this.LorannModel.getMonsterList().size()-1;i++)
 		{
+			this.hero.setPosition(new Position(x,y));
 			if (x == this.LorannModel.getMonsterList().get(i).getPosition().getX() && y == this.LorannModel.getMonsterList().get(i).getPosition().getY())
 			{
 				JFrame frame1 = new JFrame("Lorann - You Lost !");
